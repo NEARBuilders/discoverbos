@@ -64,6 +64,10 @@ import {
 import { Integrations, Infrastructure, Gateways } from "./pages/more";
 import Home from "./pages/Home";
 import HomeSelector from "./pages/home/HomeSelector";
+import Projects from "./pages/projects/Projects";
+import Resources from "./pages/education/Resources";
+import Community from "./pages/communities/Community";
+import About from "./pages/About";
 
 export const refreshAllowanceObj = {};
 const documentationHref = "https://social.near-docs.io/";
@@ -209,6 +213,7 @@ function App() {
   ];
 
   const communitiesRoutes = [
+    { path: "/community", component: <Community /> },
     {
       path: "/communities/developer",
       component: <DeveloperCommunity />,
@@ -228,6 +233,7 @@ function App() {
   ];
 
   const educationRoutes = [
+    { path: "/resources", component: <Resources /> },
     {
       path: "/education/tutorials",
       component: <EducationTutorials />,
@@ -254,6 +260,7 @@ function App() {
   ];
 
   const projectsRoutes = [
+    // { path: "/projects", component: <Projects /> },
     {
       path: "/projects/built-with-bos",
       component: <ProjectsBuiltWithBOS />,
@@ -310,6 +317,10 @@ function App() {
       path: "/homepage-selector",
       component: <HomeSelector />,
     },
+    {
+      path: "/about",
+      component: <About />,
+    },
   ];
 
   return (
@@ -329,13 +340,16 @@ function App() {
           </Route>
           {routes.map((route) => (
             <Route key={`${route.path}`} path={route.path}>
-              {route.component}
+              <div className="container">{route.component}</div>
               {/* <Footer {...passProps} /> */}
             </Route>
           ))}
           <Route exact path={"/"}>
             <Home />
             {/* <Footer {...passProps} /> */}
+          </Route>
+          <Route exact path={"/projects"}>
+            <Projects />
           </Route>
           <Route path={"/:widgetSrc*"}>
             <BosLoaderBanner />
