@@ -19,6 +19,14 @@ jobs:
       - name: Install near-social CLI
         run: |
           curl --proto '=https' --tlsv1.2 -LsSf https://github.com/FroVolod/bos-cli-rs/releases/download/v0.3.1/bos-cli-v0.3.1-installer.sh | sh
+      
+      - name: Install bos-workspace
+        run: |
+          yarn install bos-workspace
+
+      - name: Build workspace
+        run: |
+          bos-workspace build
 
       - name: Deploy widgets
         working-directory: ./build/discoverbos
