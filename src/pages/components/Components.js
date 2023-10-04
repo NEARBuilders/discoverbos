@@ -3,7 +3,7 @@ import { Widget } from "near-social-vm";
 
 export default function ComponentsPage() {
   return (
-    <div className="mb-5 w-100">
+    <div className="mb-5 w-100 container">
       <Widget src="itexpert120-contra.near/widget/ComponentsLibrary" />
     </div>
   );
