@@ -20,15 +20,13 @@ jobs:
         run: |
           curl --proto '=https' --tlsv1.2 -LsSf https://github.com/FroVolod/bos-cli-rs/releases/download/v0.3.1/bos-cli-v0.3.1-installer.sh | sh
       
-      - name: Clone and install bos-workspace globally
+      - name: Install dev dependencies
         run: |
-          git clone https://github.com/sekaiking/bos-workspace ./bos-workspace
-          cd ./bos-workspace
-          npm install -g .
+          yarn
 
       - name: Build workspace
         run: |
-          bos-workspace build
+          bosworkspace build
 
       - name: Deploy widgets
         working-directory: ./build/discoverbos
