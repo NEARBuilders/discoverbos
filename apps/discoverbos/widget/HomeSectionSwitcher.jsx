@@ -323,7 +323,7 @@ const Box = styled.div`
   gap: 1rem;
 
   border-radius: 8px;
-  border: 3px solid #03b172;
+  border: 3px solid #afafaf;
   background: #fff;
 
   width: 222px;
@@ -358,6 +358,8 @@ const Box = styled.div`
       filter: invert(42%) sepia(97%) saturate(649%) hue-rotate(117deg)
         brightness(97%) contrast(98%);
     }
+
+    border: 3px solid #03b071;
   }
 `;
 
@@ -372,13 +374,6 @@ const Container = styled.div`
     display: none;
   }
 `;
-
-// const listItems = [
-//   ["Explore", WorldIcon],
-//   ["Learn", LearnIcon],
-//   ["Connect", LearnIcon],
-//   ["Build", BuildIcon],
-// ];
 
 const listItems = [
   { name: "Explore", icon: <WorldIcon /> },

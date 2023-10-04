@@ -236,6 +236,10 @@ const HomeSection = () => {
         filter: invert(42%) sepia(97%) saturate(649%) hue-rotate(117deg)
           brightness(97%) contrast(98%);
       }
+
+      i {
+        transform: rotate(180deg);
+      }
     }
   `;
 
@@ -245,7 +249,11 @@ const HomeSection = () => {
         {MobileSwitcher && (
           <Mobile
             className={`${state.open && "selected-index"}`}
-            style={{ marginBottom: 24 }}
+            style={{
+              marginBottom: 24,
+              border: `${state.open ? "1px solid #03b071" : ""}`,
+              borderRadius: 8,
+            }}
             onClick={() => State.update({ open: !state.open })}
           >
             <MobileSwitcher />
