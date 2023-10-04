@@ -22,11 +22,11 @@ jobs:
       
       - name: Install dev dependencies
         run: |
-          yarn
+          npm install --only=dev
 
       - name: Build workspace
         run: |
-          bosworkspace build
+          npm run bosworkspace build
 
       - name: Deploy widgets
         working-directory: ./build/discoverbos
