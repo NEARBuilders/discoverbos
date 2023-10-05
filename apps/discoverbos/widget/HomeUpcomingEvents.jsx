@@ -252,7 +252,7 @@ const Event = () => {
 
   return (
     <div
-      className="d-flex align-items-center justify-content-between w-100"
+      className="d-flex align-items-center justify-content-between"
       style={{ height: "28rem" }}
     >
       <EventDetails>

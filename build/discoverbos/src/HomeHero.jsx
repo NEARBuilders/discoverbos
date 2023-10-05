@@ -5,7 +5,6 @@ const HeroSection = () => {
     justify-content: center;
     align-items: center;
     flex: 1;
-    gap: 140px;
 
     @media (width <= 800px) {
       flex-direction: column-reverse;
@@ -127,11 +126,6 @@ const HeroSection = () => {
     );
   };
 
-  const images = [
-    "https://plus.unsplash.com/premium_photo-1673338411083-47e01b496247?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80",
-    "https://images.unsplash.com/photo-1660742533971-eb413acbfb47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
-  ];
-
   const CategoriesContainer = styled.div`
     @media (width <= 800px) {
       flex-direction: column;
@@ -140,118 +134,33 @@ const HeroSection = () => {
     }
   `;
 
-  const HeroCircle = () => {
-    const SVG = styled.svg`
-      @media (width <= 800px) {
-        width: 129.98px;
-        height: 129.98px;
-      }
-    `;
-    return (
-      <SVG
-        xmlns="http://www.w3.org/2000/svg"
-        width="490"
-        height="490"
-        viewBox="0 0 490 490"
-        fill="none"
-      >
-        <path
-          d="M244.824 0C109.627 0 0 109.627 0 244.824C0 380.022 109.627 489.649 244.824 489.649C380.022 489.649 489.649 380.022 489.649 244.824C489.649 109.627 380.022 0 244.824 0Z"
-          fill="url(#paint0_linear_384_1389)"
-        />
-        <defs>
-          <linearGradient
-            id="paint0_linear_384_1389"
-            x1="64.9167"
-            y1="78.3438"
-            x2="433.378"
-            y2="407.021"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#122C22" />
-            <stop offset="0.520833" stop-color="#0E6444" />
-            <stop offset="1" stop-color="#0C8659" />
-          </linearGradient>
-        </defs>
-      </SVG>
-    );
-  };
-
-  const HeroShape = () => {
-    const SVG = styled.svg`
-      @media (width <= 800px) {
-        width: 32.495px;
-        height: 67.156px;
-      }
-    `;
-    return (
-      <SVG
-        xmlns="http://www.w3.org/2000/svg"
-        width="123"
-        height="254"
-        viewBox="0 0 123 254"
-        fill="none"
-      >
-        <path
-          d="M40.2 83.3193L18.6062 104.967C30.5249 116.915 30.5249 136.453 18.6062 148.402L40.2 170.049C64.0375 146.153 64.0375 107.356 40.2 83.3193Z"
-          fill="#76F4C6"
-          fill-opacity="0.8"
-        />
-        <path
-          d="M83.3878 170.189L104.982 148.542C93.0628 136.594 93.0628 117.055 104.982 105.107L83.3878 83.4597C59.5503 107.356 59.5503 146.153 83.3878 170.189Z"
-          fill="#76F4C6"
-          fill-opacity="0.8"
-        />
-        <path
-          d="M18.4659 235.272L40.0598 213.625C51.9785 225.573 71.469 225.573 83.3878 213.625L104.982 235.272C81.1441 259.309 42.4437 259.309 18.4659 235.272Z"
-          fill="#76F4C6"
-          fill-opacity="0.8"
-        />
-        <path
-          d="M18.4659 235.272L40.0597 213.625C28.141 201.677 28.141 182.138 40.0597 170.189L18.4659 148.542C-5.3716 172.439 -5.3716 211.376 18.4659 235.272Z"
-          fill="#76F4C6"
-          fill-opacity="0.8"
-        />
-        <path
-          d="M105.122 148.542L83.5281 170.189C95.4468 182.138 95.4468 201.677 83.5281 213.625L105.122 235.272C128.959 211.376 128.959 172.439 105.122 148.542Z"
-          fill="#76F4C6"
-          fill-opacity="0.8"
-        />
-        <path
-          d="M105.122 18.2367L83.528 39.8839C71.6093 27.9357 52.1188 27.9357 40.2 39.8839L18.6062 18.2367C42.4437 -5.65964 81.1441 -5.65964 105.122 18.2367Z"
-          fill="#76F4C6"
-          fill-opacity="0.8"
-        />
-        <path
-          d="M105.122 18.2368L83.5281 39.884C95.4468 51.8322 95.4468 71.3712 83.5281 83.3194L105.122 104.967C128.959 81.0702 128.959 42.2738 105.122 18.2368Z"
-          fill="#76F4C6"
-          fill-opacity="0.8"
-        />
-        <path
-          d="M18.4659 105.107L40.0597 83.4598C28.141 71.5116 28.141 51.9729 40.0597 40.0247L18.4659 18.3772C-5.3716 42.2736 -5.3716 81.0703 18.4659 105.107Z"
-          fill="#76F4C6"
-          fill-opacity="0.8"
-        />
-      </SVG>
-    );
-  };
-
-  const HeroSVG = styled.div`
+  const MainDiv = styled.div`
     @media (width <= 800px) {
-      right: -16.02px !important;
+      min-width: auto !important;
+      max-width: 100% !important;
+      margin-right: 0 !important;
     }
   `;
 
-  const ResponsiveContainer = styled.div`
+  const MainImage = styled.img`
     @media (width <= 800px) {
-      align-self: flex-start !important;
+      margin-right: auto;
     }
   `;
 
   return (
     <div style={{ background: "#03B172" }}>
       <Container>
-        <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
+        <MainDiv
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            minWidth: "max-content",
+            maxWidth: "65%",
+            width: "100%",
+            marginRight: "5%",
+          }}
+        >
           <Heading>
             <BoldWord>Discover</BoldWord>, <BoldWord>learn</BoldWord> and{" "}
             <BoldWord>build</BoldWord>
@@ -288,16 +197,11 @@ const HeroSection = () => {
               </div>
             </CategoriesContainer>
           </div>
-        </div>
-        <ResponsiveContainer className="position-relative">
-          <HeroCircle />
-          <HeroSVG
-            className="position-absolute"
-            style={{ bottom: "25%", right: -60.35 }}
-          >
-            <HeroShape />
-          </HeroSVG>
-        </ResponsiveContainer>
+        </MainDiv>
+        <MainImage
+          src="/images/hero-image.png"
+          style={{ width: "30%", objectFit: "cover" }}
+        />
       </Container>
     </div>
   );
