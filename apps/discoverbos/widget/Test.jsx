@@ -1,1 +1,1 @@
-return <div>Test</div>;
+return <Widget src="discover.near/widget/Search" />;

@@ -1,3 +1,7 @@
+State.init({
+  searchTerm: "",
+});
+
 const Container = styled.div`
   padding: 100px 120px;
   display: flex;
@@ -65,7 +69,7 @@ const Input = styled.input`
   }
 `;
 
-const Button = styled.button`
+const Button = styled.a`
   background: none;
   border: none;
   padding: 10px;
@@ -74,10 +78,14 @@ const Button = styled.button`
   height: 50px;
   color: white;
   background: #1b1b18;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     background: #000000;
     color: white;
+    text-decoration: none;
   }
 
   &:active {
@@ -171,9 +179,14 @@ const HeroSection = () => {
               <Input
                 className="form-control"
                 type="text"
+                value={state.searchTerm}
+                onChange={(e) => State.update({ searchTerm: e.target.value })}
+                onSubmit={() => (window.location.href = searchTerm)}
                 placeholder="Try events calendar, AI chatbot, or gigs board..."
               />
-              <Button>
+              <Button
+                href={`/discover.near/widget/Search?term=${state.searchTerm}`}
+              >
                 <i className="bi bi-search"></i>
               </Button>
             </InputContainer>

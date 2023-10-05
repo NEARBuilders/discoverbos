@@ -249,7 +249,7 @@ const Input = styled.input`
   }
 `;
 
-const SearchButton = styled.button`
+const SearchButton = styled.a`
   background: none;
   border: none;
   padding: 10px;
@@ -258,10 +258,14 @@ const SearchButton = styled.button`
   height: 50px;
   color: white;
   background: #1b1b18;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background: #000000;
     color: white;
+    text-decoration: none;
   }
 
   &:active {
@@ -273,6 +277,7 @@ const SearchButton = styled.button`
 export default function Navbar() {
   const [show, setShow] = useState(false);
   const [fix, setFix] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -293,6 +298,10 @@ export default function Navbar() {
     }
   }, []);
 
+  function URLify(string) {
+    return string.trim().replace(/\s/g, "%20");
+  }
+
   return (
     <>
       <Nav
@@ -307,9 +316,14 @@ export default function Navbar() {
             <Input
               className="form-control"
               type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Try events calendar, AI chatbot, or gigs board..."
             />
-            <SearchButton>
+            <SearchButton
+              className="p-0 m-0 d-flex align-items-center justify-content-center"
+              href={`/discover.near/widget/Search?term=${URLify(searchTerm)}`}
+            >
               <i className="bi bi-search"></i>
             </SearchButton>
           </InputContainer>
@@ -358,9 +372,13 @@ export default function Navbar() {
                     <Input
                       className="form-control"
                       type="text"
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
                       placeholder="Try events calendar, AI chatbot, or gigs board..."
                     />
-                    <SearchButton>
+                    <SearchButton
+                      href={`/discover.near/widget/Search?term=${searchTerm}`}
+                    >
                       <i className="bi bi-search"></i>
                     </SearchButton>
                   </InputContainer>

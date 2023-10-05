@@ -13,6 +13,7 @@ const showSearchBar = props.showSearchBar ?? true;
 const showFacets = props.showFacets ?? true;
 const showPagination = props.showPagination ?? true;
 const userId = props.accountId ?? context.accountId;
+const initialPrompt = props.prompt;
 
 const componentsUrl = `/near/widget/ComponentsPage`;
 const peopleUrl = `/near/widget/PeoplePage`;
@@ -379,7 +380,7 @@ const onSearchResultClick = ({ searchPosition, objectID, eventName }) => {
 };
 
 return (
-  <Wrapper>
+  <Wrapper className="container">
     {showHeader &&
       (renderHeader ? (
         renderHeader(state.search, state.paginate)
