@@ -78,7 +78,11 @@ const ExploreCard = ({ title, description, icon }) => {
   `;
 
   return (
-    <Card className="d-flex w-50 p-3 gap-3" style={{ marginBottom: 40 }}>
+    <Card
+      className="d-flex w-50 p-3 gap-3"
+      style={{ marginBottom: 40 }}
+      key={Math.random()}
+    >
       <div>{icon}</div>
       <div>
         <Title className="mb-3">{title}</Title>

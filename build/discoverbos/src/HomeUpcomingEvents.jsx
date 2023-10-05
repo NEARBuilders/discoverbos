@@ -108,7 +108,10 @@ const MobileCard = ({ event }) => {
   `;
 
   return (
-    <div className="d-flex flex-column gap-3 align-items-center w-100">
+    <div
+      className="d-flex flex-column gap-3 align-items-center w-100"
+      key={Math.random()}
+    >
       <CardImage src={event.image} />
       <div className="d-flex flex-column">
         <CardTitle>{event.name}</CardTitle>
@@ -333,6 +336,7 @@ const NavigationIndicator = () => {
     <div className="d-flex gap-2">
       {state.events.map((_, idx) => (
         <div
+          key={Math.random()}
           onClick={() => State.update({ activeIndex: idx })}
           style={{ cursor: "pointer" }}
         >

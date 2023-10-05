@@ -227,9 +227,10 @@ const HomeSection = () => {
               border: `${state.open ? "1px solid #03b071" : ""}`,
               borderRadius: 8,
             }}
+            key={Math.random()}
             onClick={() => State.update({ open: !state.open })}
           >
-            <MobileSwitcher />
+            <MobileSwitcher key={Math.random()} />
           </Mobile>
         )}
         <div
