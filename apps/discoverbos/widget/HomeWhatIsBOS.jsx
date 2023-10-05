@@ -139,7 +139,7 @@ const WhatIsBOS = () => {
       }
     `;
     return (
-      <Card className="d-flex flex-column gap-3">
+      <Card className="d-flex flex-column gap-3" key={Math.random()}>
         <SectionPill name={title} />
         <SectionDetial text={text} />
       </Card>

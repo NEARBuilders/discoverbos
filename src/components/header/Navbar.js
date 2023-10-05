@@ -4,20 +4,21 @@ import styled from "styled-components";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
-function Logo() {
-  const DesktopSVG = styled.svg`
-    @media (width <= 800px) {
-      display: none;
-    }
-  `;
-
-  const MobileSVG = styled.svg`
+const DesktopSVG = styled.svg`
+  @media (width <= 800px) {
     display: none;
+  }
+`;
 
-    @media (width <= 800px) {
-      display: block;
-    }
-  `;
+const MobileSVG = styled.svg`
+  display: none;
+
+  @media (width <= 800px) {
+    display: block;
+  }
+`;
+
+function Logo() {
   return (
     <>
       <DesktopSVG
@@ -144,9 +145,139 @@ const AuthButton = styled.a`
   }
 `;
 
+const Nav = styled.nav`
+  width: 100%;
+  height: 5.75rem;
+  padding: 24px 120px;
+  height: 92px;
+  background: var(--White, #fdfdfc);
+  border-bottom: 1px solid #cfcfcf;
+
+  position: fixed;
+  top: 0;
+
+  z-index: 50;
+
+  .nav-search {
+    display: none;
+  }
+
+  &.fixed {
+    .nav-search {
+      display: block;
+    }
+  }
+
+  @media (width <= 1200px) {
+    padding: 24px 60px;
+  }
+
+  @media (width <= 1200px) {
+    &.fixed {
+      .nav-search {
+        display: none !important;
+      }
+    }
+  }
+
+  @media (width <= 990px) {
+    padding: 24px;
+  }
+
+  @media (width <= 800px) {
+    padding: 12px 16px;
+    height: 52px !important;
+  }
+`;
+
+const LinksDiv = styled.div`
+  display: flex;
+  gap: 1rem;
+
+  @media (width <= 1180px) {
+    gap: 0.5rem;
+  }
+
+  @media (width <= 800px) {
+    display: none;
+  }
+`;
+
+const MobileLinks = styled.div`
+  display: none;
+
+  @media (width <= 800px) {
+    margin-left: auto;
+    display: block !important;
+  }
+`;
+
+const InputContainer = styled.div`
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: 1.5px solid #1d8e65;
+  background: white;
+  overflow: hidden;
+
+  max-width: 605px;
+`;
+
+const Input = styled.input`
+  flex: 1;
+  padding: 13px;
+  border: none;
+  outline: none;
+  border-radius: 0;
+
+  &::placeholder {
+    color: #9ba1a5;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    opacity: 1; /* Firefox */
+  }
+
+  &::-ms-input-placeholder {
+    /* Edge 12 -18 */
+    color: #9ba1a5;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+`;
+
+const SearchButton = styled.a`
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  color: white;
+  background: #1b1b18;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: #000000;
+    color: white;
+    text-decoration: none;
+  }
+
+  &:active {
+    outline: none;
+    border: none;
+  }
+`;
+
 export default function Navbar() {
   const [show, setShow] = useState(false);
   const [fix, setFix] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -167,123 +298,9 @@ export default function Navbar() {
     }
   }, []);
 
-  const Nav = styled.nav`
-    width: 100%;
-    height: 5.75rem;
-    padding: 24px 120px;
-    height: 92px;
-    background: var(--White, #fdfdfc);
-    border-bottom: 1px solid #cfcfcf;
-
-    position: fixed;
-    top: 0;
-
-    z-index: 50;
-
-    &.fixed {
-      .nav-search {
-        display: block !important;
-      }
-    }
-
-    @media (width <= 1200px) {
-      padding: 24px 60px;
-    }
-
-    @media (width <= 990px) {
-      padding: 24px;
-    }
-
-    @media (width <= 800px) {
-      padding: 12px 16px;
-      height: 52px !important;
-      &.fixed {
-        .nav-search {
-          display: none !important;
-        }
-      }
-    }
-  `;
-
-  const LinksDiv = styled.div`
-    display: flex;
-    gap: 1rem;
-
-    @media (width <= 1180px) {
-      gap: 0.5rem;
-    }
-
-    @media (width <= 800px) {
-      display: none;
-    }
-  `;
-
-  const MobileLinks = styled.div`
-    display: none;
-
-    @media (width <= 800px) {
-      margin-left: auto;
-      display: block !important;
-    }
-  `;
-
-  const InputContainer = styled.div`
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    border: 1.5px solid #1d8e65;
-    background: white;
-    overflow: hidden;
-
-    max-width: 605px;
-  `;
-
-  const Input = styled.input`
-    flex: 1;
-    padding: 13px;
-    border: none;
-    outline: none;
-    border-radius: 0;
-
-    &::placeholder {
-      color: #9ba1a5;
-      font-size: 1rem;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-      opacity: 1; /* Firefox */
-    }
-
-    &::-ms-input-placeholder {
-      /* Edge 12 -18 */
-      color: #9ba1a5;
-      font-size: 1rem;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-    }
-  `;
-
-  const SearchButton = styled.button`
-    background: none;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    color: white;
-    background: #1b1b18;
-
-    &:hover {
-      background: #000000;
-      color: white;
-    }
-
-    &:active {
-      outline: none;
-      border: none;
-    }
-  `;
+  function URLify(string) {
+    return string.trim().replace(/\s/g, "%20");
+  }
 
   return (
     <>
@@ -294,14 +311,19 @@ export default function Navbar() {
         <a style={{ cursor: "pointer" }} href="/">
           <Logo />
         </a>
-        <div className="nav-search flex-grow-1" style={{ display: "none" }}>
+        <div className="nav-search flex-grow-1">
           <InputContainer className="input-group">
             <Input
               className="form-control"
               type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Try events calendar, AI chatbot, or gigs board..."
             />
-            <SearchButton>
+            <SearchButton
+              className="p-0 m-0 d-flex align-items-center justify-content-center"
+              href={`/discover.near/widget/Search?term=${URLify(searchTerm)}`}
+            >
               <i className="bi bi-search"></i>
             </SearchButton>
           </InputContainer>
@@ -350,9 +372,13 @@ export default function Navbar() {
                     <Input
                       className="form-control"
                       type="text"
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
                       placeholder="Try events calendar, AI chatbot, or gigs board..."
                     />
-                    <SearchButton>
+                    <SearchButton
+                      href={`/discover.near/widget/Search?term=${searchTerm}`}
+                    >
                       <i className="bi bi-search"></i>
                     </SearchButton>
                   </InputContainer>

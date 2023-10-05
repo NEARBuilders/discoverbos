@@ -17,7 +17,9 @@ const sections = [
 return (
   <FontDiv>
     {sections.map((sec) => (
-      <Widget src={`${ownerId}/widget/Home${sec}`} />
+      <div id={sec.toLowerCase()} key={Math.random()}>
+        <Widget src={`${ownerId}/widget/Home${sec}`} />
+      </div>
     ))}
   </FontDiv>
 );
