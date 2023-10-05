@@ -3,7 +3,43 @@ State.init({
   mobileIndex: 0,
 });
 
-const ProjectCard = () => {
+const ProjectCard = ({ project }) => {
+  if (project.type === "add") {
+    const Container = styled.div`
+      max-width: 442.67px;
+      height: 515px;
+      border-radius: 16px;
+      background: #f6f6f6;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    `;
+
+    const Button = styled.a`
+      display: inline-flex;
+      padding: 16px 32px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      border-radius: 30px;
+      background: var(--Eerie-Black, #1b1b18);
+
+      color: #fcfcfb;
+      font-family: Mona Sans;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    `;
+    return (
+      <Container style={{ width: "30%" }}>
+        <Button href="#">View All Projects</Button>
+      </Container>
+    );
+  }
+
   const sampleImage =
     "https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80";
 
@@ -133,7 +169,7 @@ const ProjectCard = () => {
   return (
     <Card
       className="p-4 d-flex flex-column gap-4"
-      style={{ width: "min-content" }}
+      style={{ maxWidth: 442.667, width: "30%", minWidth: 215 }}
       key={Math.random()}
     >
       <ProjectImage src={sampleImage} />
@@ -224,6 +260,7 @@ const FeaturedProjects = () => {
     { asd: "" },
     { asd: "" },
     { asd: "" },
+    { type: "add" },
   ];
 
   const nextProjects = () => {
@@ -236,9 +273,8 @@ const FeaturedProjects = () => {
 
   const ResponsiveCards = styled.div`
     @media (width <= 1435px) {
-      flex-wrap: wrap;
-      justify-content: center !important;
-      gap: 40px !important;
+      /* flex-wrap: wrap;
+      justify-content: center !important; */
     }
   `;
 
@@ -262,19 +298,16 @@ const FeaturedProjects = () => {
             <i className="bi bi-chevron-left" onClick={previousProjects}></i>
           </NavigationButton>
           <NavigationButton
-            disabled={endIndex > projects.length}
-            className={endIndex > projects.length && "inactive"}
+            disabled={endIndex >= projects.length}
+            className={endIndex >= projects.length && "inactive"}
           >
             <i className="bi bi-chevron-right" onClick={nextProjects}></i>
           </NavigationButton>
         </div>
       </div>
-      <ResponsiveCards
-        className="d-flex justify-content-between align-items-center mx-auto"
-        style={{ gap: 80 }}
-      >
-        {projects.slice(state.projectsIndex, endIndex).map((_) => (
-          <ProjectCard key={`project-${Math.random()}`} />
+      <ResponsiveCards className="d-flex w-100 justify-content-between align-items-center mx-auto">
+        {projects.slice(state.projectsIndex, endIndex).map((project) => (
+          <ProjectCard key={`project-${Math.random()}`} project={project} />
         ))}
       </ResponsiveCards>
     </SectionContainer>
@@ -313,7 +346,7 @@ const MobileProjects = () => {
     margin-bottom: 40px;
   `;
 
-  const MobileProjectCard = () => {
+  const MobileProjectCard = ({ project }) => {
     const Card = styled.div`
       border-radius: 24px;
       box-shadow: 0px 12px 18px 0px rgba(0, 0, 0, 0.07);
@@ -323,6 +356,35 @@ const MobileProjects = () => {
 
       margin-bottom: 24px;
     `;
+
+    const Button = styled.a`
+      display: inline-flex;
+      padding: 16px 32px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      border-radius: 30px;
+      background: var(--Eerie-Black, #1b1b18);
+
+      color: #fcfcfb;
+      font-family: Mona Sans;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    `;
+
+    if (project.type === "add") {
+      return (
+        <Card
+          style={{ height: "425px", marginBottom: 24 }}
+          className="justify-content-center  align-items-center"
+        >
+          <Button>View All Projects</Button>
+        </Card>
+      );
+    }
 
     const CardImage = styled.img`
       width: 100%;
@@ -515,6 +577,7 @@ const MobileProjects = () => {
     { asd: "" },
     { asd: "" },
     { asd: "" },
+    { type: "add" },
   ];
 
   const nextProjects = () => {
@@ -538,8 +601,11 @@ const MobileProjects = () => {
           </Description>
         </div>
         <div>
-          {projects.slice(state.mobileIndex, endIndex).map((_) => (
-            <MobileProjectCard key={`project-${Math.random()}`} />
+          {projects.slice(state.mobileIndex, endIndex).map((project) => (
+            <MobileProjectCard
+              key={`project-${Math.random()}`}
+              project={project}
+            />
           ))}
         </div>
 

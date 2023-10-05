@@ -8,9 +8,9 @@ const HeroSection = () => {
 
     @media (width <= 800px) {
       flex-direction: column-reverse;
-      gap: 60px;
+      gap: 20px;
 
-      padding: 60px 16px;
+      padding: 40px 16px;
     }
   `;
 
@@ -173,7 +173,7 @@ const HeroSection = () => {
                 type="text"
                 placeholder="Try events calendar, AI chatbot, or gigs board..."
               />
-              <Button cl>
+              <Button>
                 <i className="bi bi-search"></i>
               </Button>
             </InputContainer>

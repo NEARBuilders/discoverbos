@@ -3,9 +3,9 @@ State.init({
   mobileIndex: 0,
 });
 
-const BuilderCard = () => {
+const BuilderCard = ({ builder }) => {
   const Card = styled.div`
-    width: 16rem;
+    width: 22.5%;
     border-radius: 24px;
     border: 1px solid #cfcfcf;
     background: #fff;
@@ -24,6 +24,31 @@ const BuilderCard = () => {
       width: 100%;
     }
   `;
+
+  if (builder.type === "add") {
+    const Button = styled.a`
+      display: inline-flex;
+      padding: 16px 32px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      border-radius: 30px;
+      background: var(--Eerie-Black, #1b1b18);
+
+      color: #fcfcfb;
+      font-family: Mona Sans;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    `;
+    return (
+      <Card style={{ minHeight: 310 }}>
+        <Button>View All Builders</Button>
+      </Card>
+    );
+  }
 
   const BuilderLogo = styled.img`
     width: 140px;
@@ -111,7 +136,7 @@ const BuilderCard = () => {
           <Tag>{HashTag} nft</Tag>
           <Tag>+3</Tag>
         </div>
-        <div className="d-flex justify-content-center gap-4 w-100">
+        <div className="d-flex justify-content-between w-100">
           <Stats title={"Posts"} count={"52"} />
           <Stats title={"Followers"} count={"21"} />
           <Stats title={"NFTs"} count={"7"} />
@@ -208,6 +233,7 @@ const FeaturedBuilders = () => {
     { asd: "" },
     { asd: "" },
     { asd: "" },
+    { type: "add" },
   ];
 
   const nextBuilders = () => {
@@ -266,21 +292,25 @@ const FeaturedBuilders = () => {
             <i className="bi bi-chevron-left" onClick={previousBuilders}></i>
           </NavigationButton>
           <NavigationButton
-            disabled={endIndex > builders.length}
-            className={endIndex > builders.length && "inactive"}
+            disabled={endIndex >= builders.length}
+            className={endIndex >= builders.length && "inactive"}
           >
             <i className="bi bi-chevron-right" onClick={nextBuilders}></i>
           </NavigationButton>
         </DesktopNavigation>
       </div>
-      <DesktopCards className="d-flex gap-5 flex-wrap align-items-center w-100 justify-content-center">
-        {builders.slice(state.buildersIndex, endIndex).map((_) => (
-          <BuilderCard key={`Builder-${Math.random()}`} />
+      <DesktopCards className="d-flex align-items-stretch w-100 justify-content-between">
+        {builders.slice(state.buildersIndex, endIndex).map((builder) => (
+          <BuilderCard key={`Builder-${Math.random()}`} builder={builder} />
         ))}
       </DesktopCards>
-      <MobileCards>
-        {builders.slice(state.mobileIndex, mobileEndIndex).map((_) => (
-          <BuilderCard key={`Builder-${Math.random()}`} />
+      <MobileCards className="align-items-stretch">
+        {builders.slice(state.mobileIndex, mobileEndIndex).map((builder) => (
+          <BuilderCard
+            key={`Builder-${Math.random()}`}
+            builder={builder}
+            style={{ height: 270 }}
+          />
         ))}
       </MobileCards>
       <MobileCards>

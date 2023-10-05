@@ -413,12 +413,20 @@ const UpcomingEvents = () => {
         className="w-100 d-flex align-items-center justify-content-center flex-column gap-3"
         style={{ marginTop: "32px" }}
       >
-        <div className="d-flex align-items-center justify-content-center gap-2">
-          <EventsNavigation onClick={onPreviousEvent}>
+        <div className="position-relative">
+          <EventsNavigation
+            onClick={onPreviousEvent}
+            className="position-absolute bottom-50"
+            style={{ left: -48 }}
+          >
             <i className="bi bi-chevron-left"></i>
           </EventsNavigation>
           <Event />
-          <EventsNavigation onClick={onNextEvent}>
+          <EventsNavigation
+            onClick={onNextEvent}
+            className="position-absolute bottom-50"
+            style={{ right: -48 }}
+          >
             <i className="bi bi-chevron-right"></i>
           </EventsNavigation>
         </div>
