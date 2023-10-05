@@ -5,19 +5,21 @@ const FontDiv = styled.div`
 `;
 
 const sections = [
-  "Hero",
-  "WhatIsBOS",
-  "SectionSwitcher",
-  "Projects",
-  "Builders",
-  "UpcomingEvents",
+  // "Hero",
+  // "WhatIsBOS",
+  // "SectionSwitcher",
+  // "Projects",
+  // "Builders",
+  // "UpcomingEvents",
   "Explore",
 ];
 
 return (
   <FontDiv>
     {sections.map((sec) => (
-      <Widget src={`${ownerId}/widget/Home${sec}`} />
+      <div id={sec.toLowerCase()}>
+        <Widget src={`${ownerId}/widget/Home${sec}`} />
+      </div>
     ))}
   </FontDiv>
 );
