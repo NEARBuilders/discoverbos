@@ -40,7 +40,7 @@ const NavLinks = styled.a`
   line-height: normal;
 `;
 
-const AuthButton = styled.button`
+const AuthButton = styled.a`
   border: none;
   outline: none;
   border-radius: 50rem;
@@ -114,15 +114,14 @@ export default function Navbar() {
         <Logo />
       </a>
       <LinksDiv className="align-items-center">
-        <NavLinks href="#">Components</NavLinks>
-        <NavLinks href="#">Projects</NavLinks>
-        <NavLinks href="#">Resources</NavLinks>
-        <NavLinks href="#">Community</NavLinks>
-        <NavLinks href="#">About</NavLinks>
-        <div className="d-flex align-items center gap-md-1 gap-lg-3">
-          {/* <AuthButton>Sign in</AuthButton> */}
-          <AuthButton className="sign-in">Sign in</AuthButton>
-        </div>
+        <NavLinks href="/components">Components</NavLinks>
+        <NavLinks href="/projects">Projects</NavLinks>
+        <NavLinks href="/resources">Resources</NavLinks>
+        <NavLinks href="/community">Community</NavLinks>
+        <NavLinks href="/about">About</NavLinks>
+        <AuthButton href="#" className="sign-in">
+          Sign in
+        </AuthButton>
       </LinksDiv>
       <MobileLinks>
         <div className="d-flex gap-3">
@@ -143,11 +142,11 @@ export default function Navbar() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <div className="d-flex flex-column gap-3">
-              <NavLinks href="#">Components</NavLinks>
-              <NavLinks href="#">Projects</NavLinks>
-              <NavLinks href="#">Resources</NavLinks>
-              <NavLinks href="#">Community</NavLinks>
-              <NavLinks href="#">About</NavLinks>
+              <NavLinks href="/components">Components</NavLinks>
+              <NavLinks href="/projects">Projects</NavLinks>
+              <NavLinks href="/resources">Resources</NavLinks>
+              <NavLinks href="/community">Community</NavLinks>
+              <NavLinks href="/about">About</NavLinks>
               <div className="d-flex align-items center gap-2 gap-md-1 gap-lg-3">
                 <AuthButton>Sign in</AuthButton>
                 <AuthButton className="sign-in">Create Account</AuthButton>

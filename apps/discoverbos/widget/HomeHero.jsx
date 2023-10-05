@@ -1,69 +1,3 @@
-const ImageStack = ({ images }) => {
-  const ImageItem = styled.img`
-    width: 425.514px;
-    height: 425.514px;
-    object-fit: cover;
-
-    border-radius: 23px;
-    background: #fffefe;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @media (width <= 800px) {
-      width: 246.575px;
-      height: 256.037px;
-    }
-  `;
-
-  const Container = styled.div`
-    width: 496px;
-    height: 482px;
-
-    @media (width <= 800px) {
-      width: 287.5px;
-      height: 289px;
-    }
-  `;
-
-  const AbsoluteImage = styled.img`
-    width: 425.514px;
-    height: 425.514px;
-    object-fit: cover;
-
-    border-radius: 23px;
-    background: #fffefe;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: absolute;
-    bottom: -55.6px;
-    left: 71.5px;
-
-    @media (width <= 800px) {
-      width: 246.575px;
-      height: 256.037px;
-
-      left: 41.42px;
-      bottom: -33.46px;
-    }
-  `;
-
-  return (
-    <Container>
-      <div className="position-relative">
-        <ImageItem src={images[1]} />
-        <AbsoluteImage src={images[0]} />
-      </div>
-    </Container>
-  );
-};
-
 const HeroSection = () => {
   const Container = styled.div`
     padding: 100px 120px;
@@ -356,7 +290,6 @@ const HeroSection = () => {
           </div>
         </div>
         <ResponsiveContainer className="position-relative">
-          {/* <ImageStack images={images} /> */}
           <HeroCircle />
           <HeroSVG
             className="position-absolute"

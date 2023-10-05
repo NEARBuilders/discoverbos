@@ -245,26 +245,8 @@ const cards = [
   },
 ];
 
-const ExploreImage = styled.img`
-  width: 377.268px;
-  height: 426px;
-  object-fit: cover;
-  flex-shrink: 0;
-  border-radius: 23px;
-  background: #fffefe;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-  @media (width <= 800px) {
-    width: 288px;
-    height: 320px;
-  }
-`;
-
 return (
   <Container>
-    {/* <div>
-      <ExploreImage src="https://images.unsplash.com/photo-1660742533971-eb413acbfb47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" />
-    </div> */}
     <div>
       <SectionHeading>Explore Even More</SectionHeading>
       <div className="d-flex flex-wrap align-items-center" style={{ gap: 40 }}>
