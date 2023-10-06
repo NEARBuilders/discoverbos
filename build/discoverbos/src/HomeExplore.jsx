@@ -6,16 +6,16 @@ const Container = styled.div`
   gap: 120px;
   background: #f4fdfa;
 
-  @media (width <= 1730px) {
+  @media screen and (max-width: 1730px) {
     align-items: flex-start;
   }
 
-  @media (width <= 1200px) {
+  @media screen and (max-width: 1200px) {
     flex-direction: column;
     align-items: center;
   }
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     padding: 60px 1rem;
     gap: 40px;
   }
@@ -30,7 +30,7 @@ const SectionHeading = styled.h2`
   line-height: 103.5%; /* 49.68px */
   margin-bottom: 40px;
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     color: #1b1b18;
     font-family: Poppins;
     font-size: 32px;
@@ -73,7 +73,7 @@ const ExploreCard = ({ title, description, icon, link }) => {
       }
     }
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       width: 100% !important;
     }
   `;
@@ -231,7 +231,7 @@ const cards = [
 ];
 
 const ResponsiveSection = styled.div`
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     flex-direction: column;
   }
 `;

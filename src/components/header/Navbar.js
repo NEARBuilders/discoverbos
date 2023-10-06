@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 const DesktopSVG = styled.svg`
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     display: none;
   }
 `;
@@ -13,7 +13,7 @@ const DesktopSVG = styled.svg`
 const MobileSVG = styled.svg`
   display: none;
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     display: block;
   }
 `;
@@ -84,7 +84,7 @@ function Logo() {
 
 const NavLinks = styled.a`
   color: var(--Eerie-Black, #1b1b18);
-  font-family: Mona Sans;
+  font-family: "Mona Sans", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -99,7 +99,7 @@ const NavLinks = styled.a`
 
 const MobileNavLinks = styled.a`
   color: var(--Eerie-Black, #1b1b18);
-  font-family: Mona Sans;
+  font-family: "Mona Sans", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -126,7 +126,7 @@ const MobileNavLinks = styled.a`
   }
 `;
 
-const AuthButton = styled.a`
+const AuthButton = styled.button`
   border: none;
   outline: none;
   border-radius: 50rem;
@@ -154,7 +154,7 @@ const AuthButton = styled.a`
     border: 1px solid #e3e3e0;
   }
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     display: flex;
     padding: 8px 24px;
     justify-content: center;
@@ -166,7 +166,7 @@ const AuthButton = styled.a`
     background: #f3f3f2;
 
     color: var(--Eerie-Black, #1b1b18);
-    font-family: Mona Sans;
+    font-family: "Mona Sans", sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 600;
@@ -197,11 +197,11 @@ const Nav = styled.nav`
     }
   }
 
-  @media (width <= 1200px) {
+  @media screen and (max-width: 1200px) {
     padding: 24px 60px;
   }
 
-  @media (width <= 1200px) {
+  @media screen and (max-width: 1200px) {
     &.fixed {
       .nav-search {
         display: none !important;
@@ -209,11 +209,11 @@ const Nav = styled.nav`
     }
   }
 
-  @media (width <= 990px) {
+  @media screen and (max-width: 990px) {
     padding: 24px;
   }
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     padding: 12px 16px;
     height: 52px !important;
   }
@@ -223,11 +223,11 @@ const LinksDiv = styled.div`
   display: flex;
   gap: 1rem;
 
-  @media (width <= 1180px) {
+  @media screen and (max-width: 1180px) {
     gap: 0.5rem;
   }
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     display: none;
   }
 `;
@@ -235,7 +235,7 @@ const LinksDiv = styled.div`
 const MobileLinks = styled.div`
   display: none;
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     margin-left: auto;
     display: block !important;
   }
@@ -305,7 +305,7 @@ const SearchButton = styled.a`
 
 const MobileHeading = styled.div`
   color: #1b1b18;
-  font-family: Mona Sans;
+  font-family: "Mona Sans", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -362,7 +362,8 @@ const MobileDropdown = ({ title, links }) => {
   );
 };
 
-export default function Navbar() {
+export default function Navbar(props) {
+  console.log(props);
   const [show, setShow] = useState(false);
   const [fix, setFix] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -422,13 +423,27 @@ export default function Navbar() {
           <NavLinks href="/resources">Resources</NavLinks>
           <NavLinks href="/community">Community</NavLinks>
           <NavLinks href="/about">About</NavLinks>
-          <AuthButton href="#" className="sign-in">
-            Sign in
-          </AuthButton>
+          {props.signedIn ? (
+            <AuthButton onClick={props.logOut} className="sign-in">
+              Sign out
+            </AuthButton>
+          ) : (
+            <AuthButton onClick={props.requestSignIn} className="sign-in">
+              Sign in
+            </AuthButton>
+          )}
         </LinksDiv>
         <MobileLinks>
           <div className="d-flex gap-3 align-items-center">
-            <AuthButton>Create Account</AuthButton>
+            {props.signedIn ? (
+              <AuthButton onClick={props.logOut} className="sign-in">
+                Sign out
+              </AuthButton>
+            ) : (
+              <AuthButton onClick={props.requestSignIn} className="sign-in">
+                Create Account
+              </AuthButton>
+            )}
             <Button
               style={{ width: "24px", height: "24px" }}
               className="rounded-circle p-0 d-flex align-items-center justify-content-center"
@@ -546,7 +561,23 @@ export default function Navbar() {
                   />
                 </div>
 
-                <AuthButton style={{ width: "100%" }}>Sign in</AuthButton>
+                {props.signedIn ? (
+                  <AuthButton
+                    style={{ width: "100%" }}
+                    onClick={props.logOut}
+                    className="sign-in"
+                  >
+                    Sign out
+                  </AuthButton>
+                ) : (
+                  <AuthButton
+                    style={{ width: "100%" }}
+                    onClick={props.requestSignIn}
+                    className="sign-in"
+                  >
+                    Sign in
+                  </AuthButton>
+                )}
               </div>
             </Offcanvas.Body>
           </Offcanvas>

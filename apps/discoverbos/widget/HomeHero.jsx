@@ -9,7 +9,7 @@ const Container = styled.div`
   align-items: center;
   flex: 1;
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     flex-direction: column-reverse;
     gap: 20px;
 
@@ -29,7 +29,7 @@ const Heading = styled.h2`
   font-style: normal;
   line-height: 103.5%; /* 49.68px */
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     font-size: 30px;
   }
 `;
@@ -134,7 +134,7 @@ const InfoIcon = () => {
 };
 
 const CategoriesContainer = styled.div`
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     flex-direction: column;
     align-items: flex-start !important;
     gap: 1rem;
@@ -142,7 +142,7 @@ const CategoriesContainer = styled.div`
 `;
 
 const MainDiv = styled.div`
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     min-width: auto !important;
     max-width: 100% !important;
     margin-right: 0 !important;
@@ -150,7 +150,7 @@ const MainDiv = styled.div`
 `;
 
 const MainImage = styled.img`
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     margin-right: auto;
   }
 `;

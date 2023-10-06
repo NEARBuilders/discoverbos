@@ -20,7 +20,6 @@ import "react-bootstrap-typeahead/css/Typeahead.css";
 import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { BosLoaderBanner } from "./components/BosLoaderBanner";
 import { ActionButton } from "./components/common/buttons/ActionButton";
-import Footer from "./components/navigation/Footer";
 import { NetworkId, Widgets } from "./data/widgets";
 import { useBosLoaderInitializer } from "./hooks/useBosLoaderInitializer";
 import Flags from "./pages/Flags";
@@ -325,7 +324,7 @@ function App() {
   ];
 
   return (
-    <RootLayout>
+    <RootLayout {...passProps}>
       <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route path={"/flags"}>
@@ -337,7 +336,7 @@ function App() {
           </Route>
           <Route path={"/create"}>
             <ViewPage overrideSrc={passProps.widgets.create} {...passProps} />
-            <Footer {...passProps} />
+            {/* <Footer {...passProps} /> */}
           </Route>
           {routes.map((route) => (
             <Route key={`${route.path}`} path={route.path}>

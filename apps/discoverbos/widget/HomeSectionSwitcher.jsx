@@ -367,7 +367,7 @@ const Container = styled.div`
   grid-column-gap: 32px;
   grid-row-gap: 32px;
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     display: none;
   }
 `;
@@ -397,7 +397,7 @@ const Switcher = () => {
 };
 
 const Desktop = styled.div`
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     display: none !important;
   }
 `;
@@ -405,7 +405,7 @@ const Desktop = styled.div`
 const Mobile = styled.div`
   display: none;
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     background: #f4fdfa;
     padding: 60px 16px;
 
@@ -435,7 +435,7 @@ const MobileSwitcher = ({ index, selected }) => {
 
     const Heading = styled.h2`
       color: #1b1b18;
-      font-family: Mona Sans;
+      font-family: "Mona Sans", sans-serif;
       font-size: 24px;
       font-style: normal;
       font-weight: 600;

@@ -81,7 +81,7 @@ const MainContainer = styled.div`
   display: flex;
   gap: 80px;
 
-  @media (width <= 900px) {
+  @media screen and (max-width: 900px) {
     gap: 40px;
     flex-direction: column;
   }
@@ -99,7 +99,7 @@ const RoundedDiv = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (width <= 900px) {
+  @media screen and (max-width: 900px) {
     padding: 32px 20px;
     gap: 48px;
   }
@@ -110,17 +110,17 @@ const LinksContainer = styled.div`
   flex: 1;
   justify-content: space-between;
 
-  @media (width <= 900px) {
+  @media screen and (max-width: 900px) {
     flex-wrap: wrap;
     gap: 1rem;
   }
 
-  @media (width <= 550px) {
+  @media screen and (max-width: 550px) {
     flex-direction: column;
   }
 `;
 
-export default function Footer() {
+export default function Footer(props) {
   return (
     <footer
       style={{
@@ -213,6 +213,7 @@ export default function Footer() {
                 fontSize: "0.75rem",
                 fontWeight: 600,
               }}
+              onClick={props.requestSignIn}
             >
               Create Account
             </button>
@@ -227,6 +228,7 @@ export default function Footer() {
                 fontSize: "0.75rem",
                 fontWeight: 600,
               }}
+              onClick={props.requestSignIn}
             >
               Sign In
             </button>

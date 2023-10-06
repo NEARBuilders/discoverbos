@@ -89,7 +89,7 @@ const MobileCard = ({ event }) => {
 
   const CardTitle = styled.h3`
     color: #000;
-    font-family: Mona Sans;
+    font-family: "Mona Sans", sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -99,7 +99,7 @@ const MobileCard = ({ event }) => {
 
   const CardTime = styled.p`
     color: #5c5f62;
-    font-family: Mona Sans;
+    font-family: "Mona Sans", sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -140,10 +140,10 @@ const SectionHeading = ({ title }) => {
     line-height: 103.5%; /* 49.68px */
     margin: 0;
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       color: #333;
       font-feature-settings: "clig" off, "liga" off;
-      font-family: Mona Sans;
+      font-family: "Mona Sans", sans-serif;
       font-size: 32px;
       font-style: normal;
       font-weight: 700;
@@ -164,7 +164,7 @@ const SectionInfo = ({ info }) => {
     line-height: 120.5%; /* 19.28px */
     max-width: 1042px;
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       display: none;
     }
   `;
@@ -351,7 +351,7 @@ const UpcomingEvents = () => {
   const SectionContainer = styled.div`
     padding: 100px 120px;
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       padding: 60px 1rem;
     }
   `;
@@ -369,7 +369,7 @@ const UpcomingEvents = () => {
   };
 
   const DesktopContainer = styled.div`
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       display: none !important;
     }
   `;
@@ -377,7 +377,7 @@ const UpcomingEvents = () => {
   const MobileContainer = styled.div`
     display: none;
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       display: flex;
       flex-direction: column;
       gap: 50px;
@@ -400,7 +400,7 @@ const UpcomingEvents = () => {
     background: #f3f3f2;
 
     color: #1b1b18;
-    font-family: Mona Sans;
+    font-family: "Mona Sans", sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 600;

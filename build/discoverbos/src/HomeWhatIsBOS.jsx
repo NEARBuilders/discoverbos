@@ -69,7 +69,7 @@ const WhatIsBOS = () => {
     align-items: center;
     justify-content: center;
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       padding: 60px 16px;
     }
   `;
@@ -83,7 +83,7 @@ const WhatIsBOS = () => {
     line-height: 103.5%; /* 49.68px */
     margin-bottom: 2rem;
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       color: #1b1b18;
       font-family: Poppins;
       font-size: 32px;
@@ -101,7 +101,7 @@ const WhatIsBOS = () => {
     font-weight: 700;
     line-height: 103.5%;
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       color: #03b172;
       font-family: Poppins;
       font-size: 32px;
@@ -119,9 +119,9 @@ const WhatIsBOS = () => {
     font-weight: 400;
     line-height: 120.5%; /* 19.28px */
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       color: #1b1b18;
-      font-family: Mona Sans;
+      font-family: "Mona Sans", sans-serif;
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
@@ -131,7 +131,7 @@ const WhatIsBOS = () => {
 
   const SectionBox = ({ title, text }) => {
     const Card = styled.div`
-      @media (width <= 800px) {
+      @media screen and (max-width: 800px) {
         border-radius: 8px;
         background: #f4fdfa;
         width: 100%;
@@ -168,13 +168,13 @@ const WhatIsBOS = () => {
   const ResponsiveContainer = styled.div`
     gap: 80px;
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       gap: 32px;
     }
   `;
 
   const SectionsContainer = styled.div`
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       /* flex-direction: column !important; */
       flex-wrap: wrap;
       gap: 60px !important;

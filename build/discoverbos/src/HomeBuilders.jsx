@@ -20,7 +20,7 @@ const BuilderCard = ({ builder }) => {
     justify-content: center;
     padding: 16px;
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       width: 100%;
     }
   `;
@@ -37,7 +37,7 @@ const BuilderCard = ({ builder }) => {
       background: var(--Eerie-Black, #1b1b18);
 
       color: #fcfcfb;
-      font-family: Mona Sans;
+      font-family: "Mona Sans", sans-serif;
       font-size: 12px;
       font-style: normal;
       font-weight: 600;
@@ -156,7 +156,7 @@ const FeaturedBuilders = () => {
     gap: 80px;
     background: #f4fdfa;
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       padding: 60px 1rem;
       gap: 40px;
     }
@@ -170,7 +170,7 @@ const FeaturedBuilders = () => {
     font-weight: 700;
     line-height: 103.5%; /* 49.68px */
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       font-size: 32px;
       line-height: 103.5%; /* 33.12px */
       margin-bottom: 2rem;
@@ -219,7 +219,7 @@ const FeaturedBuilders = () => {
       cursor: not-allowed;
     }
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       width: 35px;
       height: 35px;
     }
@@ -252,13 +252,13 @@ const FeaturedBuilders = () => {
   const mobileEndIndex = state.mobileIndex + 1;
 
   const DesktopNavigation = styled.div`
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       display: none !important;
     }
   `;
 
   const DesktopCards = styled.div`
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       display: none !important;
     }
   `;
@@ -266,7 +266,7 @@ const FeaturedBuilders = () => {
   const MobileCards = styled.div`
     display: none;
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       display: block;
       width: 100%;
     }

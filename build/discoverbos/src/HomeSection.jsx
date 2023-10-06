@@ -160,7 +160,7 @@ const CTA = styled.a`
 
 const RelatedLinks = ({ relatedLinks }) => {
   const Container = styled.div`
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       margin-bottom: 24px;
     }
   `;
@@ -190,7 +190,7 @@ const HomeSection = () => {
     background: ${background === "colored" ? "#F4FDFA" : "white"};
     width: 100%;
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       padding: 0;
       display: block;
     }

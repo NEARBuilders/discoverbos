@@ -9,16 +9,16 @@ const Container = styled.div`
   justify-content: space-between;
   gap: 120px;
 
-  @media (width <= 1730px) {
+  @media screen and (max-width: 1730px) {
     align-items: flex-start;
   }
 
-  @media (width <= 1200px) {
+  @media screen and (max-width: 1200px) {
     flex-direction: column;
     align-items: center;
   }
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     padding: 60px 1rem;
     gap: 40px;
   }
@@ -33,7 +33,7 @@ const SectionHeading = styled.h2`
   line-height: 103.5%; /* 49.68px */
   margin-bottom: 40px;
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     color: #1b1b18;
     font-family: Poppins;
     font-size: 32px;
