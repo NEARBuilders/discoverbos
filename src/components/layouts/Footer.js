@@ -200,7 +200,8 @@ export default function Footer(props) {
               </div>
             </div>
           </LinksContainer>
-          <div className="d-flex flex-column gap-3">
+
+          {props.signedIn ? (
             <button
               className="d-flex justify-content-center align-content-center"
               style={{
@@ -212,27 +213,47 @@ export default function Footer(props) {
                 background: "#1B1B18",
                 fontSize: "0.75rem",
                 fontWeight: 600,
+                height: "max-content",
               }}
-              onClick={props.requestSignIn}
+              onClick={props.logOut}
             >
-              Create Account
+              Sign out
             </button>
-            <button
-              className="d-flex justify-content-center align-content-center"
-              style={{
-                padding: "0.5rem 1.25rem",
-                gap: 10,
-                borderRadius: "50rem",
-                border: "1px solid #E3E3E0",
-                background: "#F3F3F2",
-                fontSize: "0.75rem",
-                fontWeight: 600,
-              }}
-              onClick={props.requestSignIn}
-            >
-              Sign In
-            </button>
-          </div>
+          ) : (
+            <div className="d-flex flex-column gap-3">
+              <button
+                className="d-flex justify-content-center align-content-center"
+                style={{
+                  color: "#FCFCFB",
+                  padding: "0.5rem 1.25rem",
+                  gap: 10,
+                  borderRadius: "50rem",
+                  border: "1px solid #E3E3E0",
+                  background: "#1B1B18",
+                  fontSize: "0.75rem",
+                  fontWeight: 600,
+                }}
+                onClick={props.requestSignIn}
+              >
+                Create Account
+              </button>
+              <button
+                className="d-flex justify-content-center align-content-center"
+                style={{
+                  padding: "0.5rem 1.25rem",
+                  gap: 10,
+                  borderRadius: "50rem",
+                  border: "1px solid #E3E3E0",
+                  background: "#F3F3F2",
+                  fontSize: "0.75rem",
+                  fontWeight: 600,
+                }}
+                onClick={props.requestSignIn}
+              >
+                Sign In
+              </button>
+            </div>
+          )}
         </MainContainer>
         <div className="d-flex flex-column flex-lg-row align-items-start justify-content-between gap-3">
           <div className="d-flex flex-column">

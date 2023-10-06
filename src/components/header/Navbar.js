@@ -406,7 +406,7 @@ export default function Navbar(props) {
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Try events calendar, AI chatbot, or gigs board..."
+              placeholder="Discover"
             />
             <SearchButton
               className="p-0 m-0 d-flex align-items-center justify-content-center"
@@ -476,7 +476,7 @@ export default function Navbar(props) {
                       type="text"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      placeholder="Try events calendar, AI chatbot, or gigs board..."
+                      placeholder="Discover"
                     />
                     <SearchButton
                       href={`/discover.near/widget/Search?term=${searchTerm}`}
