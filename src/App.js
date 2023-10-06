@@ -19,7 +19,6 @@ import "react-bootstrap-typeahead/css/Typeahead.bs5.css";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { BosLoaderBanner } from "./components/BosLoaderBanner";
-import { ActionButton } from "./components/common/buttons/ActionButton";
 import { NetworkId, Widgets } from "./data/widgets";
 import { useBosLoaderInitializer } from "./hooks/useBosLoaderInitializer";
 import Flags from "./pages/Flags";
@@ -359,7 +358,6 @@ function App() {
             {/* <NavigationWrapper {...passProps} /> */}
             <ViewPage {...passProps} />
             {/* <Footer {...passProps} /> */}
-            <ActionButton {...passProps} />
           </Route>
         </Switch>
       </Router>
