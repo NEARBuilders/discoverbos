@@ -68,6 +68,7 @@ import Projects from "./pages/projects/Projects";
 import Resources from "./pages/education/Resources";
 import Community from "./pages/communities/Community";
 import About from "./pages/About";
+import ProjectsForm from "./pages/projects/ProjectsForm";
 
 export const refreshAllowanceObj = {};
 const documentationHref = "https://social.near-docs.io/";
@@ -350,6 +351,9 @@ function App() {
           </Route>
           <Route exact path={"/projects"}>
             <Projects />
+          </Route>
+          <Route exact path={"/projects-form"}>
+            <ProjectsForm />
           </Route>
           <Route path={"/:widgetSrc*"}>
             <BosLoaderBanner />
