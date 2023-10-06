@@ -439,7 +439,7 @@ export default function Navbar(props) {
                 Sign out
               </AuthButton>
             ) : (
-              <AuthButton onClick={props.requestSignIn} className="sign-in">
+              <AuthButton onClick={props.requestSignIn}>
                 Create Account
               </AuthButton>
             )}
