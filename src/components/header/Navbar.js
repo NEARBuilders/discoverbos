@@ -97,6 +97,35 @@ const NavLinks = styled.a`
   padding: 16px 8px;
 `;
 
+const MobileNavLinks = styled.a`
+  color: var(--Eerie-Black, #1b1b18);
+  font-family: Mona Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 8px;
+
+  div.mobile-nav-links {
+    display: none;
+  }
+
+  &.selected {
+    i {
+      transform: rotate(180deg);
+    }
+
+    div.mobile-nav-links {
+      display: block;
+    }
+  }
+`;
+
 const AuthButton = styled.a`
   border: none;
   outline: none;
@@ -384,21 +413,21 @@ export default function Navbar() {
                   </InputContainer>
                 </div>
 
-                <NavLinks href="/components">
-                  Components <i className="bi bi-chevron-down"></i>
-                </NavLinks>
-                <NavLinks href="/projects">
+                <MobileNavLinks href="/components">
+                  <div>Components</div>
+                </MobileNavLinks>
+                <MobileNavLinks href="/projects">
                   Projects <i className="bi bi-chevron-down"></i>
-                </NavLinks>
-                <NavLinks href="/resources">
+                </MobileNavLinks>
+                <MobileNavLinks href="/resources">
                   Resources <i className="bi bi-chevron-down"></i>
-                </NavLinks>
-                <NavLinks href="/community">
+                </MobileNavLinks>
+                <MobileNavLinks href="/community">
                   Community <i className="bi bi-chevron-down"></i>
-                </NavLinks>
-                <NavLinks href="/about">
+                </MobileNavLinks>
+                <MobileNavLinks href="/about">
                   About <i className="bi bi-chevron-down"></i>
-                </NavLinks>
+                </MobileNavLinks>
 
                 <AuthButton style={{ width: "100%" }}>Sign in</AuthButton>
               </div>

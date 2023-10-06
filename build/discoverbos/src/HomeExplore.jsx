@@ -40,7 +40,7 @@ const SectionHeading = styled.h2`
   }
 `;
 
-const ExploreCard = ({ title, description, icon }) => {
+const ExploreCard = ({ title, description, icon, link }) => {
   const Title = styled.p`
     color: #1b1b18;
     font-size: 24px;
@@ -59,11 +59,12 @@ const ExploreCard = ({ title, description, icon }) => {
     margin: 0;
   `;
 
-  const Card = styled.div`
+  const Card = styled.a`
     border-radius: 8px;
     transition: all 300ms;
     cursor: pointer;
     &:hover {
+      text-decoration: none;
       background: #eee8dd;
       svg {
         transition: all 300ms;
@@ -82,6 +83,7 @@ const ExploreCard = ({ title, description, icon }) => {
       className="d-flex w-50 p-3 gap-3"
       style={{ marginBottom: 40 }}
       key={Math.random()}
+      href={link}
     >
       <div>{icon}</div>
       <div>
@@ -95,6 +97,7 @@ const ExploreCard = ({ title, description, icon }) => {
 const cards = [
   {
     title: "BOS Native",
+    link: "/projects/native-projects",
     description:
       "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
     icon: (
@@ -114,6 +117,7 @@ const cards = [
   },
   {
     title: "Funding Opportunities",
+    link: "/opportunities/funding",
     description:
       "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
     icon: (
@@ -133,6 +137,7 @@ const cards = [
   },
   {
     title: "Tutorials",
+    link: "/education/tutorials",
     description:
       "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
     icon: (
@@ -154,6 +159,7 @@ const cards = [
   },
   {
     title: "Code Reviews",
+    link: "/education/code-reviews",
     description:
       "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
     icon: (
@@ -173,6 +179,7 @@ const cards = [
   },
   {
     title: "Regional Communities",
+    link: "/communities/regional",
     description:
       "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
     icon: (
@@ -192,6 +199,7 @@ const cards = [
   },
   {
     title: "Accelerator Program",
+    link: "/opportunities/accelerator",
     description:
       "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
     icon: (
@@ -239,6 +247,7 @@ return (
             title={card.title}
             description={card.description}
             icon={card.icon}
+            link={card.link}
             key={`Opportunity-${Math.random()}`}
             id={`Opportunity-Card-${Math.random()}`}
           />

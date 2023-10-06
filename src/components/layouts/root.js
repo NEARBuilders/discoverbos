@@ -12,13 +12,22 @@ const Container = styled.div`
   }
 `;
 
+const ChildrenDiv = styled.div`
+  margin-top: 92px;
+  max-width: 100%;
+
+  @media (width <= 800px) {
+    margin-top: 16px;
+  }
+`;
+
 export default function RootLayout(props) {
   return (
     <>
       <Navbar />
       <main>
         <Container className="flex-grow-1">
-          <div style={{ maxWidth: "100%" }}>{props.children}</div>
+          <ChildrenDiv>{props.children}</ChildrenDiv>
         </Container>
       </main>
       <Footer />

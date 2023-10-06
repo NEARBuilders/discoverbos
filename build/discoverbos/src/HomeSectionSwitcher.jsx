@@ -38,20 +38,20 @@ const ExploreData = {
     </>
   ),
   ctaIcon: SearchIcon,
-  ctaLink: "#",
+  ctaLink: "/discover.near/widget/Search",
   relatedLinks: [
     {
-      href: "#",
+      href: "/projects/built-with-bos",
       name: "Built with BOS",
       details: "check out the possibilities",
     },
     {
-      href: "#",
+      href: "/projects/native-projects",
       name: "BOS Native",
       details: "see the potential",
     },
     {
-      href: "#",
+      href: "/projects/bos-integration",
       name: "Integrated with BOS",
       details: "check out the possibilities",
     },
@@ -104,17 +104,17 @@ const LearnData = {
   ctaLink: "#",
   relatedLinks: [
     {
-      href: "#",
+      href: "/education/tutorials",
       name: "Tutorials",
       details: "check out the possibilities",
     },
     {
-      href: "#",
+      href: "/education/code-reviews",
       name: "Code Reviews",
       details: "see the potential",
     },
     {
-      href: "#",
+      href: "/education/workshops",
       name: "Workshops + Webinars",
       details: "check out the possibilities",
     },
@@ -168,20 +168,20 @@ const ConnectData = {
     </>
   ),
   ctaIcon: ConnectIcon,
-  ctaLink: "#",
+  ctaLink: "/community",
   relatedLinks: [
     {
-      href: "#",
+      href: "/communities/developer",
       name: "Developer Communities",
       details: "check out the possibilities",
     },
     {
-      href: "#",
+      href: "communities/project",
       name: "Project Communities",
       details: "see the potential",
     },
     {
-      href: "#",
+      href: "/events/calendar",
       name: "Event Calendar",
       details: "check out the possibilities",
     },
@@ -234,17 +234,17 @@ const BuildData = {
   ctaLink: "#",
   relatedLinks: [
     {
-      href: "#",
+      href: "/discover.near/widget/Search",
       name: "Search",
       details: "check out the possibilities",
     },
     {
-      href: "#",
+      href: "/components",
       name: "Components",
       details: "see the potential",
     },
     {
-      href: "#",
+      href: "/opportunities/accelerator",
       name: "Accelerator Programs",
       details: "check out the possibilities",
     },

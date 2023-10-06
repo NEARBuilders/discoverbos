@@ -140,7 +140,7 @@ const Links = styled.a`
   line-height: 120.5%; /* 18.075px */
 `;
 
-const CTA = styled.button`
+const CTA = styled.a`
   width: max-content;
   padding: 0.5rem 1rem;
   display: flex;
@@ -155,6 +155,7 @@ const CTA = styled.button`
   outline: none;
 
   &:hover {
+    text-decoration: none;
     color: white;
     background: #028656;
   }
