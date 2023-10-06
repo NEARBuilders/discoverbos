@@ -303,6 +303,65 @@ const SearchButton = styled.a`
   }
 `;
 
+const MobileHeading = styled.div`
+  color: #1b1b18;
+  font-family: Mona Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 8px;
+
+  &.selected {
+    i {
+      transform: rotate(180deg);
+    }
+  }
+`;
+
+const MobileDropdownLink = styled.a`
+  padding: 4px 8px;
+  color: #1b1b1b;
+  font-size: 14px;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: none;
+  }
+`;
+
+const MobileDropdown = ({ title, links }) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div key={title}>
+      <MobileHeading onClick={() => setOpen((prev) => !prev)}>
+        {title}{" "}
+        <i className={`ms-auto bi bi-chevron-${open ? "up" : "down"}`}></i>
+      </MobileHeading>
+      <div className="d-flex flex-column gap-2">
+        {open &&
+          links &&
+          links.map((link) => (
+            <MobileDropdownLink
+              href={link.href}
+              key={`mobile-link-${link.name}`}
+            >
+              {link.name}
+            </MobileDropdownLink>
+          ))}
+      </div>
+    </div>
+  );
+};
+
 export default function Navbar() {
   const [show, setShow] = useState(false);
   const [fix, setFix] = useState(false);
@@ -413,21 +472,79 @@ export default function Navbar() {
                   </InputContainer>
                 </div>
 
-                <MobileNavLinks href="/components">
-                  <div>Components</div>
-                </MobileNavLinks>
-                <MobileNavLinks href="/projects">
-                  Projects <i className="bi bi-chevron-down"></i>
-                </MobileNavLinks>
-                <MobileNavLinks href="/resources">
-                  Resources <i className="bi bi-chevron-down"></i>
-                </MobileNavLinks>
-                <MobileNavLinks href="/community">
-                  Community <i className="bi bi-chevron-down"></i>
-                </MobileNavLinks>
-                <MobileNavLinks href="/about">
-                  About <i className="bi bi-chevron-down"></i>
-                </MobileNavLinks>
+                <div className="d-flex flex-column">
+                  <MobileNavLinks href="/components">
+                    <div>Components</div>
+                  </MobileNavLinks>
+                  <MobileDropdown
+                    title={"Projects"}
+                    links={[
+                      {
+                        name: "Built with BOS",
+                        href: "/projects/built-with-bos",
+                      },
+                      {
+                        name: "BOS Native",
+                        href: "/projects/native-projects",
+                      },
+                      {
+                        name: "Integrated with BOS",
+                        href: "/projects/bos-integration",
+                      },
+                    ]}
+                  />
+                  <MobileDropdown
+                    title={"Resources"}
+                    links={[
+                      {
+                        name: "Tutorials",
+                        href: "/education/tutorials",
+                      },
+                      {
+                        name: "Code Reviews",
+                        href: "/education/code-reviews",
+                      },
+                      {
+                        name: "Workshops/Webinar",
+                        href: "/education/workshops",
+                      },
+                      {
+                        name: "Office Hours",
+                        href: "/education/office-hours",
+                      },
+                    ]}
+                  />
+                  <MobileDropdown
+                    title={"Community"}
+                    links={[
+                      {
+                        name: "Developers",
+                        href: "/communities/developer",
+                      },
+                      {
+                        name: "Projects",
+                        href: "/communities/project",
+                      },
+                      {
+                        name: "Regional",
+                        href: "/communities/regional",
+                      },
+                      {
+                        name: "General BOS",
+                        href: "/communities/general-bos",
+                      },
+                    ]}
+                  />
+                  <MobileDropdown
+                    title={"About"}
+                    links={[
+                      { name: "About us", href: "/about" },
+                      { name: "Integrations", href: "/integrations" },
+                      { name: "Infrastructure", href: "/infrastructure" },
+                      { name: "Gateways", href: "/gateways" },
+                    ]}
+                  />
+                </div>
 
                 <AuthButton style={{ width: "100%" }}>Sign in</AuthButton>
               </div>
