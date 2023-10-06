@@ -20,7 +20,6 @@ import "react-bootstrap-typeahead/css/Typeahead.css";
 import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { BosLoaderBanner } from "./components/BosLoaderBanner";
 import { ActionButton } from "./components/common/buttons/ActionButton";
-import Footer from "./components/navigation/Footer";
 import { NetworkId, Widgets } from "./data/widgets";
 import { useBosLoaderInitializer } from "./hooks/useBosLoaderInitializer";
 import Flags from "./pages/Flags";
@@ -68,6 +67,7 @@ import Projects from "./pages/projects/Projects";
 import Resources from "./pages/education/Resources";
 import Community from "./pages/communities/Community";
 import About from "./pages/About";
+import ProjectsForm from "./pages/projects/ProjectsForm";
 
 export const refreshAllowanceObj = {};
 const documentationHref = "https://social.near-docs.io/";
@@ -324,7 +324,7 @@ function App() {
   ];
 
   return (
-    <RootLayout>
+    <RootLayout {...passProps}>
       <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route path={"/flags"}>
@@ -336,7 +336,7 @@ function App() {
           </Route>
           <Route path={"/create"}>
             <ViewPage overrideSrc={passProps.widgets.create} {...passProps} />
-            <Footer {...passProps} />
+            {/* <Footer {...passProps} /> */}
           </Route>
           {routes.map((route) => (
             <Route key={`${route.path}`} path={route.path}>
@@ -350,6 +350,9 @@ function App() {
           </Route>
           <Route exact path={"/projects"}>
             <Projects />
+          </Route>
+          <Route exact path={"/projects-form"}>
+            <ProjectsForm />
           </Route>
           <Route path={"/:widgetSrc*"}>
             <BosLoaderBanner />

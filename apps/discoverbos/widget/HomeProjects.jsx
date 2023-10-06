@@ -27,7 +27,7 @@ const ProjectCard = ({ project }) => {
       background: var(--Eerie-Black, #1b1b18);
 
       color: #fcfcfb;
-      font-family: Mona Sans;
+      font-family: "Mona Sans", sans-serif;
       font-size: 12px;
       font-style: normal;
       font-weight: 600;
@@ -198,7 +198,7 @@ const FeaturedProjects = () => {
     justify-content: center;
     gap: 80px;
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       display: none;
     }
   `;
@@ -272,7 +272,7 @@ const FeaturedProjects = () => {
   const endIndex = state.projectsIndex + 3;
 
   const ResponsiveCards = styled.div`
-    @media (width <= 1435px) {
+    @media screen and (max-width: 1435px) {
       /* flex-wrap: wrap;
       justify-content: center !important; */
     }
@@ -284,10 +284,9 @@ const FeaturedProjects = () => {
         <div>
           <SectionHeading>Featured Projects</SectionHeading>
           <SectionDescription>
-            Lorem ipsum dolor sit amet consectetur. Tortor risus ipsum amet
-            tincidunt facilisis massa. Rutrum ultrices tellus porttitor diam.
-            Purus mauris amet nulla hendrerit neque sed eros quam. Sed odio
-            vitae.
+            We highlight these outstanding projects for you to benefit from our
+            curated pool of innovations that have made a substantial impact in
+            other members' lives.
           </SectionDescription>
         </div>
         <div className="ms-auto d-flex gap-3 mt-auto">
@@ -318,7 +317,7 @@ const MobileProjects = () => {
   const Container = styled.div`
     display: none;
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       display: flex;
       flex-direction: column;
       padding: 60px 16px;
@@ -337,7 +336,7 @@ const MobileProjects = () => {
 
   const Description = styled.p`
     color: #1b1b18;
-    font-family: Mona Sans;
+    font-family: "Mona Sans", sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -368,7 +367,7 @@ const MobileProjects = () => {
       background: var(--Eerie-Black, #1b1b18);
 
       color: #fcfcfb;
-      font-family: Mona Sans;
+      font-family: "Mona Sans", sans-serif;
       font-size: 12px;
       font-style: normal;
       font-weight: 600;
@@ -463,7 +462,7 @@ const MobileProjects = () => {
 
     const Time = styled.p`
       color: #6e798c;
-      font-family: Mona Sans;
+      font-family: "Mona Sans", sans-serif;
       font-size: 14px;
       font-style: normal;
       font-weight: 400;
@@ -474,7 +473,7 @@ const MobileProjects = () => {
 
     const CardTitle = styled.h3`
       color: #081f32;
-      font-family: Mona Sans;
+      font-family: "Mona Sans", sans-serif;
       font-size: 20px;
       font-style: normal;
       font-weight: 700;
@@ -485,7 +484,7 @@ const MobileProjects = () => {
 
     const CardDetails = styled.p`
       color: #374a59;
-      font-family: Mona Sans;
+      font-family: "Mona Sans", sans-serif;
       font-size: 14px;
       font-style: normal;
       font-weight: 400;

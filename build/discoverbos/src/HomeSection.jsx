@@ -1,14 +1,6 @@
 const data = props.data;
-const {
-  title,
-  description,
-  cta,
-  ctaIcon,
-  ctaLink,
-  images,
-  relatedLinks,
-  background,
-} = data;
+const { title, description, cta, ctaIcon, ctaLink, relatedLinks, background } =
+  data;
 
 const openState = data.open || false;
 const mobileState = data.mobile || false;
@@ -140,7 +132,7 @@ const Links = styled.a`
   line-height: 120.5%; /* 18.075px */
 `;
 
-const CTA = styled.button`
+const CTA = styled.a`
   width: max-content;
   padding: 0.5rem 1rem;
   display: flex;
@@ -155,6 +147,7 @@ const CTA = styled.button`
   outline: none;
 
   &:hover {
+    text-decoration: none;
     color: white;
     background: #028656;
   }
@@ -167,7 +160,7 @@ const CTA = styled.button`
 
 const RelatedLinks = ({ relatedLinks }) => {
   const Container = styled.div`
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       margin-bottom: 24px;
     }
   `;
@@ -197,7 +190,7 @@ const HomeSection = () => {
     background: ${background === "colored" ? "#F4FDFA" : "white"};
     width: 100%;
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       padding: 0;
       display: block;
     }

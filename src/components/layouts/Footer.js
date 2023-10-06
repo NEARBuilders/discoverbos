@@ -81,7 +81,7 @@ const MainContainer = styled.div`
   display: flex;
   gap: 80px;
 
-  @media (width <= 900px) {
+  @media screen and (max-width: 900px) {
     gap: 40px;
     flex-direction: column;
   }
@@ -99,7 +99,7 @@ const RoundedDiv = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (width <= 900px) {
+  @media screen and (max-width: 900px) {
     padding: 32px 20px;
     gap: 48px;
   }
@@ -110,17 +110,17 @@ const LinksContainer = styled.div`
   flex: 1;
   justify-content: space-between;
 
-  @media (width <= 900px) {
+  @media screen and (max-width: 900px) {
     flex-wrap: wrap;
     gap: 1rem;
   }
 
-  @media (width <= 550px) {
+  @media screen and (max-width: 550px) {
     flex-direction: column;
   }
 `;
 
-export default function Footer() {
+export default function Footer(props) {
   return (
     <footer
       style={{
@@ -141,48 +141,62 @@ export default function Footer() {
             <div className="d-flex flex-column" style={{ gap: 32 }}>
               <div className="d-flex flex-column" style={{ gap: 4 }}>
                 <LinkHeader>PROJECTS</LinkHeader>
-                <LinkItem href="#">Built With BOS</LinkItem>
-                <LinkItem href="#">BOS Native</LinkItem>
-                <LinkItem href="#">Integrated with BOS</LinkItem>
+                <LinkItem href="/projects/built-with-bos">
+                  Built With BOS
+                </LinkItem>
+                <LinkItem href="/projects/native-projects">BOS Native</LinkItem>
+                <LinkItem href="/projects/bos-integration">
+                  Integrated with BOS
+                </LinkItem>
               </div>
               <div className="d-flex flex-column" style={{ gap: 4 }}>
                 <LinkHeader>OPPORTUNITIES</LinkHeader>
-                <LinkItem href="#">Funding Opportunities</LinkItem>
-                <LinkItem href="#">Accelerator Programs</LinkItem>
-                <LinkItem href="#">Incubation Programs</LinkItem>
-                <LinkItem href="#">Amplification Channels</LinkItem>
+                <LinkItem href="/opportunities/funding">
+                  Funding Opportunities
+                </LinkItem>
+                <LinkItem href="/opportunities/accelerator">
+                  Accelerator Programs
+                </LinkItem>
+                <LinkItem href="/opportunities/incubation">
+                  Incubation Programs
+                </LinkItem>
+                <LinkItem href="/opportunities/amplification">
+                  Amplification Channels
+                </LinkItem>
               </div>
             </div>
             <div className="d-flex flex-column" style={{ gap: 32 }}>
               <div className="d-flex flex-column" style={{ gap: 4 }}>
                 <LinkHeader>RESOURCES</LinkHeader>
-                <LinkItem href="#">Tutorials</LinkItem>
-                <LinkItem href="#">Code Reviews</LinkItem>
-                <LinkItem href="#">Workshops/Webinars</LinkItem>
-                <LinkItem href="#">Office Hours</LinkItem>
+                <LinkItem href="/education/tutorials">Tutorials</LinkItem>
+                <LinkItem href="/education/code-reviews">Code Reviews</LinkItem>
+                <LinkItem href="/education/workshops">
+                  Workshops/Webinars
+                </LinkItem>
+                <LinkItem href="/education/office-hours">Office Hours</LinkItem>
               </div>
             </div>
             <div className="d-flex flex-column" style={{ gap: 32 }}>
               <div className="d-flex flex-column" style={{ gap: 4 }}>
                 <LinkHeader>COMMUNITY</LinkHeader>
-                <LinkItem href="#">Developers</LinkItem>
-                <LinkItem href="#">Projects</LinkItem>
-                <LinkItem href="#">Regional</LinkItem>
-                <LinkItem href="#">General BOS</LinkItem>
+                <LinkItem href="/communities/developer">Developers</LinkItem>
+                <LinkItem href="/communities/project">Projects</LinkItem>
+                <LinkItem href="/communities/regional">Regional</LinkItem>
+                <LinkItem href="/communities/general-bos">General BOS</LinkItem>
               </div>
               <div className="d-flex flex-column" style={{ gap: 4 }}>
                 <LinkHeader>EVENTS</LinkHeader>
-                <LinkItem href="#">Calendar</LinkItem>
-                <LinkItem href="#">Past Events</LinkItem>
+                <LinkItem href="/events/calendar">Calendar</LinkItem>
+                <LinkItem href="/events/library">Past Events</LinkItem>
               </div>
             </div>
             <div className="d-flex flex-column" style={{ gap: 32 }}>
               <div className="d-flex flex-column" style={{ gap: 4 }}>
                 <LinkHeader>ABOUT</LinkHeader>
-                <LinkItem href="#">About DiscoverBOS</LinkItem>
-                <LinkItem href="#">Integrations</LinkItem>
-                <LinkItem href="#">Infrastructure</LinkItem>
-                <LinkItem href="#">Gateways</LinkItem>
+                <LinkItem href="/about">About DiscoverBOS</LinkItem>
+                <LinkItem href="/integrations">Integrations</LinkItem>
+                <LinkItem href="/infrastructure">Infrastructure</LinkItem>
+                <LinkItem href="/gateways">Gateways</LinkItem>
               </div>
             </div>
           </LinksContainer>
@@ -199,6 +213,7 @@ export default function Footer() {
                 fontSize: "0.75rem",
                 fontWeight: 600,
               }}
+              onClick={props.requestSignIn}
             >
               Create Account
             </button>
@@ -213,6 +228,7 @@ export default function Footer() {
                 fontSize: "0.75rem",
                 fontWeight: 600,
               }}
+              onClick={props.requestSignIn}
             >
               Sign In
             </button>

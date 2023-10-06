@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 const DesktopSVG = styled.svg`
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     display: none;
   }
 `;
@@ -13,7 +13,7 @@ const DesktopSVG = styled.svg`
 const MobileSVG = styled.svg`
   display: none;
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     display: block;
   }
 `;
@@ -84,7 +84,7 @@ function Logo() {
 
 const NavLinks = styled.a`
   color: var(--Eerie-Black, #1b1b18);
-  font-family: Mona Sans;
+  font-family: "Mona Sans", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -97,7 +97,36 @@ const NavLinks = styled.a`
   padding: 16px 8px;
 `;
 
-const AuthButton = styled.a`
+const MobileNavLinks = styled.a`
+  color: var(--Eerie-Black, #1b1b18);
+  font-family: "Mona Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 8px;
+
+  div.mobile-nav-links {
+    display: none;
+  }
+
+  &.selected {
+    i {
+      transform: rotate(180deg);
+    }
+
+    div.mobile-nav-links {
+      display: block;
+    }
+  }
+`;
+
+const AuthButton = styled.button`
   border: none;
   outline: none;
   border-radius: 50rem;
@@ -125,7 +154,7 @@ const AuthButton = styled.a`
     border: 1px solid #e3e3e0;
   }
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     display: flex;
     padding: 8px 24px;
     justify-content: center;
@@ -137,7 +166,7 @@ const AuthButton = styled.a`
     background: #f3f3f2;
 
     color: var(--Eerie-Black, #1b1b18);
-    font-family: Mona Sans;
+    font-family: "Mona Sans", sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 600;
@@ -168,11 +197,11 @@ const Nav = styled.nav`
     }
   }
 
-  @media (width <= 1200px) {
+  @media screen and (max-width: 1200px) {
     padding: 24px 60px;
   }
 
-  @media (width <= 1200px) {
+  @media screen and (max-width: 1200px) {
     &.fixed {
       .nav-search {
         display: none !important;
@@ -180,11 +209,11 @@ const Nav = styled.nav`
     }
   }
 
-  @media (width <= 990px) {
+  @media screen and (max-width: 990px) {
     padding: 24px;
   }
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     padding: 12px 16px;
     height: 52px !important;
   }
@@ -194,11 +223,11 @@ const LinksDiv = styled.div`
   display: flex;
   gap: 1rem;
 
-  @media (width <= 1180px) {
+  @media screen and (max-width: 1180px) {
     gap: 0.5rem;
   }
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     display: none;
   }
 `;
@@ -206,7 +235,7 @@ const LinksDiv = styled.div`
 const MobileLinks = styled.div`
   display: none;
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     margin-left: auto;
     display: block !important;
   }
@@ -274,7 +303,66 @@ const SearchButton = styled.a`
   }
 `;
 
-export default function Navbar() {
+const MobileHeading = styled.div`
+  color: #1b1b18;
+  font-family: "Mona Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 8px;
+
+  &.selected {
+    i {
+      transform: rotate(180deg);
+    }
+  }
+`;
+
+const MobileDropdownLink = styled.a`
+  padding: 4px 8px;
+  color: #1b1b1b;
+  font-size: 14px;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: none;
+  }
+`;
+
+const MobileDropdown = ({ title, links }) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div key={title}>
+      <MobileHeading onClick={() => setOpen((prev) => !prev)}>
+        {title}{" "}
+        <i className={`ms-auto bi bi-chevron-${open ? "up" : "down"}`}></i>
+      </MobileHeading>
+      <div className="d-flex flex-column gap-2">
+        {open &&
+          links &&
+          links.map((link) => (
+            <MobileDropdownLink
+              href={link.href}
+              key={`mobile-link-${link.name}`}
+            >
+              {link.name}
+            </MobileDropdownLink>
+          ))}
+      </div>
+    </div>
+  );
+};
+
+export default function Navbar(props) {
   const [show, setShow] = useState(false);
   const [fix, setFix] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -334,13 +422,27 @@ export default function Navbar() {
           <NavLinks href="/resources">Resources</NavLinks>
           <NavLinks href="/community">Community</NavLinks>
           <NavLinks href="/about">About</NavLinks>
-          <AuthButton href="#" className="sign-in">
-            Sign in
-          </AuthButton>
+          {props.signedIn ? (
+            <AuthButton onClick={props.logOut} className="sign-in">
+              Sign out
+            </AuthButton>
+          ) : (
+            <AuthButton onClick={props.requestSignIn} className="sign-in">
+              Sign in
+            </AuthButton>
+          )}
         </LinksDiv>
         <MobileLinks>
           <div className="d-flex gap-3 align-items-center">
-            <AuthButton>Create Account</AuthButton>
+            {props.signedIn ? (
+              <AuthButton onClick={props.logOut} className="sign-in">
+                Sign out
+              </AuthButton>
+            ) : (
+              <AuthButton onClick={props.requestSignIn} className="sign-in">
+                Create Account
+              </AuthButton>
+            )}
             <Button
               style={{ width: "24px", height: "24px" }}
               className="rounded-circle p-0 d-flex align-items-center justify-content-center"
@@ -384,23 +486,97 @@ export default function Navbar() {
                   </InputContainer>
                 </div>
 
-                <NavLinks href="/components">
-                  Components <i className="bi bi-chevron-down"></i>
-                </NavLinks>
-                <NavLinks href="/projects">
-                  Projects <i className="bi bi-chevron-down"></i>
-                </NavLinks>
-                <NavLinks href="/resources">
-                  Resources <i className="bi bi-chevron-down"></i>
-                </NavLinks>
-                <NavLinks href="/community">
-                  Community <i className="bi bi-chevron-down"></i>
-                </NavLinks>
-                <NavLinks href="/about">
-                  About <i className="bi bi-chevron-down"></i>
-                </NavLinks>
+                <div className="d-flex flex-column">
+                  <MobileNavLinks href="/components">
+                    <div>Components</div>
+                  </MobileNavLinks>
+                  <MobileDropdown
+                    title={"Projects"}
+                    links={[
+                      {
+                        name: "Built with BOS",
+                        href: "/projects/built-with-bos",
+                      },
+                      {
+                        name: "BOS Native",
+                        href: "/projects/native-projects",
+                      },
+                      {
+                        name: "Integrated with BOS",
+                        href: "/projects/bos-integration",
+                      },
+                    ]}
+                  />
+                  <MobileDropdown
+                    title={"Resources"}
+                    links={[
+                      {
+                        name: "Tutorials",
+                        href: "/education/tutorials",
+                      },
+                      {
+                        name: "Code Reviews",
+                        href: "/education/code-reviews",
+                      },
+                      {
+                        name: "Workshops/Webinar",
+                        href: "/education/workshops",
+                      },
+                      {
+                        name: "Office Hours",
+                        href: "/education/office-hours",
+                      },
+                    ]}
+                  />
+                  <MobileDropdown
+                    title={"Community"}
+                    links={[
+                      {
+                        name: "Developers",
+                        href: "/communities/developer",
+                      },
+                      {
+                        name: "Projects",
+                        href: "/communities/project",
+                      },
+                      {
+                        name: "Regional",
+                        href: "/communities/regional",
+                      },
+                      {
+                        name: "General BOS",
+                        href: "/communities/general-bos",
+                      },
+                    ]}
+                  />
+                  <MobileDropdown
+                    title={"About"}
+                    links={[
+                      { name: "About us", href: "/about" },
+                      { name: "Integrations", href: "/integrations" },
+                      { name: "Infrastructure", href: "/infrastructure" },
+                      { name: "Gateways", href: "/gateways" },
+                    ]}
+                  />
+                </div>
 
-                <AuthButton style={{ width: "100%" }}>Sign in</AuthButton>
+                {props.signedIn ? (
+                  <AuthButton
+                    style={{ width: "100%" }}
+                    onClick={props.logOut}
+                    className="sign-in"
+                  >
+                    Sign out
+                  </AuthButton>
+                ) : (
+                  <AuthButton
+                    style={{ width: "100%" }}
+                    onClick={props.requestSignIn}
+                    className="sign-in"
+                  >
+                    Sign in
+                  </AuthButton>
+                )}
               </div>
             </Offcanvas.Body>
           </Offcanvas>

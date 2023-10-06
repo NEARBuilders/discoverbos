@@ -6,16 +6,16 @@ const Container = styled.div`
   gap: 120px;
   background: #f4fdfa;
 
-  @media (width <= 1730px) {
+  @media screen and (max-width: 1730px) {
     align-items: flex-start;
   }
 
-  @media (width <= 1200px) {
+  @media screen and (max-width: 1200px) {
     flex-direction: column;
     align-items: center;
   }
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     padding: 60px 1rem;
     gap: 40px;
   }
@@ -30,7 +30,7 @@ const SectionHeading = styled.h2`
   line-height: 103.5%; /* 49.68px */
   margin-bottom: 40px;
 
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     color: #1b1b18;
     font-family: Poppins;
     font-size: 32px;
@@ -40,7 +40,7 @@ const SectionHeading = styled.h2`
   }
 `;
 
-const ExploreCard = ({ title, description, icon }) => {
+const ExploreCard = ({ title, description, icon, link }) => {
   const Title = styled.p`
     color: #1b1b18;
     font-size: 24px;
@@ -59,11 +59,12 @@ const ExploreCard = ({ title, description, icon }) => {
     margin: 0;
   `;
 
-  const Card = styled.div`
+  const Card = styled.a`
     border-radius: 8px;
     transition: all 300ms;
     cursor: pointer;
     &:hover {
+      text-decoration: none;
       background: #eee8dd;
       svg {
         transition: all 300ms;
@@ -72,7 +73,7 @@ const ExploreCard = ({ title, description, icon }) => {
       }
     }
 
-    @media (width <= 800px) {
+    @media screen and (max-width: 800px) {
       width: 100% !important;
     }
   `;
@@ -82,6 +83,7 @@ const ExploreCard = ({ title, description, icon }) => {
       className="d-flex w-50 p-3 gap-3"
       style={{ marginBottom: 40 }}
       key={Math.random()}
+      href={link}
     >
       <div>{icon}</div>
       <div>
@@ -95,8 +97,9 @@ const ExploreCard = ({ title, description, icon }) => {
 const cards = [
   {
     title: "BOS Native",
+    link: "/projects/native-projects",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
+      "DiscoverbOS is the gateway of the gateways build on the BOS powered by NEAR protocol.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -114,8 +117,9 @@ const cards = [
   },
   {
     title: "Funding Opportunities",
+    link: "/opportunities/funding",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
+      "Find your support within a range of funding opportunities for your project.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -133,8 +137,9 @@ const cards = [
   },
   {
     title: "Tutorials",
+    link: "/education/tutorials",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
+      "Get the lowdown with our simple user-friendly how-to tutorials for users",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -154,8 +159,8 @@ const cards = [
   },
   {
     title: "Code Reviews",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
+    link: "/education/code-reviews",
+    description: "Grow your skills by learning from our revised codes",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -173,8 +178,9 @@ const cards = [
   },
   {
     title: "Regional Communities",
+    link: "/communities/regional",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
+      "Explore the diversity of BOS ecosystems and grow your network from everywhere you want",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -192,8 +198,9 @@ const cards = [
   },
   {
     title: "Accelerator Program",
+    link: "/opportunities/accelerator",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
+      "Maximize your resources and leverage the mentorship at your disposal to establish your strong foundation on the OpenWeb.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -224,7 +231,7 @@ const cards = [
 ];
 
 const ResponsiveSection = styled.div`
-  @media (width <= 800px) {
+  @media screen and (max-width: 800px) {
     flex-direction: column;
   }
 `;
@@ -239,6 +246,7 @@ return (
             title={card.title}
             description={card.description}
             icon={card.icon}
+            link={card.link}
             key={`Opportunity-${Math.random()}`}
             id={`Opportunity-Card-${Math.random()}`}
           />
