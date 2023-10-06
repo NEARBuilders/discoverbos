@@ -363,7 +363,6 @@ const MobileDropdown = ({ title, links }) => {
 };
 
 export default function Navbar(props) {
-  console.log(props);
   const [show, setShow] = useState(false);
   const [fix, setFix] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
