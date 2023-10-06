@@ -1,14 +1,6 @@
 const data = props.data;
-const {
-  title,
-  description,
-  cta,
-  ctaIcon,
-  ctaLink,
-  images,
-  relatedLinks,
-  background,
-} = data;
+const { title, description, cta, ctaIcon, ctaLink, relatedLinks, background } =
+  data;
 
 const openState = data.open || false;
 const mobileState = data.mobile || false;

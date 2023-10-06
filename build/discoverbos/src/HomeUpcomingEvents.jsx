@@ -411,7 +411,11 @@ const UpcomingEvents = () => {
     <SectionContainer key={Math.random()}>
       <div className="d-flex flex-column w-100" style={{ gap: "20px" }}>
         <SectionHeading title={"Upcoming Events"} />
-        <SectionInfo info="Lorem ipsum dolor sit amet consectetur. Tortor risus ipsum amet tincidunt facilisis massa. Rutrum ultrices tellus porttitor diam. Purus mauris amet nulla hendrerit neque sed eros quam. Sed odio vitae." />
+        <SectionInfo
+          info="Explore the vibrant events within the BOS Ecosystem. Share your own
+            event with us, and let it shine on the DiscoverBOS layer for all to
+            see in our Ecosystem calendar"
+        />
       </div>
       <DesktopContainer
         className="w-100 d-flex align-items-center justify-content-center flex-column gap-3"

@@ -284,10 +284,9 @@ const FeaturedProjects = () => {
         <div>
           <SectionHeading>Featured Projects</SectionHeading>
           <SectionDescription>
-            Lorem ipsum dolor sit amet consectetur. Tortor risus ipsum amet
-            tincidunt facilisis massa. Rutrum ultrices tellus porttitor diam.
-            Purus mauris amet nulla hendrerit neque sed eros quam. Sed odio
-            vitae.
+            We highlight these outstanding projects for you to benefit from our
+            curated pool of innovations that have made a substantial impact in
+            other members' lives.
           </SectionDescription>
         </div>
         <div className="ms-auto d-flex gap-3 mt-auto">

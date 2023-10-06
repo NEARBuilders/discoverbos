@@ -278,10 +278,9 @@ const FeaturedBuilders = () => {
         <div>
           <SectionHeading>Featured Builders</SectionHeading>
           <SectionDescription>
-            Lorem ipsum dolor sit amet consectetur. Tortor risus ipsum amet
-            tincidunt facilisis massa. Rutrum ultrices tellus porttitor diam.
-            Purus mauris amet nulla hendrerit neque sed eros quam. Sed odio
-            vitae.
+            Inspire yourself from the top buidlers of BOS and enjoy how they
+            embody the future of our OpenWeb and contribute to your digital
+            journey. Let their genius contribute to your everything.
           </SectionDescription>
         </div>
         <DesktopNavigation className="ms-auto d-flex gap-3 mt-auto">

@@ -473,34 +473,35 @@ return (
                   },
                 },
               };
-              const deposit = Big(JSON.stringify(data).length * 16).mul(
-                Big(10).pow(20)
-              );
-              const transactions = [
-                {
-                  contractName: "social.near",
-                  methodName: "set",
-                  deposit,
-                  args: { data },
-                },
-                {
-                  contractName: ownerId,
-                  methodName: "add_project",
-                  args: { account_id: state.accountId },
-                },
-                {
-                  contractName: ownerId,
-                  methodName: "edit_project",
-                  args: {
-                    account_id: state.accountId,
-                    project: {
-                      integration: state.integration.value,
-                      ...(state.geo ? { geo: state.geo } : {}),
-                    },
-                  },
-                },
-              ];
-              Near.call(transactions);
+              console.log(data);
+              // const deposit = Big(JSON.stringify(data).length * 16).mul(
+              //   Big(10).pow(20)
+              // );
+              // const transactions = [
+              //   {
+              //     contractName: "social.near",
+              //     methodName: "set",
+              //     deposit,
+              //     args: { data },
+              //   },
+              //   {
+              //     contractName: ownerId,
+              //     methodName: "add_project",
+              //     args: { account_id: state.accountId },
+              //   },
+              //   {
+              //     contractName: ownerId,
+              //     methodName: "edit_project",
+              //     args: {
+              //       account_id: state.accountId,
+              //       project: {
+              //         integration: state.integration.value,
+              //         ...(state.geo ? { geo: state.geo } : {}),
+              //       },
+              //     },
+              //   },
+              // ];
+              // Near.call(transactions);
             },
             text: (
               <>

@@ -31,12 +31,8 @@ const ExploreData = {
   open: true,
   title: "Explore",
   description:
-    "Lorem ipsum dolor sit amet consectetur. Tortor risus ipsum amet tincidunt facilisis massa. Rutrum ultrices tellus porttitor diam. Purus mauris amet nulla hendrerit neque sed eros quam. Sed odio vitae.",
-  cta: (
-    <>
-      <strong>Search</strong> for components
-    </>
-  ),
+    "EXPLORE on the BOS platform. This the gateway of gateways to a rich ecosystem of innovation, collaboration, and learning. Navigate through the OpenWeb and delve into a universe of endless opportunities.",
+  cta: <>DISCOVER (NOW)</>,
   ctaIcon: SearchIcon,
   ctaLink: "/discover.near/widget/Search",
   relatedLinks: [
@@ -55,10 +51,6 @@ const ExploreData = {
       name: "Integrated with BOS",
       details: "check out the possibilities",
     },
-  ],
-  images: [
-    "https://plus.unsplash.com/premium_photo-1673338411083-47e01b496247?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80",
-    "https://images.unsplash.com/photo-1660742533971-eb413acbfb47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
   ],
 };
 
@@ -94,12 +86,8 @@ const LearnData = {
   background: "colored",
   title: "Learn",
   description:
-    "Lorem ipsum dolor sit amet consectetur. Tortor risus ipsum amet tincidunt facilisis massa. Rutrum ultrices tellus porttitor diam. Purus mauris amet nulla hendrerit neque sed eros quam. Sed odio vitae.",
-  cta: (
-    <>
-      <strong>Understand</strong> blockchain technology
-    </>
-  ),
+    "FIND a panoply of tutorials, guides, and valuable insights on components, gateways, opportunities and much more. Gain information and grow your knowledge.",
+  cta: <>DISCOVER (NOW)</>,
   ctaIcon: LinkConnectIcon,
   ctaLink: "#",
   relatedLinks: [
@@ -118,10 +106,6 @@ const LearnData = {
       name: "Workshops + Webinars",
       details: "check out the possibilities",
     },
-  ],
-  images: [
-    "https://plus.unsplash.com/premium_photo-1673338411083-47e01b496247?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80",
-    "https://images.unsplash.com/photo-1660742533971-eb413acbfb47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
   ],
 };
 
@@ -161,12 +145,8 @@ const ConnectData = {
   background: "colored",
   title: "Connect",
   description:
-    "Lorem ipsum dolor sit amet consectetur. Tortor risus ipsum amet tincidunt facilisis massa. Rutrum ultrices tellus porttitor diam. Purus mauris amet nulla hendrerit neque sed eros quam. Sed odio vitae.",
-  cta: (
-    <>
-      <strong>Join</strong> a community
-    </>
-  ),
+    "Express yourself through your connections within the communities of each ecosystem. Cultivate a network that transcends boundaries.",
+  cta: <>DISCOVER (NOW)</>,
   ctaIcon: ConnectIcon,
   ctaLink: "/community",
   relatedLinks: [
@@ -185,10 +165,6 @@ const ConnectData = {
       name: "Event Calendar",
       details: "check out the possibilities",
     },
-  ],
-  images: [
-    "https://plus.unsplash.com/premium_photo-1673338411083-47e01b496247?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80",
-    "https://images.unsplash.com/photo-1660742533971-eb413acbfb47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
   ],
 };
 
@@ -224,34 +200,27 @@ const BuildData = {
   background: "colored",
   title: "Build",
   description:
-    "Lorem ipsum dolor sit amet consectetur. Tortor risus ipsum amet tincidunt facilisis massa. Rutrum ultrices tellus porttitor diam. Purus mauris amet nulla hendrerit neque sed eros quam. Sed odio vitae.",
-  cta: (
-    <>
-      <strong>Create</strong> blockchain solutions
-    </>
-  ),
+    "Take advantage of our developer community and programs to innovate and bring your ideas to life. Contribute to the future of the open web.",
+  cta: <>DISCOVER (NOW)</>,
   ctaIcon: LinkIcon,
   ctaLink: "#",
   relatedLinks: [
     {
-      href: "/discover.near/widget/Search",
-      name: "Search",
-      details: "check out the possibilities",
+      href: "/education/tutorials",
+      name: "Tutorials",
+      details: "Step-by-step instructional guides",
     },
     {
-      href: "/components",
-      name: "Components",
-      details: "see the potential",
+      href: "/education/code-reviews",
+      name: "Code Reviews",
+      details: "Evaluations of code quality and functionality",
     },
     {
-      href: "/opportunities/accelerator",
-      name: "Accelerator Programs",
-      details: "check out the possibilities",
+      href: "/education/workshops",
+      name: "Webinars & Workshops",
+      details:
+        "Immersive learning experiences and  engaging sessions to gain valuable information.",
     },
-  ],
-  images: [
-    "https://plus.unsplash.com/premium_photo-1673338411083-47e01b496247?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80",
-    "https://images.unsplash.com/photo-1660742533971-eb413acbfb47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
   ],
 };
 

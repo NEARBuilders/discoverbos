@@ -99,7 +99,7 @@ const cards = [
     title: "BOS Native",
     link: "/projects/native-projects",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
+      "DiscoverbOS is the gateway of the gateways build on the BOS powered by NEAR protocol.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +119,7 @@ const cards = [
     title: "Funding Opportunities",
     link: "/opportunities/funding",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
+      "Find your support within a range of funding opportunities for your project.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +139,7 @@ const cards = [
     title: "Tutorials",
     link: "/education/tutorials",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
+      "Get the lowdown with our simple user-friendly how-to tutorials for users",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -160,8 +160,7 @@ const cards = [
   {
     title: "Code Reviews",
     link: "/education/code-reviews",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
+    description: "Grow your skills by learning from our revised codes",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -181,7 +180,7 @@ const cards = [
     title: "Regional Communities",
     link: "/communities/regional",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
+      "Explore the diversity of BOS ecosystems and grow your network from everywhere you want",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -201,7 +200,7 @@ const cards = [
     title: "Accelerator Program",
     link: "/opportunities/accelerator",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Tincidunt dui a penatibus laoreet dui lectus tempor sed integer.",
+      "Maximize your resources and leverage the mentorship at your disposal to establish your strong foundation on the OpenWeb.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

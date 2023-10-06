@@ -170,9 +170,8 @@ const HeroSection = () => {
           }}
         >
           <Heading>
-            <BoldWord>Discover</BoldWord>, <BoldWord>learn</BoldWord> and{" "}
-            <BoldWord>build</BoldWord>
-            the future of the BOS.
+            <BoldWord>Discover</BoldWord>, your future on the{" "}
+            <BoldWord>BOS</BoldWord>
           </Heading>
           <div style={{ marginTop: "40px" }}>
             <InputContainer className="input-group">
@@ -182,7 +181,7 @@ const HeroSection = () => {
                 value={state.searchTerm}
                 onChange={(e) => State.update({ searchTerm: e.target.value })}
                 onSubmit={() => (window.location.href = searchTerm)}
-                placeholder="Try events calendar, AI chatbot, or gigs board..."
+                placeholder="Discover"
               />
               <Button
                 href={`/discover.near/widget/Search?term=${state.searchTerm}`}

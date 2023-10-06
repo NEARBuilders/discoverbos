@@ -149,19 +149,19 @@ const WhatIsBOS = () => {
   const sections = [
     {
       title: "Explore",
-      text: "Lorem ipsum dolor sit facilisis amet consectetur. Viverra volutpat facilisis lobortis phasellus.",
+      text: "Discover everything within the BOS platform. From projects, components and communities to resources and educational content, this tool is your compass in the Open Web.",
     },
     {
       title: "Learn",
-      text: "Lorem ipsum dolor sit facilisis amet consectetur. Viverra volutpat facilisis lobortis phasellus.",
+      text: "Cultivate your knowledge in the BOS ecosystem. Benefit from a curated library, providing you with tutorials, guides, and detailed information on components, gateways and even more.",
     },
     {
       title: "Connect",
-      text: "Lorem ipsum dolor sit facilisis amet consectetur. Viverra volutpat facilisis lobortis phasellus.",
+      text: "Grow your network in the entire BOS ecosystems. Express yourself by creating your own space and by connecting with people from every communities.",
     },
     {
       title: "Build",
-      text: "Lorem ipsum dolor sit facilisis amet consectetur. Viverra volutpat facilisis lobortis phasellus.",
+      text: "Create your project. Access a well garnished resource hub for professional and technical support who assist you in bringing your ideas to reality. Contribute to the future of the Open Web.",
     },
   ];
 
@@ -189,10 +189,24 @@ const WhatIsBOS = () => {
             What is Discover<HeadingSpan>BOS</HeadingSpan>?
           </SectionHeading>
           <SectionParagraph>
-            Lorem ipsum dolor sit amet consectetur. Tortor risus ipsum amet
-            tincidunt facilisis massa. Rutrum ultrices tellus porttitor diam.
-            Purus mauris amet nulla hendrerit neque sed eros quam. Sed odio
-            vitae.
+            DiscoverBOS, your gateway to the Open Web ! Dive into the future
+            with the Blockchain Operating System (BOS), your decentralized
+            platform that empowers you to create and use any type of blockchain
+            application, whether it's EVM or non-EVM based. It offers secure,
+            scalable, and friendly experiences for creating and using a wide
+            range of decentralized applications.
+          </SectionParagraph>
+
+          <SectionParagraph>
+            Discover a curated world of widgets, components, resources, and
+            communities tailored just for you.
+            <br />
+            Reimagine your future on the online culture where you design your
+            own decentralized space.
+          </SectionParagraph>
+
+          <SectionParagraph>
+            Start building, start exploring, start innovating with DiscoverBOS.
           </SectionParagraph>
         </div>
         <SectionsContainer className="d-flex justify-content-between gap-3">
