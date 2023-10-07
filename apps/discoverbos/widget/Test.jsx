@@ -1,1 +1,1 @@
-return "Loader working";
+return <Widget src="discover.near/widget/Search" />;
