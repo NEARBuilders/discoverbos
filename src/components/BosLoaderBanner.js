@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Draggable from "react-draggable";
 
 import { useFlags } from "../hooks/useFlags";
 import { useBosLoaderStore } from "../stores/bos-loader";
@@ -23,8 +24,9 @@ const Button = styled.button`
 
 const Floating = styled.div`
   position: fixed;
-  top: 6.5rem;
-  right: 1.5rem;
+  top: 7rem;
+  right: 1rem;
+  width: max-content;
 
   z-index: 1000;
 
@@ -76,31 +78,18 @@ export function BosLoaderBanner() {
         </Tooltip>
       }
     >
-      <Floating>
-        <Container href={"/flags"}>
-          {redirectMapStore.failedToLoad
-            ? "BOS Loader fetch error"
-            : "Loading components"}
-        </Container>
-        <Button type="button" onClick={closeBanner}>
-          <i className="bi bi-x" />
-        </Button>
-      </Floating>
+      <Draggable position={null}>
+        <Floating>
+          <Container href={"/flags"}>
+            {redirectMapStore.failedToLoad
+              ? "BOS Loader fetch error"
+              : "Loading components"}
+          </Container>
+          <Button type="button" onClick={closeBanner}>
+            <i className="bi bi-x" />
+          </Button>
+        </Floating>
+      </Draggable>
     </OverlayTrigger>
   );
 }
-// <Banner>
-//   <div>
-//     <p>Loading components from: {redirectMapStore.loaderUrl}</p>
-//     {redirectMapStore.failedToLoad && (
-//       <p style={{ color: 'red' }}>
-//         BOS Loader fetch error, see console logs. CORS errors may be misleading and mean your endpoint cannot be
-//         reached
-//       </p>
-//     )}
-//   </div>
-
-//   <Button type="button" onClick={closeBanner}>
-//     <i className="ph-fill ph-x-circle" />
-//   </Button>
-// </Banner>

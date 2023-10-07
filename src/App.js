@@ -119,16 +119,6 @@ function App() {
       });
   }, [initNear]);
 
-  // useEffect(() => {
-  //   if (
-  //     !location.search.includes("?account_id") &&
-  //     !location.search.includes("&account_id") &&
-  //     (location.search || location.href.includes("/?#"))
-  //   ) {
-  //     window.history.replaceState({}, "/", "/" + location.hash);
-  //   }
-  // }, [location]);
-
   useEffect(() => {
     if (!near) {
       return;
@@ -259,7 +249,6 @@ function App() {
   ];
 
   const projectsRoutes = [
-    // { path: "/projects", component: <Projects /> },
     {
       path: "/projects/built-with-bos",
       component: <ProjectsBuiltWithBOS />,
@@ -331,21 +320,17 @@ function App() {
           </Route>
           <Route path={"/scanner"}>
             <NavigationWrapper {...passProps} />
-            {/* <KeypomScanner /> */}
           </Route>
           <Route path={"/create"}>
             <ViewPage overrideSrc={passProps.widgets.create} {...passProps} />
-            {/* <Footer {...passProps} /> */}
           </Route>
           {routes.map((route) => (
             <Route key={`${route.path}`} path={route.path}>
               <div className="container">{route.component}</div>
-              {/* <Footer {...passProps} /> */}
             </Route>
           ))}
           <Route exact path={"/"}>
             <Home />
-            {/* <Footer {...passProps} /> */}
           </Route>
           <Route exact path={"/projects"}>
             <Projects />
@@ -355,9 +340,7 @@ function App() {
           </Route>
           <Route path={"/:widgetSrc*"}>
             <BosLoaderBanner />
-            {/* <NavigationWrapper {...passProps} /> */}
             <ViewPage {...passProps} />
-            {/* <Footer {...passProps} /> */}
           </Route>
         </Switch>
       </Router>
