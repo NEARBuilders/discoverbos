@@ -67,29 +67,29 @@ export function BosLoaderBanner() {
   if (!redirectMapStore.loaderUrl) return null;
 
   return (
-    <OverlayTrigger
-      key={"bos-loader"}
-      placement={"bottom"}
-      overlay={
-        <Tooltip>
-          {redirectMapStore.failedToLoad
-            ? "Check console.log. CORS errors may be misleading"
-            : redirectMapStore.loaderUrl}
-        </Tooltip>
-      }
-    >
-      <Draggable position={null}>
-        <Floating>
+    <Draggable position={null}>
+      <Floating>
+        <OverlayTrigger
+          key={"bos-loader"}
+          placement={"bottom"}
+          overlay={
+            <Tooltip>
+              {redirectMapStore.failedToLoad
+                ? "Check console.log. CORS errors may be misleading"
+                : redirectMapStore.loaderUrl}
+            </Tooltip>
+          }
+        >
           <Container href={"/flags"}>
             {redirectMapStore.failedToLoad
               ? "BOS Loader fetch error"
               : "Loading components"}
           </Container>
-          <Button type="button" onClick={closeBanner}>
-            <i className="bi bi-x" />
-          </Button>
-        </Floating>
-      </Draggable>
-    </OverlayTrigger>
+        </OverlayTrigger>
+        <Button type="button" onClick={closeBanner}>
+          <i className="bi bi-x" />
+        </Button>
+      </Floating>
+    </Draggable>
   );
 }
