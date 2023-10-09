@@ -4,6 +4,9 @@ import { useBosLoaderStore } from "../stores/bos-loader";
 
 export default function Home() {
   const redirectMapStore = useBosLoaderStore();
+
+  // set page title
+  document.title = "DiscoverBOS | Home";
   return (
     <div>
       <Widget
