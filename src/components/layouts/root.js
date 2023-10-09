@@ -13,7 +13,7 @@ const Container = styled.div`
 `;
 
 const ChildrenDiv = styled.div`
-  margin-top: 92px;
+  margin-top: 100px;
   max-width: 100%;
 
   @media screen and (max-width: 800px) {

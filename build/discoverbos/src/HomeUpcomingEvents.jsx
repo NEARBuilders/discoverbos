@@ -444,7 +444,7 @@ const UpcomingEvents = () => {
         {MobileEvents.map((it) => (
           <MobileCard event={it} />
         ))}
-        <CTA href="#">Event Calendar</CTA>
+        <CTA href="/events/calendar">Event Calendar</CTA>
       </MobileContainer>
     </SectionContainer>
   );

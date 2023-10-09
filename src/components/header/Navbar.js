@@ -362,6 +362,46 @@ const MobileDropdown = ({ title, links }) => {
   );
 };
 
+function MenuDropdown({ name, links }) {
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const handleMouseEnter = () => {
+    setShowDropdown(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowDropdown(false);
+  };
+
+  return (
+    <div
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="position-relative d-flex flex-column align-items-center"
+    >
+      <NavLinks href="/projects">{name}</NavLinks>
+      {showDropdown && (
+        <div
+          style={{ zIndex: 100, top: 50, width: "max-content" }}
+          className="position-absolute rounded-3 shadow bg-white p-3"
+        >
+          <div className="d-flex flex-column gap-3">
+            {links.map((link, idx) => (
+              <a
+                key={`${name}-${idx}`}
+                href={link.href}
+                style={{ textAlign: "center", color: "inherit" }}
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Navbar(props) {
   const [show, setShow] = useState(false);
   const [fix, setFix] = useState(false);
@@ -406,7 +446,7 @@ export default function Navbar(props) {
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Try events calendar, AI chatbot, or gigs board..."
+              placeholder="Discover"
             />
             <SearchButton
               className="p-0 m-0 d-flex align-items-center justify-content-center"
@@ -418,10 +458,50 @@ export default function Navbar(props) {
         </div>
         <LinksDiv className="ms-auto align-items-center">
           <NavLinks href="/components">Components</NavLinks>
-          <NavLinks href="/projects">Projects</NavLinks>
-          <NavLinks href="/resources">Resources</NavLinks>
-          <NavLinks href="/community">Community</NavLinks>
-          <NavLinks href="/about">About</NavLinks>
+
+          {/* Dropdowns */}
+          <MenuDropdown
+            name="Projects"
+            links={[
+              { href: "/projects/built-with-bos", name: "Built with BOS" },
+              { href: "/projects/native-projects", name: "BOS Native" },
+              {
+                href: "/projects/bos-integration",
+                name: "Integrated with BOS",
+              },
+              {
+                href: "/projects-form",
+                name: "Submit your project",
+              },
+            ]}
+          />
+          <MenuDropdown
+            name="Resources"
+            links={[
+              { href: "/education/tutorials", name: "Tutorials" },
+              { href: "/education/code-reviews", name: "Code Reviews" },
+              { href: "/education/workshops", name: "Workshops/Webinars" },
+              { href: "/education/office-hours", name: "Office Hours" },
+            ]}
+          />
+          <MenuDropdown
+            name="Community"
+            links={[
+              { href: "/communities/developer", name: "Developer" },
+              { href: "/communities/project", name: "Project" },
+              { href: "/communities/regional", name: "Regional" },
+              { href: "/communities/general-bos", name: "General BOS" },
+            ]}
+          />
+          <MenuDropdown
+            name="About"
+            links={[
+              { href: "/about", name: "About DiscoverBOS" },
+              { href: "/integrations", name: "Integrations" },
+              { href: "/infrastructure", name: "Infrasturcture" },
+              { href: "/gateways", name: "Gateways" },
+            ]}
+          />
           {props.signedIn ? (
             <AuthButton onClick={props.logOut} className="sign-in">
               Sign out
@@ -439,7 +519,7 @@ export default function Navbar(props) {
                 Sign out
               </AuthButton>
             ) : (
-              <AuthButton onClick={props.requestSignIn} className="sign-in">
+              <AuthButton onClick={props.requestSignIn}>
                 Create Account
               </AuthButton>
             )}
@@ -476,7 +556,7 @@ export default function Navbar(props) {
                       type="text"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      placeholder="Try events calendar, AI chatbot, or gigs board..."
+                      placeholder="Discover"
                     />
                     <SearchButton
                       href={`/discover.near/widget/Search?term=${searchTerm}`}
