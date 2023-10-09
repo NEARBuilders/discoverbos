@@ -97,35 +97,6 @@ const NavLinks = styled.a`
   padding: 16px 8px;
 `;
 
-const MobileNavLinks = styled.a`
-  color: var(--Eerie-Black, #1b1b18);
-  font-family: "Mona Sans", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 16px 8px;
-
-  div.mobile-nav-links {
-    display: none;
-  }
-
-  &.selected {
-    i {
-      transform: rotate(180deg);
-    }
-
-    div.mobile-nav-links {
-      display: block;
-    }
-  }
-`;
-
 const AuthButton = styled.button`
   border: none;
   outline: none;
@@ -337,14 +308,22 @@ const MobileDropdownLink = styled.a`
   }
 `;
 
-const MobileDropdown = ({ title, links }) => {
+const MobileDropdown = ({ title, links, href }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <div key={title}>
       <MobileHeading onClick={() => setOpen((prev) => !prev)}>
-        {title}{" "}
-        <i className={`ms-auto bi bi-chevron-${open ? "up" : "down"}`}></i>
+        {!links ? (
+          <a style={{ color: "inherit" }} href={href}>
+            {title}
+          </a>
+        ) : (
+          <>
+            {title}{" "}
+            <i className={`ms-auto bi bi-chevron-${open ? "up" : "down"}`}></i>
+          </>
+        )}
       </MobileHeading>
       <div className="d-flex flex-column gap-2">
         {open &&
@@ -362,7 +341,7 @@ const MobileDropdown = ({ title, links }) => {
   );
 };
 
-function MenuDropdown({ name, links }) {
+function MenuDropdown({ name, links, href }) {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const handleMouseEnter = () => {
@@ -379,8 +358,8 @@ function MenuDropdown({ name, links }) {
       onMouseLeave={handleMouseLeave}
       className="position-relative d-flex flex-column align-items-center"
     >
-      <NavLinks href="/projects">{name}</NavLinks>
-      {showDropdown && (
+      <NavLinks href={href}>{name}</NavLinks>
+      {links && showDropdown && (
         <div
           style={{ zIndex: 100, top: 50, width: "max-content" }}
           className="position-absolute rounded-3 shadow bg-white p-3"
@@ -401,6 +380,56 @@ function MenuDropdown({ name, links }) {
     </div>
   );
 }
+
+const links = [
+  { category: "Components", href: "/components" },
+  {
+    category: "Projects",
+    href: "/projects",
+    menu: [
+      { href: "/projects/built-with-bos", name: "Built with BOS" },
+      { href: "/projects/native-projects", name: "BOS Native" },
+      {
+        href: "/projects/bos-integration",
+        name: "Integrated with BOS",
+      },
+      {
+        href: "/projects-form",
+        name: "Submit your project",
+      },
+    ],
+  },
+  {
+    category: "Resources",
+    href: "/resources",
+    menu: [
+      { href: "/education/tutorials", name: "Tutorials" },
+      { href: "/education/code-reviews", name: "Code Reviews" },
+      { href: "/education/workshops", name: "Workshops/Webinars" },
+      { href: "/education/office-hours", name: "Office Hours" },
+    ],
+  },
+  {
+    category: "Community",
+    href: "/community",
+    menu: [
+      { href: "/communities/developer", name: "Developer" },
+      { href: "/communities/project", name: "Project" },
+      { href: "/communities/regional", name: "Regional" },
+      { href: "/communities/general-bos", name: "General BOS" },
+    ],
+  },
+  {
+    category: "About",
+    href: "/about",
+    menu: [
+      { href: "/about", name: "About DiscoverBOS" },
+      { href: "/integrations", name: "Integrations" },
+      { href: "/infrastructure", name: "Infrasturcture" },
+      { href: "/gateways", name: "Gateways" },
+    ],
+  },
+];
 
 export default function Navbar(props) {
   const [show, setShow] = useState(false);
@@ -457,51 +486,16 @@ export default function Navbar(props) {
           </InputContainer>
         </div>
         <LinksDiv className="ms-auto align-items-center">
-          <NavLinks href="/components">Components</NavLinks>
-
           {/* Dropdowns */}
-          <MenuDropdown
-            name="Projects"
-            links={[
-              { href: "/projects/built-with-bos", name: "Built with BOS" },
-              { href: "/projects/native-projects", name: "BOS Native" },
-              {
-                href: "/projects/bos-integration",
-                name: "Integrated with BOS",
-              },
-              {
-                href: "/projects-form",
-                name: "Submit your project",
-              },
-            ]}
-          />
-          <MenuDropdown
-            name="Resources"
-            links={[
-              { href: "/education/tutorials", name: "Tutorials" },
-              { href: "/education/code-reviews", name: "Code Reviews" },
-              { href: "/education/workshops", name: "Workshops/Webinars" },
-              { href: "/education/office-hours", name: "Office Hours" },
-            ]}
-          />
-          <MenuDropdown
-            name="Community"
-            links={[
-              { href: "/communities/developer", name: "Developer" },
-              { href: "/communities/project", name: "Project" },
-              { href: "/communities/regional", name: "Regional" },
-              { href: "/communities/general-bos", name: "General BOS" },
-            ]}
-          />
-          <MenuDropdown
-            name="About"
-            links={[
-              { href: "/about", name: "About DiscoverBOS" },
-              { href: "/integrations", name: "Integrations" },
-              { href: "/infrastructure", name: "Infrasturcture" },
-              { href: "/gateways", name: "Gateways" },
-            ]}
-          />
+          {links.map((item) => (
+            <MenuDropdown
+              name={item.category}
+              links={item.menu}
+              key={item.href}
+              href={item.href}
+            />
+          ))}
+
           {props.signedIn ? (
             <AuthButton onClick={props.logOut} className="sign-in">
               Sign out
@@ -567,77 +561,14 @@ export default function Navbar(props) {
                 </div>
 
                 <div className="d-flex flex-column">
-                  <MobileNavLinks href="/components">
-                    <div>Components</div>
-                  </MobileNavLinks>
-                  <MobileDropdown
-                    title={"Projects"}
-                    links={[
-                      {
-                        name: "Built with BOS",
-                        href: "/projects/built-with-bos",
-                      },
-                      {
-                        name: "BOS Native",
-                        href: "/projects/native-projects",
-                      },
-                      {
-                        name: "Integrated with BOS",
-                        href: "/projects/bos-integration",
-                      },
-                    ]}
-                  />
-                  <MobileDropdown
-                    title={"Resources"}
-                    links={[
-                      {
-                        name: "Tutorials",
-                        href: "/education/tutorials",
-                      },
-                      {
-                        name: "Code Reviews",
-                        href: "/education/code-reviews",
-                      },
-                      {
-                        name: "Workshops/Webinar",
-                        href: "/education/workshops",
-                      },
-                      {
-                        name: "Office Hours",
-                        href: "/education/office-hours",
-                      },
-                    ]}
-                  />
-                  <MobileDropdown
-                    title={"Community"}
-                    links={[
-                      {
-                        name: "Developers",
-                        href: "/communities/developer",
-                      },
-                      {
-                        name: "Projects",
-                        href: "/communities/project",
-                      },
-                      {
-                        name: "Regional",
-                        href: "/communities/regional",
-                      },
-                      {
-                        name: "General BOS",
-                        href: "/communities/general-bos",
-                      },
-                    ]}
-                  />
-                  <MobileDropdown
-                    title={"About"}
-                    links={[
-                      { name: "About us", href: "/about" },
-                      { name: "Integrations", href: "/integrations" },
-                      { name: "Infrastructure", href: "/infrastructure" },
-                      { name: "Gateways", href: "/gateways" },
-                    ]}
-                  />
+                  {links.map((it) => (
+                    <MobileDropdown
+                      title={it.category}
+                      links={it.menu}
+                      key={it.href}
+                      href={it.href}
+                    />
+                  ))}
                 </div>
 
                 {props.signedIn ? (
