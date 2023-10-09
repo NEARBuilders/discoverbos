@@ -64,6 +64,10 @@ export function BosLoaderBanner() {
     }
   }
 
+  function onRefresh() {
+    window.location.reload();
+  }
+
   if (!redirectMapStore.loaderUrl) return null;
 
   return (
@@ -88,6 +92,9 @@ export function BosLoaderBanner() {
         </OverlayTrigger>
         <Button type="button" onClick={closeBanner}>
           <i className="bi bi-x" />
+        </Button>
+        <Button type="button" onClick={onRefresh}>
+          <i className="bi bi-arrow-clockwise"></i>
         </Button>
       </Floating>
     </Draggable>
