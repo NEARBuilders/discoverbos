@@ -1,5 +1,4 @@
 import React from "react";
-// import Header from "../header/Header";
 import Navbar from "../header/Navbar";
 import Footer from "./Footer";
 import styled from "styled-components";

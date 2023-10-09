@@ -164,7 +164,17 @@ const Nav = styled.nav`
 
   &.fixed {
     .nav-search {
+      animation: 300ms fadeIn ease-in-out;
       display: block;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
     }
   }
 
