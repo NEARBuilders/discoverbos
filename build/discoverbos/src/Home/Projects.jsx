@@ -570,6 +570,7 @@ const MobileProjects = () => {
     }
   `;
 
+
   // TODO: Projects should be shown here
   const projects = JSON.parse(Social.get(`${context.accountId}/thing/project-registry/featured`, "final") || "null") || [];
 

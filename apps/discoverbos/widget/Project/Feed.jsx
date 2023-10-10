@@ -7,6 +7,7 @@ const Flex = styled.div`
 `;
 
 const { Feed } = VM.require("efiz.near/widget/Module.Feed");
+
 const { Card } = VM.require("discover.near/widget/project.module");
 
 // TODO: Replace with discover.near
