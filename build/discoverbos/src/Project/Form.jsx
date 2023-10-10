@@ -175,7 +175,6 @@ const validateForm = () => {
   );
 };
 
-
 const UUID = {
   generate: (template) => {
     if (typeof template !== "string") {
