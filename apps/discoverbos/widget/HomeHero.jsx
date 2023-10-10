@@ -205,7 +205,29 @@ const HeroSection = () => {
                 <CategoryItem name="Widget" />
                 <CategoryItem name="Components" />
                 <CategoryItem name="Projects" />
-                <InfoIcon />
+
+                <OverlayTrigger
+                  key={"bottom"}
+                  placement={"bottom"}
+                  overlay={
+                    <Tooltip id={"tooltip-bottom"}>
+                      <div
+                        className="d-flex flex-column gap-1"
+                        style={{ textAlign: "left" }}
+                      >
+                        <p className="m-0">
+                          <strong>Categories</strong>
+                          <br />
+                          Description about categories. <br />
+                          Description categories.
+                        </p>{" "}
+                        <a href="#">Learn More</a>
+                      </div>
+                    </Tooltip>
+                  }
+                >
+                  <InfoIcon />
+                </OverlayTrigger>
               </div>
             </CategoriesContainer>
           </div>

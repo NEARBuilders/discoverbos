@@ -1,5 +1,4 @@
 import React from "react";
-// import Header from "../header/Header";
 import Navbar from "../header/Navbar";
 import Footer from "./Footer";
 import styled from "styled-components";
@@ -13,7 +12,7 @@ const Container = styled.div`
 `;
 
 const ChildrenDiv = styled.div`
-  margin-top: 100px;
+  margin-top: 92px;
   max-width: 100%;
 
   @media screen and (max-width: 800px) {
