@@ -570,14 +570,8 @@ const MobileProjects = () => {
     }
   `;
 
-  const projects = [
-    { asd: "" },
-    { asd: "" },
-    { asd: "" },
-    { asd: "" },
-    { asd: "" },
-    { type: "add" },
-  ];
+  // TODO: Projects should be shown here
+  const projects = JSON.parse(Social.get(`${context.accountId}/thing/project-registry/featured`, "final") || "null") || [];
 
   const nextProjects = () => {
     State.update({ mobileIndex: state.mobileIndex + 1 });
