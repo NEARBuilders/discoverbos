@@ -76,7 +76,7 @@ return (
               return (
                 <div key={p}>
                   <Widget
-                    src="discover.near/widget/Project.provider"
+                    src="discover.near/widget/Project.Provider"
                     props={{
                       View: Card,
                       path: projectPath,
