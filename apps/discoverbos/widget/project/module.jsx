@@ -1,4 +1,4 @@
-function Card({ metadata, path }) {
+const Card = ({ metadata, path }) => {
   const {
     name: projectName,
     image,
@@ -107,6 +107,6 @@ function Card({ metadata, path }) {
       </div>
     </a>
   );
-}
+};
 
-return { Card, View };
+return { Card };

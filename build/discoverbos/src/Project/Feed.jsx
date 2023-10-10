@@ -7,18 +7,7 @@ const Flex = styled.div`
 `;
 
 const { Feed } = VM.require("efiz.near/widget/Module.Feed");
-const { Card } = VM.require("discover.near/widget/project.module");
-
-// TODO: Replace with discover.near
-const hiddenProjects =
-  JSON.parse(
-    Social.get(`${context.accountId}/thing/project-registry/hidden`, "final") ||
-      "null"
-  ) || [];
-
-if (!Feed || !Card) {
-  return <div>Loading modules...</div>;
-}
+Feed = Feed || (() => <></>);
 
 return (
   <>

@@ -3,6 +3,16 @@ State.init({
   mobileIndex: 0,
 });
 
+const projects =
+  JSON.parse(
+    Social.get(
+      `${context.accountId}/thing/project-registry/featured`,
+      "final"
+    ) || "null"
+  ) || [];
+
+console.log(projects);
+
 const ProjectCard = ({ project }) => {
   if (project.type === "add") {
     const Container = styled.div`
@@ -571,7 +581,13 @@ const MobileProjects = () => {
   `;
 
   // TODO: Projects should be shown here
-  const projects = JSON.parse(Social.get(`${context.accountId}/thing/project-registry/featured`, "final") || "null") || [];
+  const projects =
+    JSON.parse(
+      Social.get(
+        `${context.accountId}/thing/project-registry/featured`,
+        "final"
+      ) || "null"
+    ) || [];
 
   const nextProjects = () => {
     State.update({ mobileIndex: state.mobileIndex + 1 });

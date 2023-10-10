@@ -1,7 +1,9 @@
 const { Feed } = VM.require("efiz.near/widget/Module.Feed");
-const { Card } = VM.require("discover.near/widget/project.module");
+const { Card } = VM.require("discover.near/widget/Project.Module");
 
-if (!Feed || !Card) {
+console.log();
+
+if (!Feed) {
   return <div>Loading modules...</div>;
 }
 
@@ -74,7 +76,7 @@ return (
               return (
                 <div key={p}>
                   <Widget
-                    src="discover.near/widget/project.provider"
+                    src="discover.near/widget/Project.provider"
                     props={{
                       View: Card,
                       path: projectPath,

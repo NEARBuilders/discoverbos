@@ -35,7 +35,6 @@ const Content = styled.div`
 const { Feed } = VM.require("efiz.near/widget/Module.Feed");
 Feed = Feed || (() => <></>);
 
-
 const { path } = props;
 
 const data = Social.getr(path, "final");
