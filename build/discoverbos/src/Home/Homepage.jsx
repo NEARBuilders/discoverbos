@@ -2,7 +2,7 @@ const accountId = context.accountId;
 const ownerId = "discover.near";
 
 const homepage = Social.get(`${accountId}/settings/discover.near/homepage`);
-const defaultHomepage = `${ownerId}/widget/Home`;
+const defaultHomepage = `${ownerId}/widget/Home.Index`;
 
 if (homepage === null) {
   return "loading...";

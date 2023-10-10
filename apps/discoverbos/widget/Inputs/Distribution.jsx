@@ -8,7 +8,7 @@ const options = [
 
 return (
   <Widget
-    src={`${ownerId}/widget/InputsSelect`}
+    src={`${ownerId}/widget/Inputs.Select`}
     props={{
       label: "What is your projects distribution model?",
       noLabel: props.noLabel,

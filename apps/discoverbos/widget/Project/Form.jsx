@@ -196,7 +196,7 @@ return (
     <Form>
       <FormHeader>General</FormHeader>
       <Widget
-        src={`${ownerId}/widget/InputsText`}
+        src={`${ownerId}/widget/Inputs.Text`}
         props={{
           label: "Project name *",
           placeholder: "Enter project name",
@@ -221,7 +221,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/InputsAccountId`}
+        src={`${ownerId}/widget/Inputs.AccountId`}
         props={{
           label: "Your project's NEAR Account *",
           placeholder:
@@ -258,7 +258,7 @@ return (
         <></>
       )}
       <Widget
-        src={`${ownerId}/widget/InputsVerticals`}
+        src={`${ownerId}/widget/Inputs.Verticals`}
         props={{
           verticals: state.verticals,
           update: (verticals) => State.update({ verticals }),
@@ -267,7 +267,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/InputsProductType`}
+        src={`${ownerId}/widget/Inputs.ProductType`}
         props={{
           productType: state.productType,
           update: (productType) => State.update({ productType }),
@@ -276,7 +276,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/InputsIntegration`}
+        src={`${ownerId}/widget/Inputs.Integration`}
         props={{
           category: state.integration,
           update: (integration) => State.update({ integration }),
@@ -290,7 +290,7 @@ return (
       >
         <Hidable>
           <Widget
-            src={`${ownerId}/widget/InputsMultiSelect`}
+            src={`${ownerId}/widget/Inputs.MultiSelect`}
             props={{
               label: "Other chains",
               placeholder:
@@ -307,7 +307,7 @@ return (
         </Hidable>
       </Collapsible.Root>
       <Widget
-        src={`${ownerId}/widget/InputsPhase`}
+        src={`${ownerId}/widget/Inputs.Phase`}
         props={{
           dev: state.dev,
           update: (dev) => State.update({ dev }),
@@ -316,7 +316,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/InputsText`}
+        src={`${ownerId}/widget/Inputs.Text`}
         props={{
           label: "Tagline",
           placeholder: "Write a one liner about your project",
@@ -336,7 +336,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/InputsTextArea`}
+        src={`${ownerId}/widget/Inputs.TextArea`}
         props={{
           label: "Description",
           placeholder: "Give a short description of your project",
@@ -357,7 +357,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/InputsDistribution`}
+        src={`${ownerId}/widget/Inputs.Distribution`}
         props={{
           distribution: state.distribution,
           update: (distribution) => State.update({ distribution }),
@@ -366,7 +366,7 @@ return (
         }}
       />
       {/*<Widget
-        src={`${ownerId}/widget/InputsMultiSelect`}
+        src={`${ownerId}/widget/Inputs.MultiSelect`}
         props={{
           label: "Tags",
           placeholder: "Add tags",
@@ -381,7 +381,7 @@ return (
         }}
       />*/}
       <Widget
-        src={`${ownerId}/widget/InputsText`}
+        src={`${ownerId}/widget/Inputs.Text`}
         props={{
           label: "Website",
           placeholder: "Website URL (near.org)",
@@ -400,7 +400,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/InputsNumber`}
+        src={`${ownerId}/widget/Inputs.Number`}
         props={{
           label: "Team size",
           placeholder: 10,
@@ -417,7 +417,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/InputsText`}
+        src={`${ownerId}/widget/Inputs.Text`}
         props={{
           label: "Location",
           placeholder: "San Fancisco, CA",

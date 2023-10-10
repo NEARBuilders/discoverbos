@@ -119,7 +119,7 @@ const tabs = [
     title: "Settings",
     module: () => (
       <Widget
-        src="discover.near/widget/ProjectSettings"
+        src="discover.near/widget/Project.Settings"
         props={{ thingId: projectId, data }}
       />
     ),

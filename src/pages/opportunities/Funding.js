@@ -5,7 +5,7 @@ import Heading from "../../components/header/Heading";
 const links = [
   {
     name: "HackBOX: Streamline and incubate your Hackathon and get funding",
-    href: "https://near.org/hackbox.near/widget/home",
+    href: "https://near.org/hackbox.near/widget/Home.",
   },
 ];
 

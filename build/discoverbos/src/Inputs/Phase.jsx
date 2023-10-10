@@ -10,7 +10,7 @@ const options = [
 
 return (
   <Widget
-    src={`${ownerId}/widget/InputsSelect`}
+    src={`${ownerId}/widget/Inputs.Select`}
     props={{
       label: "Development phase *",
       noLabel: props.noLabel,

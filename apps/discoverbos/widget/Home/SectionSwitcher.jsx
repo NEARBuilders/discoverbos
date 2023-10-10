@@ -457,7 +457,7 @@ const MobileSwitcher = ({ index, selected }) => {
   return (
     <div key={Math.random()}>
       <Widget
-        src="discover.near/widget/HomeSection"
+        src="discover.near/widget/Home.Section"
         props={{
           data: { ...InfoSections[index], mobile: true },
           mobileSwitcher: Switcher,
@@ -471,7 +471,7 @@ return (
   <>
     <Desktop className="d-flex align-items-center">
       <Widget
-        src="discover.near/widget/HomeSection"
+        src="discover.near/widget/Home.Section"
         props={{
           data: { ...InfoSections[state.selectedIndex] },
           switcher: Switcher,

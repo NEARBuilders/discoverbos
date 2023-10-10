@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div>
       <Widget
-        src="discover.near/widget/Home"
+        src="discover.near/widget/Home.Index"
         config={{
           redirectMap: redirectMapStore.redirectMap,
         }}

@@ -9,7 +9,7 @@ const options = [
 
 return (
   <Widget
-    src={`${ownerId}/widget/InputsSelect`}
+    src={`${ownerId}/widget/Inputs.Select`}
     props={{
       label: "Integration with NEAR *",
       noLabel: props.noLabel,

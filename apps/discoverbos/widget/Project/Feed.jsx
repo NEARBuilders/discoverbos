@@ -25,28 +25,27 @@ return (
     <Feed
       index={{
         action: "every",
-        key: "group", // TODO: replace with "project"
+        key: "group", // TODO: change to project
         options: {
+          // nft:mrbrownnft.near
           limit: 10,
           order: "desc",
           accountId: undefined,
         },
       }}
       Item={(p) => {
-        const projectPath = `${p.accountId}/thing/${p.value.id}`;
-        if (!hiddenProjects.includes(projectPath)) {
-          return (
-            <div key={p}>
-              <Widget
-                src="discover.near/widget/project.provider"
-                props={{
-                  View: Card,
-                  path: projectPath,
-                }}
-              />
-            </div>
-          );
-        }
+        return (
+          <a
+            href={`/discover.near/widget/Project.Page?projectId=${p.value.id}&creatorId=${p.accountId}`}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <Widget
+              key={p}
+              src={"discover.near/widget/Project.Card"}
+              props={{ projectId: p.value.id, creatorId: p.accountId }}
+            />
+          </a>
+        );
       }}
       Layout={Flex}
     />

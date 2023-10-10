@@ -34,7 +34,7 @@ const mapOptionToValue = (option) => {
 
 return (
   <Widget
-    src={`${ownerId}/widget/InputsMultiSelect`}
+    src={`${ownerId}/widget/Inputs.MultiSelect`}
     props={{
       label: "Product type *",
       noLabel: props.noLabel,

@@ -151,7 +151,7 @@ const validate = async () => {
 
 return (
   <Widget
-    src={`${ownerId}/widget/InputsText`}
+    src={`${ownerId}/widget/Inputs.Text`}
     props={{
       label,
       placeholder,
