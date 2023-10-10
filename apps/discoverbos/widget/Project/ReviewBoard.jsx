@@ -116,7 +116,7 @@ return (
       {featured.map((projectPath) => (
         <div key={projectPath}>
           <Widget
-            src="discover.near/widget/project.provider"
+            src="discover.near/widget/Project.Provider"
             props={{
               View: Card,
               path: projectPath,
@@ -135,7 +135,7 @@ return (
       {hidden.map((projectPath) => (
         <div key={projectPath}>
           <Widget
-            src="discover.near/widget/project.provider"
+            src="discover.near/widget/Project.Provider"
             props={{
               View: Card,
               path: projectPath,
