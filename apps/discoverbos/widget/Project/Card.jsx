@@ -24,8 +24,6 @@ if (tags) {
   tagKeys = Object.keys(tags);
 }
 
-console.log(projectName, linktree);
-
 return (
   <div
     className="border shadow-sm rounded-2 d-flex flex-column p-2 gap-2"

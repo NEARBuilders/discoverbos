@@ -35,7 +35,7 @@ const ProjectCard = ({ project }) => {
     `;
     return (
       <Container style={{ width: "30%" }}>
-        <Button href="#">View All Projects</Button>
+        <Button href="/projects">View All Projects</Button>
       </Container>
     );
   }
@@ -380,7 +380,7 @@ const MobileProjects = () => {
           style={{ height: "425px", marginBottom: 24 }}
           className="justify-content-center  align-items-center"
         >
-          <Button>View All Projects</Button>
+          <Button href="/projects">View All Projects</Button>
         </Card>
       );
     }
