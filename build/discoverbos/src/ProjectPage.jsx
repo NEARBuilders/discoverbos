@@ -35,9 +35,9 @@ const Content = styled.div`
 const { Feed } = VM.require("efiz.near/widget/Module.Feed");
 Feed = Feed || (() => <></>);
 
-const { creatorId, projectId } = props;
+const { path } = props;
 
-const data = Social.get(`${creatorId}/thing/${projectId}/**`, "final");
+const data = Social.getr(path, "final");
 
 if (!data) {
   return <div>Project not found</div>;

@@ -7,36 +7,46 @@ const Flex = styled.div`
 `;
 
 const { Feed } = VM.require("efiz.near/widget/Module.Feed");
-Feed = Feed || (() => <></>);
+const { Card } = VM.require("discover.near/widget/project.module");
+
+// TODO: Replace with discover.near
+const hiddenProjects =
+  JSON.parse(
+    Social.get(`${context.accountId}/thing/project-registry/hidden`, "final") ||
+      "null"
+  ) || [];
+
+if (!Feed || !Card) {
+  return <div>Loading modules...</div>;
+}
 
 return (
   <>
-    <div className="my-3">
-      <h2>Projects built with BOS</h2>
-    </div>
     <Feed
       index={{
         action: "every",
-        key: "group", // TODO: change to project 
-        options: { // nft:mrbrownnft.near
+        key: "group", // TODO: replace with "project"
+        options: {
           limit: 10,
           order: "desc",
           accountId: undefined,
         },
       }}
       Item={(p) => {
-        return (
-          <a
-            href={`/discover.near/widget/ProjectPage?projectId=${p.value.id}&creatorId=${p.accountId}`}
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <Widget
-              key={p}
-              src={"discover.near/widget/ProjectCard"}
-              props={{ projectId: p.value.id, creatorId: p.accountId }}
-            />
-          </a>
-        );
+        const projectPath = `${p.accountId}/thing/${p.value.id}`;
+        if (!hiddenProjects.includes(projectPath)) {
+          return (
+            <div key={p}>
+              <Widget
+                src="discover.near/widget/project.provider"
+                props={{
+                  View: Card,
+                  path: projectPath,
+                }}
+              />
+            </div>
+          );
+        }
       }}
       Layout={Flex}
     />
