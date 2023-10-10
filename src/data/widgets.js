@@ -19,17 +19,17 @@ const TestnetWidgets = {
 
 const MainnetWidgets = {
   image: "mob.near/widget/Image",
-  default: "discover.near/widget/home",
+  default: "discover.near/widget/Home.Index",
   thing: "efiz.near/widget/every.thing.view",
   create: "efiz.near/widget/creator",
   header: {
-    mobile: "efiz.near/widget/every.app.header.mobile"
+    mobile: "efiz.near/widget/every.app.header.mobile",
   },
   left: {
-    menu: "efiz.near/widget/every.app.left.menu"
+    menu: "efiz.near/widget/every.app.left.menu",
   },
   action: {
-    button: "efiz.near/widget/every.app.action.button"
+    button: "efiz.near/widget/every.app.action.button",
   },
   viewSource: "mob.near/widget/WidgetSource",
   widgetMetadataEditor: "mob.near/widget/WidgetMetadataEditor",

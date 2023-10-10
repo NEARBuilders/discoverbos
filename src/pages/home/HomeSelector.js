@@ -8,7 +8,7 @@ export default function HomeSelector() {
   return (
     <div>
       <Widget
-        src="itexpert120-contra.near/widget/HomepageSelector"
+        src="itexpert120-contra.near/widget/Home.pageSelector"
         config={{
           redirectMap: redirectMapStore.redirectMap,
         }}

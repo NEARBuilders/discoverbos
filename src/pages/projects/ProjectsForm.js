@@ -8,7 +8,7 @@ export default function ProjectsForm() {
   return (
     <div className="container mb-3 my-5">
       <Widget
-        src="discover.near/widget/ProjectForm" // this references a local widget in apps/discoverbos/widget/project/feed
+        src="discover.near/widget/Project.Form" // this references a local widget in apps/discoverbos/widget/Project./feed
         config={{
           redirectMap: redirectMapStore.redirectMap,
         }}
