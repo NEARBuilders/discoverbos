@@ -424,7 +424,7 @@ return (
       />
       <FormFooter>
         <Widget
-          src={`${ownerId}/widget/ButtonsGreen`}
+          src={`${ownerId}/widget/Buttons.Green`}
           props={{
             disabled: !validateForm(),
             onClick: () => {

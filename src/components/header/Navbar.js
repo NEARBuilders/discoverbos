@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import ProfileIcon from "./ProfileIcon";
 
 const DesktopSVG = styled.svg`
   @media screen and (max-width: 800px) {
@@ -506,10 +507,11 @@ export default function Navbar(props) {
             />
           ))}
 
-          {props.signedIn ? (
-            <AuthButton onClick={props.logOut} className="sign-in">
+          {/* <AuthButton onClick={props.logOut} className="sign-in">
               Sign out
-            </AuthButton>
+            </AuthButton> */}
+          {props.signedIn ? (
+            <ProfileIcon accountId={props.signedAccountId} />
           ) : (
             <AuthButton onClick={props.requestSignIn} className="sign-in">
               Sign in
