@@ -15,6 +15,8 @@ if (projectsPath.length === 0) {
   return <div>Loading...</div>;
 }
 
+console.log(projectsPath);
+
 const projects = projectsPath.map((it) => {
   const data = Social.getr(it, "final");
   return JSON.parse(data[""]);
