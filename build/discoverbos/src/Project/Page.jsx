@@ -32,6 +32,18 @@ const Content = styled.div`
   flex: 1;
 `;
 
+const TabItem = styled.div`
+  border-radius: 8px;
+
+  &.active {
+    background: #f0f0f0;
+  }
+
+  &:hover {
+    background: lightgray;
+  }
+`;
+
 const { Feed } = VM.require("efiz.near/widget/Module.Feed");
 Feed = Feed || (() => <></>);
 
@@ -44,6 +56,7 @@ if (!data) {
 }
 
 const projectData = JSON.parse(data[""]);
+console.log(projectData);
 
 const tabs = [
   {
@@ -143,16 +156,16 @@ function Module({ module }) {
 }
 
 return (
-  <div className="d-flex flex-column gap-3 bg-white">
+  <div className="d-flex flex-column gap-3 bg-white container">
     <Banner
-      className="object-fit-cover"
+      className="object-fit-cover rounded-bottom-3"
       style={{
         background: `center / cover no-repeat url(https://ipfs.near.social/ipfs/${backgroundImage.ipfs_cid})`,
       }}
     />
 
     <div className="d-md-flex d-block justify-content-between container">
-      <div className="d-md-flex d-block align-items-end">
+      <div className="d-md-flex d-block align-items-start">
         <div className="position-relative">
           <div style={{ width: 150, height: 100 }}>
             <img
@@ -175,7 +188,7 @@ return (
       <div className="d-flex align-items-end gap-3">
         <Button
           className="btn btn-outline-primary"
-          onClick={() => State.update({ selectedTab: tabs[3] })}
+          onClick={() => State.update({ selectedTab: tabs[1] })}
         >
           Configure Project
         </Button>
@@ -188,17 +201,19 @@ return (
         tabs.map(({ iconClass, title }, index) =>
           title ? (
             <li className="nav-item" key={title}>
-              <div
+              <TabItem
                 className={[
                   "d-inline-flex gap-2",
-                  state.selectedTab === title ? "nav-link active" : "nav-link",
+                  state.selectedTab.title === title
+                    ? "nav-link active"
+                    : "nav-link",
                 ].join(" ")}
                 style={{ cursor: "pointer" }}
                 onClick={() => State.update({ selectedTab: tabs[index] })}
               >
                 <i className={iconClass} />
                 <span>{title}</span>
-              </div>
+              </TabItem>
             </li>
           ) : null
         )}

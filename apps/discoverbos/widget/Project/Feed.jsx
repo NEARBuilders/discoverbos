@@ -7,6 +7,7 @@ const Flex = styled.div`
 `;
 
 const { Feed } = VM.require("efiz.near/widget/Module.Feed");
+const { Card } = VM.require("discover.near/widget/Project.Module");
 Feed = Feed || (() => <></>);
 
 return (
@@ -23,20 +24,21 @@ return (
       }}
       Item={(p) => {
         const projectPath = `${p.accountId}/thing/${p.value.id}`;
-        if (!hiddenProjects.includes(projectPath)) {
-          return (
-            <div key={p}>
-              <Widget
-                src="discover.near/widget/project.provider"
-                props={{
-                  View: Card,
-                  path: projectPath,
-                }}
-              />
-            </div>
-          );
-        }
+        // if (!hiddenProjects.includes(projectPath)) {
+        console.log(projectPath);
+        return (
+          <div key={p}>
+            <Widget
+              src="discover.near/widget/Project.Provider"
+              props={{
+                View: Card,
+                path: projectPath,
+              }}
+            />
+          </div>
+        );
       }}
+      // }
       Layout={Flex}
     />
   </>

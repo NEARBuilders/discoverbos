@@ -40,7 +40,7 @@ const handleSave = () => {
 
 return (
   <div>
-    <div>
+    <div className="d-flex flex-column gap-3" style={{ maxWidth: 720 }}>
       <input
         placeholder="iconClass"
         value={iconClass}
@@ -64,12 +64,13 @@ return (
       <button onClick={handleAddTab}>Add Tab</button>
     </div>
     <ul>
-      {tabs && tabs.map((tab, index) => (
-        <li key={index}>
-          {tab.module.src} - {tab.module.blockHeight}
-          <button onClick={() => handleRemoveTab(index)}>Remove</button>
-        </li>
-      ))}
+      {tabs &&
+        tabs.map((tab, index) => (
+          <li key={index}>
+            {tab.module.src} - {tab.module.blockHeight}
+            <button onClick={() => handleRemoveTab(index)}>Remove</button>
+          </li>
+        ))}
     </ul>
     <div>
       <button onClick={handleSave} disabled={!hasChanges}>
