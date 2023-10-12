@@ -1,14 +1,12 @@
 const { Feed } = VM.require("efiz.near/widget/Module.Feed");
-const { Card } = VM.require("/*__@creatorAccount__*//widget/Project.Module");
+const { Card } = VM.require("/*__@creatorAccount__*//widget/project.module");
 
-console.log();
-
-if (!Feed) {
+if (!Feed || !Card) {
   return <div>Loading modules...</div>;
 }
 
 const projectRegistry = Social.getr(
-  "efiz.near/thing/project-registry",
+  `${context.accountId}/thing/project-registry`,
   "final"
 );
 
@@ -20,7 +18,7 @@ const featured = JSON.parse(projectRegistry.featured) || [];
 const hidden = JSON.parse(projectRegistry.hidden) || [];
 
 const toggleFeatureProject = (projectPath) => {
-  const _featured = JSON.parse(JSON.stringify(featured));
+  const _featured = JSON.parse(JSON.stringify(featured)) || [];
   if (_featured.includes(projectPath)) {
     _featured = _featured.filter((p) => p !== projectPath);
   } else {
@@ -35,7 +33,7 @@ const toggleFeatureProject = (projectPath) => {
   });
 };
 const toggleHideProject = (projectPath) => {
-  const _hidden = JSON.parse(JSON.stringify(hidden));
+  const _hidden = JSON.parse(JSON.stringify(hidden)) || [];
   if (_hidden.includes(projectPath)) {
     _hidden = _hidden.filter((p) => p !== projectPath);
   } else {
@@ -76,7 +74,7 @@ return (
               return (
                 <div key={p}>
                   <Widget
-                    src="/*__@creatorAccount__*//widget/Project.Provider"
+                    src="/*__@creatorAccount__*//widget/project.provider"
                     props={{
                       View: Card,
                       path: projectPath,
@@ -116,7 +114,7 @@ return (
       {featured.map((projectPath) => (
         <div key={projectPath}>
           <Widget
-            src="/*__@creatorAccount__*//widget/Project.Provider"
+            src="/*__@creatorAccount__*//widget/project.provider"
             props={{
               View: Card,
               path: projectPath,
@@ -135,7 +133,7 @@ return (
       {hidden.map((projectPath) => (
         <div key={projectPath}>
           <Widget
-            src="/*__@creatorAccount__*//widget/Project.Provider"
+            src="/*__@creatorAccount__*//widget/project.provider"
             props={{
               View: Card,
               path: projectPath,

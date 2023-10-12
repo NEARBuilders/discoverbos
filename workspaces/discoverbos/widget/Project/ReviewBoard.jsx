@@ -1,12 +1,12 @@
 const { Feed } = VM.require("efiz.near/widget/Module.Feed");
-const { Card } = VM.require("/*__@creatorAccount__*//widget/project.module");
+const { Card } = VM.require("/*__@creatorAccount__*//widget/Project.Module");
 
-if (!Feed || !Card) {
+if (!Feed) {
   return <div>Loading modules...</div>;
 }
 
 const projectRegistry = Social.getr(
-  "efiz.near/thing/project-registry",
+  `${context.accountId}/thing/project-registry`,
   "final"
 );
 
@@ -74,7 +74,7 @@ return (
               return (
                 <div key={p}>
                   <Widget
-                    src="/*__@creatorAccount__*//widget/project.provider"
+                    src="/*__@creatorAccount__*//widget/Project.Provider"
                     props={{
                       View: Card,
                       path: projectPath,
@@ -114,7 +114,7 @@ return (
       {featured.map((projectPath) => (
         <div key={projectPath}>
           <Widget
-            src="/*__@creatorAccount__*//widget/project.provider"
+            src="/*__@creatorAccount__*//widget/Project.Provider"
             props={{
               View: Card,
               path: projectPath,
@@ -133,7 +133,7 @@ return (
       {hidden.map((projectPath) => (
         <div key={projectPath}>
           <Widget
-            src="/*__@creatorAccount__*//widget/project.provider"
+            src="/*__@creatorAccount__*//widget/Project.Provider"
             props={{
               View: Card,
               path: projectPath,

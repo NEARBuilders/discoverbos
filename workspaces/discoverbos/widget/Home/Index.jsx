@@ -16,7 +16,7 @@ return (
   <FontDiv>
     {sections.map((sec) => (
       <div id={sec.toLowerCase()} key={Math.random()}>
-        <Widget src={"/*__@creatorAccount__*//widget/Home.${sec}"} />
+        <Widget src={`/*__@creatorAccount__*//widget/Home.${sec}`} />
       </div>
     ))}
   </FontDiv>

@@ -7,7 +7,18 @@ const Flex = styled.div`
 `;
 
 const { Feed } = VM.require("efiz.near/widget/Module.Feed");
-Feed = Feed || (() => <></>);
+const { Card } = VM.require("/*__@creatorAccount__*//widget/Project.Module");
+
+if (!Feed || !Card) {
+  return <div>Loading modules...</div>;
+}
+
+const projectRegistry = Social.getr(
+  "/*__@creatorAccount__*//thing/project-registry",
+  "final"
+);
+
+const hiddenProjects = JSON.parse(projectRegistry.hidden) || [];
 
 return (
   <>
@@ -27,7 +38,7 @@ return (
           return (
             <div key={p}>
               <Widget
-                src="/*__@creatorAccount__*//widget/project.provider"
+                src="/*__@creatorAccount__*//widget/Project.Provider"
                 props={{
                   View: Card,
                   path: projectPath,
