@@ -69,17 +69,15 @@ const tabs = [
           src="devs.near/widget/Compose"
           props={{
             index: {
-              post: JSON.stringify([
-                {
-                  key: {
-                    id: projectId,
-                    type: "thing",
-                  },
-                  value: {
-                    type: "md",
-                  },
+              post: JSON.stringify({
+                key: {
+                  id: projectId,
+                  type: "thing",
                 },
-              ]),
+                value: {
+                  type: "md",
+                },
+              }),
             },
           }}
         />
