@@ -11,6 +11,7 @@ jobs:
       BOS_SIGNER_ACCOUNT_ID: ${{ vars.SIGNER_ACCOUNT_ID }}
       BOS_SIGNER_PUBLIC_KEY: ${{ vars.SIGNER_PUBLIC_KEY }}
       BOS_SIGNER_PRIVATE_KEY: ${{ secrets.SIGNER_PRIVATE_KEY }}
+      NETWORK_ID: mainnet
 
     steps:
       - name: Checkout repository

@@ -1,5 +1,5 @@
 const { Feed } = VM.require("efiz.near/widget/Module.Feed");
-const { Card } = VM.require("discover.near/widget/Project.Module");
+const { Card } = VM.require("/*__@creatorAccount__*//widget/Project.Module");
 
 console.log();
 
@@ -61,7 +61,7 @@ return (
       <Feed
         index={{
           action: "notify",
-          key: "discover.near", // TODO: change to project
+          key: "/*__@creatorAccount__*/", // TODO: change to project
           options: {
             limit: 10,
             order: "desc",
@@ -76,7 +76,7 @@ return (
               return (
                 <div key={p}>
                   <Widget
-                    src="discover.near/widget/Project.Provider"
+                    src="/*__@creatorAccount__*//widget/Project.Provider"
                     props={{
                       View: Card,
                       path: projectPath,
@@ -116,7 +116,7 @@ return (
       {featured.map((projectPath) => (
         <div key={projectPath}>
           <Widget
-            src="discover.near/widget/Project.Provider"
+            src="/*__@creatorAccount__*//widget/Project.Provider"
             props={{
               View: Card,
               path: projectPath,
@@ -135,7 +135,7 @@ return (
       {hidden.map((projectPath) => (
         <div key={projectPath}>
           <Widget
-            src="discover.near/widget/Project.Provider"
+            src="/*__@creatorAccount__*//widget/Project.Provider"
             props={{
               View: Card,
               path: projectPath,

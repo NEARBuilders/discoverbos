@@ -1,5 +1,3 @@
-const ownerId = "discover.near";
-
 const FontDiv = styled.div`
   font-family: "Mona Sans", sans-serif;
 `;
@@ -18,7 +16,7 @@ return (
   <FontDiv>
     {sections.map((sec) => (
       <div id={sec.toLowerCase()} key={Math.random()}>
-        <Widget src={`${ownerId}/widget/Home.${sec}`} />
+        <Widget src={"/*__@creatorAccount__*//widget/Home.${sec}"} />
       </div>
     ))}
   </FontDiv>

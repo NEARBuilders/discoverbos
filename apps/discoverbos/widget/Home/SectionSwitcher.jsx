@@ -34,7 +34,7 @@ const ExploreData = {
     "EXPLORE on the BOS platform. This the gateway of gateways to a rich ecosystem of innovation, collaboration, and learning. Navigate through the OpenWeb and delve into a universe of endless opportunities.",
   cta: <>DISCOVER (NOW)</>,
   ctaIcon: SearchIcon,
-  ctaLink: "/discover.near/widget/Search",
+  ctaLink: "//*__@creatorAccount__*//widget/Search",
   relatedLinks: [
     {
       href: "/projects/built-with-bos",
@@ -457,7 +457,7 @@ const MobileSwitcher = ({ index, selected }) => {
   return (
     <div key={Math.random()}>
       <Widget
-        src="discover.near/widget/Home.Section"
+        src="/*__@creatorAccount__*//widget/Home.Section"
         props={{
           data: { ...InfoSections[index], mobile: true },
           mobileSwitcher: Switcher,
@@ -471,7 +471,7 @@ return (
   <>
     <Desktop className="d-flex align-items-center">
       <Widget
-        src="discover.near/widget/Home.Section"
+        src="/*__@creatorAccount__*//widget/Home.Section"
         props={{
           data: { ...InfoSections[state.selectedIndex] },
           switcher: Switcher,

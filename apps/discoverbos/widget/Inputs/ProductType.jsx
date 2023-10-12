@@ -1,5 +1,3 @@
-const ownerId = "discover.near";
-
 /** @type {{text:string;value:string}[]} */
 const options = [
   { text: "DAO", value: "dao" },
@@ -34,7 +32,7 @@ const mapOptionToValue = (option) => {
 
 return (
   <Widget
-    src={`${ownerId}/widget/Inputs.MultiSelect`}
+    src={"/*__@creatorAccount__*//widget/Inputs.MultiSelect"}
     props={{
       label: "Product type *",
       noLabel: props.noLabel,

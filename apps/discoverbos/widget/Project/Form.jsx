@@ -1,9 +1,7 @@
-const ownerId = "discover.near";
-
 if (!context.accountId) {
   return (
     <Widget
-      src={`${ownerId}/widget/InfoSegment`}
+      src={"/*__@creatorAccount__*//widget/InfoSegment"}
       props={{
         title: "Not logged in!",
         description: "You must log in to create a new project!",
@@ -196,7 +194,7 @@ return (
     <Form>
       <FormHeader>General</FormHeader>
       <Widget
-        src={`${ownerId}/widget/Inputs.Text`}
+        src={"/*__@creatorAccount__*//widget/Inputs.Text"}
         props={{
           label: "Project name *",
           placeholder: "Enter project name",
@@ -221,7 +219,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/Inputs.AccountId`}
+        src={"/*__@creatorAccount__*//widget/Inputs.AccountId"}
         props={{
           label: "Your project's NEAR Account *",
           placeholder:
@@ -233,7 +231,7 @@ return (
       />
       {state.addInfo && state.accountId !== context.accountId ? (
         <Widget
-          src={`${ownerId}/widget/InfoSegment`}
+          src={"/*__@creatorAccount__*//widget/InfoSegment"}
           props={{
             title: "Account ID of project",
             description: (
@@ -258,7 +256,7 @@ return (
         <></>
       )}
       <Widget
-        src={`${ownerId}/widget/Inputs.Verticals`}
+        src={"/*__@creatorAccount__*//widget/Inputs.Verticals"}
         props={{
           verticals: state.verticals,
           update: (verticals) => State.update({ verticals }),
@@ -267,7 +265,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/Inputs.ProductType`}
+        src={"/*__@creatorAccount__*//widget/Inputs.ProductType"}
         props={{
           productType: state.productType,
           update: (productType) => State.update({ productType }),
@@ -276,7 +274,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/Inputs.Integration`}
+        src={"/*__@creatorAccount__*//widget/Inputs.Integration"}
         props={{
           category: state.integration,
           update: (integration) => State.update({ integration }),
@@ -290,7 +288,7 @@ return (
       >
         <Hidable>
           <Widget
-            src={`${ownerId}/widget/Inputs.MultiSelect`}
+            src={"/*__@creatorAccount__*//widget/Inputs.MultiSelect"}
             props={{
               label: "Other chains",
               placeholder:
@@ -307,7 +305,7 @@ return (
         </Hidable>
       </Collapsible.Root>
       <Widget
-        src={`${ownerId}/widget/Inputs.Phase`}
+        src={"/*__@creatorAccount__*//widget/Inputs.Phase"}
         props={{
           dev: state.dev,
           update: (dev) => State.update({ dev }),
@@ -316,7 +314,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/Inputs.Text`}
+        src={"/*__@creatorAccount__*//widget/Inputs.Text"}
         props={{
           label: "Tagline",
           placeholder: "Write a one liner about your project",
@@ -336,7 +334,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/Inputs.TextArea`}
+        src={"/*__@creatorAccount__*//widget/Inputs.TextArea"}
         props={{
           label: "Description",
           placeholder: "Give a short description of your project",
@@ -357,7 +355,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/Inputs.Distribution`}
+        src={"/*__@creatorAccount__*//widget/Inputs.Distribution"}
         props={{
           distribution: state.distribution,
           update: (distribution) => State.update({ distribution }),
@@ -365,8 +363,8 @@ return (
           error: state.distributionError,
         }}
       />
-      {/*<Widget
-        src={`${ownerId}/widget/Inputs.MultiSelect`}
+      <Widget
+        src={"/*__@creatorAccount__*//widget/Inputs.MultiSelect"}
         props={{
           label: "Tags",
           placeholder: "Add tags",
@@ -379,9 +377,9 @@ return (
               })),
             }),
         }}
-      />*/}
+      />
       <Widget
-        src={`${ownerId}/widget/Inputs.Text`}
+        src={"/*__@creatorAccount__*//widget/Inputs.Text"}
         props={{
           label: "Website",
           placeholder: "Website URL (near.org)",
@@ -400,7 +398,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/Inputs.Number`}
+        src={"/*__@creatorAccount__*//widget/Inputs.Number"}
         props={{
           label: "Team size",
           placeholder: 10,
@@ -417,7 +415,7 @@ return (
         }}
       />
       <Widget
-        src={`${ownerId}/widget/Inputs.Text`}
+        src={"/*__@creatorAccount__*//widget/Inputs.Text"}
         props={{
           label: "Location",
           placeholder: "San Fancisco, CA",
@@ -437,7 +435,7 @@ return (
       />
       <FormFooter>
         <Widget
-          src={`${ownerId}/widget/Buttons.Green`}
+          src={"/*__@creatorAccount__*//widget/Buttons.Green"}
           props={{
             disabled: !validateForm(),
             onClick: () => {
@@ -503,7 +501,7 @@ return (
                     },
                   }),
                   notify: JSON.stringify({
-                    key: "discover.near",
+                    key: "/*__@creatorAccount__*/",
                     value: {
                       type: "request",
                       data: {

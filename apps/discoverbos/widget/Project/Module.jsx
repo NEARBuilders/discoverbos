@@ -16,7 +16,7 @@ const Card = ({ metadata, path }) => {
 
   return (
     <a
-      href={`/discover.near/widget/ProjectPage?path=${path}`}
+      href={`//*__@creatorAccount__*//widget/ProjectPage?path=${path}`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
       <div

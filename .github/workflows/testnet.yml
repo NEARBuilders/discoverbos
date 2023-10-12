@@ -11,6 +11,7 @@ jobs:
       BOS_SIGNER_ACCOUNT_ID: ${{ vars.TESTNET_SIGNER_ACCOUNT_ID }}
       BOS_SIGNER_PUBLIC_KEY: ${{ vars.TESTNET_SIGNER_PUBLIC_KEY }}
       BOS_SIGNER_PRIVATE_KEY: ${{ secrets.TESTNET_SIGNER_PRIVATE_KEY }}
+      NETWORK_ID: testnet
 
     steps:
       - name: Checkout repository

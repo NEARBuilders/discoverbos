@@ -1,13 +1,13 @@
 const accountId = context.accountId;
-const ownerId = "discover.near";
+const ownerId = "/*__@creatorAccount__*/";
 
 if (!accountId) {
   return "Please sign in with NEAR wallet to edit your homepage";
 }
 
-const defaultHomepage = `${ownerId}/widget/Home.Index`;
+const defaultHomepage = "/*__@creatorAccount__*//widget/Home.Index";
 
-const homepage = Social.get(`${accountId}/settings/discover.near/homepage`);
+const homepage = Social.get(`${accountId}/settings//*__@creatorAccount__*//homepage`);
 
 if (homepage === null) {
   return "Loading";
@@ -33,7 +33,7 @@ return (
     </div>
     <div className="mb-2">
       <CommitButton
-        data={{ settings: { "discover.near": { homepage: state.homepage } } }}
+        data={{ settings: { "/*__@creatorAccount__*/": { homepage: state.homepage } } }}
       >
         Save homepage
       </CommitButton>

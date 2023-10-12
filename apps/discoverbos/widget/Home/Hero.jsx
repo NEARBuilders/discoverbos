@@ -184,7 +184,7 @@ const HeroSection = () => {
                 placeholder="Discover"
               />
               <Button
-                href={`/discover.near/widget/Search?term=${state.searchTerm}`}
+                href={`//*__@creatorAccount__*//widget/Search?term=${state.searchTerm}`}
               >
                 <i className="bi bi-search"></i>
               </Button>

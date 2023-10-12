@@ -1,5 +1,3 @@
-const ownerId = "discover.near";
-
 const options = [
   { text: "Native", value: "native" },
   { text: "Multichain", value: "multichain" },
@@ -9,7 +7,7 @@ const options = [
 
 return (
   <Widget
-    src={`${ownerId}/widget/Inputs.Select`}
+    src="/*__@creatorAccount__*//widget/Inputs.Select"}
     props={{
       label: "Integration with NEAR *",
       noLabel: props.noLabel,
