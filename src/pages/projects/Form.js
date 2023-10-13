@@ -142,7 +142,7 @@ export default function ProjectsForm() {
   };
 
   return (
-    <main className="container pt-3">
+    <main className="container pt-3" style={{ maxWidth: "72rem" }}>
       <h2 style={{ textAlign: "center" }} className="mb-3">
         Submit New Project
       </h2>
