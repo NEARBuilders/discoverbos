@@ -59,6 +59,8 @@ export default function ProjectsForm() {
   const [website, setWebsite] = useState("");
   const [teamSize, setTeamSize] = useState();
   const [location, setLocation] = useState("");
+  const [projectLogo, setProjectLogo] = useState();
+  const [backgroundImage, setBackgroundImage] = useState();
 
   // form validation
   const [nameValidation, setNameValidation] = useState(false);
@@ -90,6 +92,7 @@ export default function ProjectsForm() {
     useState(false);
   const [distributionModelValidation, setDistributionModelValidation] =
     useState(false);
+  const [projectLogoValidation, setProjectLogoValidation] = useState(false);
 
   // validate select
   useEffect(() => {
@@ -118,6 +121,10 @@ export default function ProjectsForm() {
     );
   }, [selectedDistrubutionModal]);
 
+  useEffect(() => {
+    setProjectLogoValidation(projectLogo ? true : false);
+  }, [projectLogo]);
+
   const validateForm = () => {
     return (
       nameValidation &&
@@ -126,7 +133,8 @@ export default function ProjectsForm() {
       productTypeValidation &&
       nearIntegrationValidation &&
       developmentPhaseValidation &&
-      distributionModelValidation
+      distributionModelValidation &&
+      projectLogoValidation
     );
   };
 
@@ -167,6 +175,28 @@ export default function ProjectsForm() {
             {!accountValidation && (
               <Form.Text>Account ID must end with &apos;.near&apos;</Form.Text>
             )}
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="projectAccount">
+            <Form.Label>Project Logo *</Form.Label>
+            <Widget
+              src="near/widget/ImageEditorTabs"
+              props={{
+                image: projectLogo,
+                onChange: (img) => setProjectLogo(img),
+              }}
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="projectAccount">
+            <Form.Label>Project Background</Form.Label>
+            <Widget
+              src="near/widget/ImageEditorTabs"
+              props={{
+                image: backgroundImage,
+                onChange: (img) => setBackgroundImage(img),
+              }}
+            />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="verticals">
