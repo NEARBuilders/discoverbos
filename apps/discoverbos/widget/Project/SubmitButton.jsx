@@ -3,8 +3,6 @@ const validateForm = props.validateForm;
 const data = props.data;
 const did = props.did;
 
-console.log(data);
-
 return (
   <Widget
     src={`${ownerId}/widget/Buttons.Green`}
@@ -12,15 +10,13 @@ return (
       disabled: !validateForm,
       onClick: () => {
         if (!validateForm) return;
-
-        console.log("Clicked");
         Social.set({
           thing: {
             [did]: {
               "": JSON.stringify(data),
               metadata: {
                 name: data.name,
-                description: state.description,
+                description: data.description,
               },
             },
           },
