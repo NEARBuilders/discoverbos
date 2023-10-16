@@ -1,4 +1,5 @@
 const Button = styled.button`
+  all: unset;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -18,6 +19,12 @@ const Button = styled.button`
 
   &:disabled {
     background: #e5e5e5;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border: none;
   }
 `;
 

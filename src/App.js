@@ -66,7 +66,8 @@ import Projects from "./pages/projects/Projects";
 import Resources from "./pages/education/Resources";
 import Community from "./pages/communities/Community";
 import About from "./pages/About";
-import ProjectsForm from "./pages/projects/ProjectsForm";
+// import ProjectsForm from "./pages/projects/ProjectsForm";
+import ProjectsForm from "./pages/projects/Form";
 
 export const refreshAllowanceObj = {};
 const documentationHref = "https://social.near-docs.io/";
