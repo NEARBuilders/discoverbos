@@ -7,38 +7,38 @@ const Flex = styled.div`
 `;
 
 const { Feed } = VM.require("efiz.near/widget/Module.Feed");
+const { Card } = VM.require("discover.near/widget/Project.Module");
 Feed = Feed || (() => <></>);
 
 return (
   <>
-    <div className="my-3">
-      <h2>Projects built with BOS</h2>
-    </div>
     <Feed
       index={{
         action: "every",
-        key: "group", // TODO: change to project
+        key: "group", // TODO: replace with "project"
         options: {
-          // nft:mrbrownnft.near
           limit: 10,
           order: "desc",
           accountId: undefined,
         },
       }}
       Item={(p) => {
+        const projectPath = `${p.accountId}/thing/${p.value.id}`;
+        // if (!hiddenProjects.includes(projectPath)) {
+        console.log(projectPath);
         return (
-          <a
-            href={`/discover.near/widget/Project.Page?projectId=${p.value.id}&creatorId=${p.accountId}`}
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
+          <div key={p}>
             <Widget
-              key={p}
-              src={"discover.near/widget/Project.Card"}
-              props={{ projectId: p.value.id, creatorId: p.accountId }}
+              src="discover.near/widget/Project.Provider"
+              props={{
+                View: Card,
+                path: projectPath,
+              }}
             />
-          </a>
+          </div>
         );
       }}
+      // }
       Layout={Flex}
     />
   </>

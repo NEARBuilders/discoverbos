@@ -17,41 +17,41 @@ const canEdit = (accountId) => {
   );
 };
 
-const checkIsProject = (accountId) => {
-  return Near.asyncView(
-    ownerId,
-    "check_is_project",
-    { account_id: accountId },
-    "final",
-    false
-  );
-};
+// const checkIsProject = (accountId) => {
+//   return Near.asyncView(
+//     ownerId,
+//     "check_is_project",
+//     { account_id: accountId },
+//     "final",
+//     false
+//   );
+// };
 
-const checkIsVendor = (accountId) => {
-  return Near.asyncView(
-    ownerId,
-    "check_is_vendor",
-    { account_id: accountId },
-    "final",
-    false
-  );
-};
+// const checkIsVendor = (accountId) => {
+//   return Near.asyncView(
+//     ownerId,
+//     "check_is_vendor",
+//     { account_id: accountId },
+//     "final",
+//     false
+//   );
+// };
 
-const checkIsInvestor = (accountId) => {
-  return Near.asyncView(
-    ownerId,
-    "check_is_investor",
-    { account_id: accountId },
-    "final",
-    false
-  );
-};
+// const checkIsInvestor = (accountId) => {
+//   return Near.asyncView(
+//     ownerId,
+//     "check_is_investor",
+//     { account_id: accountId },
+//     "final",
+//     false
+//   );
+// };
 
-const checkIsTaken = {
-  project: checkIsProject,
-  vendor: checkIsVendor,
-  investor: checkIsInvestor,
-}[props.type ?? "project"];
+// const checkIsTaken = {
+//   project: checkIsProject,
+//   vendor: checkIsVendor,
+//   investor: checkIsInvestor,
+// }[props.type ?? "project"];
 
 State.init({
   valid: true,
@@ -106,52 +106,50 @@ const validate = async () => {
     return;
   }
 
-  checkIsTaken(value).then((isProject) => {
-    if (isProject) {
-      State.update({
-        valid: false,
-        errorMessage: "This account ID is already taken!",
-      });
-      addInfo(false);
-      return;
-    }
+  // checkIsTaken(value).then((isProject) => {
+  //   if (isProject) {
+  //     State.update({
+  //       valid: false,
+  //       errorMessage: "This account ID is already taken!",
+  //     });
+  //     addInfo(false);
+  //     return;
+  //   }
 
-    if (!props.addInfo) {
-      // if (forbiddenIds.has(value)) {
-      //   State.update({
-      //     valid: false,
-      //     errorMessage: "This account ID has already been used!",
-      //   });
-      //   return;
-      // }
-      //
-      State.update({ valid: true, errorMessage: "" });
-      addInfo(false);
-    }
+  //   if (!props.addInfo) {
+  //     // if (forbiddenIds.has(value)) {
+  //     //   State.update({
+  //     //     valid: false,
+  //     //     errorMessage: "This account ID has already been used!",
+  //     //   });
+  //     //   return;
+  //     // }
+  //     //
+  //     State.update({ valid: true, errorMessage: "" });
+  //     addInfo(false);
+  //   }
 
-    canEdit(value).then((editPermission) => {
-      if (!editPermission) {
-        if (value !== context.accountId) {
-          State.update({
-            valid: false,
-            errorMessage: "You do not have permission to edit this account!",
-          });
-        }
+  //   canEdit(value).then((editPermission) => {
+  //     if (!editPermission) {
+  //       if (value !== context.accountId) {
+  //         State.update({
+  //           valid: false,
+  //           errorMessage: "You do not have permission to edit this account!",
+  //         });
+  //       }
 
-        State.update({ valid: true, errorMessage: "" });
-        addInfo(true);
-        return;
-      }
+  //       State.update({ valid: true, errorMessage: "" });
+  //       addInfo(true);
+  //       return;
+  //     }
 
-      State.update({ valid: true, errorMessage: "" });
-      addInfo(false);
-    });
-  });
+  //     State.update({ valid: true, errorMessage: "" });
+  //     addInfo(false);
 };
 
 return (
   <Widget
-    src={`${ownerId}/widget/Inputs.Text`}
+    src={`${ownerId}/widget/InputsText`}
     props={{
       label,
       placeholder,

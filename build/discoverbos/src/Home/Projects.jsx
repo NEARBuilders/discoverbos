@@ -3,15 +3,41 @@ State.init({
   mobileIndex: 0,
 });
 
+const projectsPath =
+  JSON.parse(
+    Social.get(
+      `${context.accountId}/thing/project-registry/featured`,
+      "final"
+    ) || "null"
+  ) || [];
+
+if (projectsPath.length === 0) {
+  return <div>Loading...</div>;
+}
+
+console.log(projectsPath);
+
+const projects = projectsPath.map((it) => {
+  const data = Social.getr(it, "final");
+  return JSON.parse(data[""]);
+});
+
+if (projects.length === 0 || projectsPath[0] === null) {
+  return <div>Loading...</div>;
+}
+
+console.log(projects);
+
 const ProjectCard = ({ project }) => {
   if (project.type === "add") {
     const Container = styled.div`
-      max-width: 442.67px;
-      height: 515px;
+      max-width: 400px;
+      width: 100%;
       border-radius: 16px;
       background: #f6f6f6;
 
       display: flex;
+      flex-shrink: 0;
       align-items: center;
       justify-content: center;
     `;
@@ -34,8 +60,8 @@ const ProjectCard = ({ project }) => {
       line-height: normal;
     `;
     return (
-      <Container style={{ width: "30%" }}>
-        <Button href="#">View All Projects</Button>
+      <Container>
+        <Button href="/projects">View All Projects</Button>
       </Container>
     );
   }
@@ -158,7 +184,7 @@ const ProjectCard = ({ project }) => {
         <div>
           <BuilderLogo src="https://plus.unsplash.com/premium_photo-1668004507519-20874dc42842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2112&q=80" />
         </div>
-        <BuilderName className="flex-grow-1">Builder Name</BuilderName>
+        <BuilderName className="flex-grow-1">{project.dev}</BuilderName>
         <LikeButton>
           <i className="bi bi-heart"></i>
         </LikeButton>
@@ -167,22 +193,15 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <Card
-      className="p-4 d-flex flex-column gap-4"
-      style={{ maxWidth: 442.667, width: "30%", minWidth: 215 }}
-      key={Math.random()}
-    >
+    <Card className="p-4 d-flex flex-column gap-4" key={Math.random()}>
       <ProjectImage src={sampleImage} />
       <div className="d-flex flex-column gap-3">
         <div className="d-flex">
           <Tag>{HashTag} modal</Tag>
           <Time className="ms-auto">1 week ago</Time>
         </div>
-        <ProjectTitle>Super Cool Project</ProjectTitle>
-        <ProjectDetails>
-          Luas dan nyaman. meski belum berani kemana-mana karena kondisi
-          pandemi. hanya menilmati kamar dan sarapan. pelayanannya ramah.
-        </ProjectDetails>
+        <ProjectTitle>{project.name}</ProjectTitle>
+        <ProjectDetails>{project.description}</ProjectDetails>
         <BuilderInfo />
       </div>
     </Card>
@@ -254,15 +273,6 @@ const FeaturedProjects = () => {
     }
   `;
 
-  const projects = [
-    { asd: "" },
-    { asd: "" },
-    { asd: "" },
-    { asd: "" },
-    { asd: "" },
-    { type: "add" },
-  ];
-
   const nextProjects = () => {
     State.update({ projectsIndex: state.projectsIndex + 3 });
   };
@@ -289,7 +299,7 @@ const FeaturedProjects = () => {
             other members' lives.
           </SectionDescription>
         </div>
-        <div className="ms-auto d-flex gap-3 mt-auto">
+        <div className="ms-auto d-none gap-3 mt-auto">
           <NavigationButton
             disabled={state.projectsIndex === 0}
             className={state.projectsIndex === 0 && "inactive"}
@@ -304,10 +314,14 @@ const FeaturedProjects = () => {
           </NavigationButton>
         </div>
       </div>
-      <ResponsiveCards className="d-flex w-100 justify-content-between align-items-center mx-auto">
-        {projects.slice(state.projectsIndex, endIndex).map((project) => (
+      <ResponsiveCards className="d-flex w-100 overflow-x-scroll align-items-stretch mx-auto gap-3">
+        {projects.map((project) => (
           <ProjectCard key={`project-${Math.random()}`} project={project} />
         ))}
+        <ProjectCard
+          key={`project-${Math.random()}`}
+          project={{ type: "add" }}
+        />
       </ResponsiveCards>
     </SectionContainer>
   );
@@ -380,7 +394,7 @@ const MobileProjects = () => {
           style={{ height: "425px", marginBottom: 24 }}
           className="justify-content-center  align-items-center"
         >
-          <Button>View All Projects</Button>
+          <Button href="/projects">View All Projects</Button>
         </Card>
       );
     }
@@ -570,14 +584,14 @@ const MobileProjects = () => {
     }
   `;
 
-  const projects = [
-    { asd: "" },
-    { asd: "" },
-    { asd: "" },
-    { asd: "" },
-    { asd: "" },
-    { type: "add" },
-  ];
+  // TODO: Projects should be shown here
+  const projects =
+    JSON.parse(
+      Social.get(
+        `${context.accountId}/thing/project-registry/featured`,
+        "final"
+      ) || "null"
+    ) || [];
 
   const nextProjects = () => {
     State.update({ mobileIndex: state.mobileIndex + 1 });

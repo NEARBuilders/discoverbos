@@ -75,7 +75,7 @@ const FormFooter = styled.div`
 State.init({
   name: "",
   nameError: "",
-  accountId: "",
+  accountId: context.accountId,
   accountIdError: "",
   verticals: [],
   verticalsError: "",
@@ -175,6 +175,19 @@ const validateForm = () => {
   );
 };
 
+const UUID = {
+  generate: (template) => {
+    if (typeof template !== "string") {
+      template = "xxxxxxxx-xxxx-xxxx-yxxx-xxxxxxxxxxxx";
+    }
+    return template.replace(/[xy]/g, (c) => {
+      var r = (Math.random() * 16) | 0;
+      var v = c === "x" ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    });
+  },
+};
+
 return (
   <Container>
     <div>
@@ -212,7 +225,7 @@ return (
         props={{
           label: "Your project's NEAR Account *",
           placeholder:
-            "Enter the NEAR account ID of your project (wallet address like nearhorizon.near)",
+            "Enter the NEAR account ID of your project (wallet address like discover.near)",
           value: state.accountId,
           onChange: (accountId) => State.update({ accountId }),
           addInfo: (addInfo) => State.update({ addInfo }),
@@ -424,84 +437,83 @@ return (
       />
       <FormFooter>
         <Widget
-          src={`${ownerId}/widget/ButtonsGreen`}
+          src={`${ownerId}/widget/Buttons.Green`}
           props={{
             disabled: !validateForm(),
             onClick: () => {
               if (!validateForm()) return;
               const data = {
-                [state.accountId]: {
-                  profile: {
-                    name: state.name,
-                    verticals: state.verticals.reduce(
-                      (acc, name) => Object.assign(acc, { [name]: "" }),
-                      {}
-                    ),
-                    product_type: state.productType.reduce(
-                      (acc, name) => Object.assign(acc, { [name]: "" }),
-                      {}
-                    ),
-                    dev: state.dev.value,
-                    ...(state.team ? { team: `${state.team}` } : {}),
-                    ...(state.tagline ? { tagline: state.tagline } : {}),
-                    ...(state.description
-                      ? { description: state.description }
-                      : {}),
-                    ...(state.tags.length
-                      ? {
-                          tags: state.tags.reduce(
-                            (acc, { name }) =>
-                              Object.assign(acc, { [name]: "" }),
-                            {}
-                          ),
-                        }
-                      : {}),
-                    ...(state.website || state.socials
-                      ? {
-                          ...state.socials,
-                          ...(state.website
-                            ? {
-                                website: state.website.startsWith("http://")
-                                  ? state.website.substring(7)
-                                  : state.website.startsWith("https://")
-                                  ? state.website.substring(8)
-                                  : state.website,
-                              }
-                            : {}),
-                        }
-                      : {}),
+                name: state.name,
+                verticals: state.verticals.reduce(
+                  (acc, name) => Object.assign(acc, { [name]: "" }),
+                  {}
+                ),
+                accountId: state.accountId,
+                product_type: state.productType.reduce(
+                  (acc, name) => Object.assign(acc, { [name]: "" }),
+                  {}
+                ),
+                dev: state.dev.value,
+                ...(state.team ? { team: `${state.team}` } : {}),
+                ...(state.tagline ? { tagline: state.tagline } : {}),
+                ...(state.description
+                  ? { description: state.description }
+                  : {}),
+                ...(state.tags.length
+                  ? {
+                      tags: state.tags.reduce(
+                        (acc, { name }) => Object.assign(acc, { [name]: "" }),
+                        {}
+                      ),
+                    }
+                  : {}),
+                ...(state.website || state.socials
+                  ? {
+                      ...state.socials,
+                      ...(state.website
+                        ? {
+                            website: state.website.startsWith("http://")
+                              ? state.website.substring(7)
+                              : state.website.startsWith("https://")
+                              ? state.website.substring(8)
+                              : state.website,
+                          }
+                        : {}),
+                    }
+                  : {}),
+              };
+
+              // TODO: Move this out of this component
+              const did = UUID.generate("xxxxxxx");
+              Social.set({
+                thing: {
+                  [did]: {
+                    "": JSON.stringify(data),
+                    metadata: {
+                      name: data.name,
+                      description: state.description,
+                    },
                   },
                 },
-              };
-              console.log(data);
-              // const deposit = Big(JSON.stringify(data).length * 16).mul(
-              //   Big(10).pow(20)
-              // );
-              // const transactions = [
-              //   {
-              //     contractName: "social.near",
-              //     methodName: "set",
-              //     deposit,
-              //     args: { data },
-              //   },
-              //   {
-              //     contractName: ownerId,
-              //     methodName: "add_project",
-              //     args: { account_id: state.accountId },
-              //   },
-              //   {
-              //     contractName: ownerId,
-              //     methodName: "edit_project",
-              //     args: {
-              //       account_id: state.accountId,
-              //       project: {
-              //         integration: state.integration.value,
-              //         ...(state.geo ? { geo: state.geo } : {}),
-              //       },
-              //     },
-              //   },
-              // ];
-              // Near.call(transactions);
+                index: {
+                  every: JSON.stringify({
+                    key: "group",
+                    value: {
+                      id: did,
+                    },
+                  }),
+                  notify: JSON.stringify({
+                    key: "discover.near",
+                    value: {
+                      type: "request",
+                      data: {
+                        type: "featured",
+                        src: `${context.accountId}/thing/${did}`,
+                      },
+                    },
+                  }),
+                },
+              });
             },
             text: (
               <>
