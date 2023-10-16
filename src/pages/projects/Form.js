@@ -4,6 +4,7 @@ import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import CreatableSelect from "react-select/creatable";
 import { Widget } from "near-social-vm";
+import { useBosLoaderStore } from "../../stores/bos-loader";
 
 const verticalOptions = [
   { value: "DeSci", label: "DeSci" },
@@ -48,6 +49,9 @@ const distributionModelOptions = [
 ];
 
 export default function ProjectsForm() {
+
+  const redirectMapStore = useBosLoaderStore(); // We need this in order to run Widgets from local
+
   const [validated, setValidated] = useState(false);
 
   // form state values
@@ -279,7 +283,10 @@ const validateForm = () => {
             />
           </Form.Group>
           <Widget
-              src="discover.near/widget/Project.SubmitButton" 
+              src="discover.near/widget/Project.SubmitButton"
+              config={{
+                redirectMap: redirectMapStore.redirectMap,
+              }}
               props={{
                 data: {
                   name: projectName,
