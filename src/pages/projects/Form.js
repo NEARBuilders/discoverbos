@@ -1,11 +1,10 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-
 import CreatableSelect from "react-select/creatable";
+import { Widget } from "near-social-vm";
+import { useBosLoaderStore } from "../../stores/bos-loader";
+import { v4 } from "uuid";
 
 const verticalOptions = [
   { value: "DeSci", label: "DeSci" },
@@ -50,7 +49,7 @@ const distributionModelOptions = [
 ];
 
 export default function ProjectsForm() {
-  const [validated, setValidated] = useState(false);
+  const redirectMapStore = useBosLoaderStore(); // We need this in order to run Widgets from local
 
   // form state values
   const [projectName, setProjectName] = useState("");
@@ -119,27 +118,19 @@ export default function ProjectsForm() {
     );
   }, [selectedDistrubutionModal]);
 
-  // submit form
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setValidated(true);
-    const data = {
-      name: projectName,
-      accountId: projectAccount,
-      verticals: selectedVerticals,
-      productType: selectedProductType,
-      nearIntegration: selectedNearIntegration,
-      developmentPhase: selectedDevelopmentPhase,
-      tagline: tagline,
-      description: description,
-      distributionModal: selectedDistrubutionModal,
-      website: website,
-      teamSize: teamSize,
-      location: location,
-    };
-
-    console.log(data);
+  const validateForm = () => {
+    return (
+      nameValidation &&
+      accountValidation &&
+      verticalsValidation &&
+      productTypeValidation &&
+      nearIntegrationValidation &&
+      developmentPhaseValidation &&
+      distributionModelValidation
+    );
   };
+
+  const did = useMemo(() => v4(), []);
 
   return (
     <main className="container pt-3" style={{ maxWidth: "72rem" }}>
@@ -147,7 +138,7 @@ export default function ProjectsForm() {
         Submit New Project
       </h2>
       <div>
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        <Form noValidate onSubmit={(e) => e.preventDefault()}>
           <Form.Group className="mb-3" controlId="projectName">
             <Form.Label>Project Name *</Form.Label>
             <Form.Control
@@ -287,23 +278,30 @@ export default function ProjectsForm() {
               onChange={(e) => setLocation(e.target.value)}
             />
           </Form.Group>
-
-          <Button
-            className="mb-3"
-            variant="primary"
-            disabled={
-              !nameValidation ||
-              !accountValidation ||
-              !verticalsValidation ||
-              !productTypeValidation ||
-              !nearIntegrationValidation ||
-              !developmentPhaseValidation ||
-              !distributionModelValidation
-            }
-            type="submit"
-          >
-            Submit
-          </Button>
+          <Widget
+            src="discover.near/widget/Project.SubmitButton"
+            config={{
+              redirectMap: redirectMapStore.redirectMap,
+            }}
+            props={{
+              data: {
+                name: projectName,
+                accountId: projectAccount,
+                verticals: selectedVerticals,
+                productType: selectedProductType,
+                nearIntegration: selectedNearIntegration,
+                developmentPhase: selectedDevelopmentPhase,
+                tagline: tagline,
+                description: description,
+                distributionModal: selectedDistrubutionModal,
+                website: website,
+                teamSize: teamSize,
+                location: location,
+              },
+              validateForm: validateForm(),
+              did,
+            }}
+          />
         </Form>
       </div>
     </main>
