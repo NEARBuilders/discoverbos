@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import Button from "react-bootstrap/Button";
@@ -159,36 +159,8 @@ const Nav = styled.nav`
 
   z-index: 50;
 
-  .nav-search {
-    display: none;
-  }
-
-  &.fixed {
-    .nav-search {
-      animation: 300ms fadeIn ease-in-out;
-      display: block;
-    }
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0%;
-    }
-    100% {
-      opacity: 100%;
-    }
-  }
-
   @media screen and (max-width: 1200px) {
     padding: 24px 60px;
-  }
-
-  @media screen and (max-width: 1200px) {
-    &.fixed {
-      .nav-search {
-        display: none !important;
-      }
-    }
   }
 
   @media screen and (max-width: 990px) {
@@ -220,68 +192,6 @@ const MobileLinks = styled.div`
   @media screen and (max-width: 800px) {
     margin-left: auto;
     display: block !important;
-  }
-`;
-
-const InputContainer = styled.div`
-  display: flex;
-  align-items: center;
-  border-radius: 10px;
-  border: 1.5px solid #1d8e65;
-  background: white;
-  overflow: hidden;
-
-  max-width: 605px;
-`;
-
-const Input = styled.input`
-  flex: 1;
-  padding: 13px;
-  border: none;
-  outline: none;
-  border-radius: 0;
-
-  &::placeholder {
-    color: #9ba1a5;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    opacity: 1; /* Firefox */
-  }
-
-  &::-ms-input-placeholder {
-    /* Edge 12 -18 */
-    color: #9ba1a5;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  }
-`;
-
-const SearchButton = styled.a`
-  background: none;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  color: white;
-  background: #1b1b18;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:hover {
-    background: #000000;
-    color: white;
-    text-decoration: none;
-  }
-
-  &:active {
-    outline: none;
-    border: none;
   }
 `;
 
@@ -421,20 +331,9 @@ const links = [
     ],
   },
   {
-    category: "Community",
-    href: "/community",
+    category: "Tools",
+    href: "/tools",
     menu: [
-      { href: "/communities/developer", name: "Developer" },
-      { href: "/communities/project", name: "Project" },
-      { href: "/communities/regional", name: "Regional" },
-      { href: "/communities/general-bos", name: "General BOS" },
-    ],
-  },
-  {
-    category: "About",
-    href: "/about",
-    menu: [
-      { href: "/about", name: "About DiscoverBOS" },
       { href: "/integrations", name: "Integrations" },
       { href: "/infrastructure", name: "Infrasturcture" },
       { href: "/gateways", name: "Gateways" },
@@ -444,58 +343,19 @@ const links = [
 
 export default function Navbar(props) {
   const [show, setShow] = useState(false);
-  const [fix, setFix] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  useEffect(() => {
-    function setFixed() {
-      if (window.scrollY >= 485) {
-        setFix(true);
-      } else {
-        setFix(false);
-      }
-    }
-
-    if (window.location.pathname === "/") {
-      window.addEventListener("scroll", setFixed);
-    } else {
-      setFix(true);
-    }
-  }, []);
-
-  function URLify(string) {
-    return string.trim().replace(/\s/g, "%20");
-  }
-
   return (
     <>
       <Nav
-        className={`w-100 d-flex gap-3 align-items-center ${fix && "fixed"}`}
+        className={`w-100 d-flex gap-3 align-items-center`}
         style={{ height: 92 }}
       >
         <a style={{ cursor: "pointer" }} href="/">
           <Logo />
         </a>
-        <div className="nav-search flex-grow-1">
-          <InputContainer className="input-group">
-            <Input
-              className="form-control"
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Discover"
-            />
-            <SearchButton
-              className="p-0 m-0 d-flex align-items-center justify-content-center"
-              href={`/discover.near/widget/Search?term=${URLify(searchTerm)}`}
-            >
-              <i className="bi bi-search"></i>
-            </SearchButton>
-          </InputContainer>
-        </div>
         <LinksDiv className="ms-auto align-items-center">
           {/* Dropdowns */}
           {links.map((item) => (
@@ -511,7 +371,10 @@ export default function Navbar(props) {
               Sign out
             </AuthButton> */}
           {props.signedIn ? (
-            <ProfileIcon accountId={props.signedAccountId} />
+            <ProfileIcon
+              accountId={props.signedAccountId}
+              logOut={props.logOut}
+            />
           ) : (
             <AuthButton onClick={props.requestSignIn} className="sign-in">
               Sign in
@@ -555,23 +418,6 @@ export default function Navbar(props) {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <div className="d-flex flex-column gap-3">
-                <div className="nav-search flex-grow-1">
-                  <InputContainer className="input-group">
-                    <Input
-                      className="form-control"
-                      type="text"
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      placeholder="Discover"
-                    />
-                    <SearchButton
-                      href={`/discover.near/widget/Search?term=${searchTerm}`}
-                    >
-                      <i className="bi bi-search"></i>
-                    </SearchButton>
-                  </InputContainer>
-                </div>
-
                 <div className="d-flex flex-column">
                   {links.map((it) => (
                     <MobileDropdown

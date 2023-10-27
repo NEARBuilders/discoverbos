@@ -4,15 +4,7 @@ const FontDiv = styled.div`
   font-family: "Mona Sans", sans-serif;
 `;
 
-const sections = [
-  "Hero",
-  "WhatIsBOS",
-  "SectionSwitcher",
-  "Projects",
-  "Builders",
-  "UpcomingEvents",
-  "Explore",
-];
+const sections = ["Hero", "SectionSwitcher", "Projects", "Explore"];
 
 return (
   <FontDiv>

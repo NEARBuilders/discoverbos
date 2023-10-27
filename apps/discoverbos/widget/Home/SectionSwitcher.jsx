@@ -31,7 +31,7 @@ const ExploreData = {
   open: true,
   title: "Explore",
   description:
-    "EXPLORE on the BOS platform. This the gateway of gateways to a rich ecosystem of innovation, collaboration, and learning. Navigate through the OpenWeb and delve into a universe of endless opportunities.",
+    "DiscoverBOS is a gateway to provide direction and resources for developers and curious Users to the world of BOS.",
   cta: <>DISCOVER (NOW)</>,
   ctaIcon: SearchIcon,
   ctaLink: "/discover.near/widget/Search",
@@ -86,7 +86,7 @@ const LearnData = {
   background: "colored",
   title: "Learn",
   description:
-    "FIND a panoply of tutorials, guides, and valuable insights on components, gateways, opportunities and much more. Gain information and grow your knowledge.",
+    "It features a curation of projects, resources, components, and communities to get you started in your knowledge on BOS and the BOS ecosystem.",
   cta: <>DISCOVER (NOW)</>,
   ctaIcon: LinkConnectIcon,
   ctaLink: "#",
