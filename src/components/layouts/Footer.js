@@ -91,7 +91,6 @@ export default function Footer(props) {
   return (
     <footer
       style={{
-        minHeight: "42.5rem",
         width: "100%",
         background: "linear-gradient(90deg, #03B172 0%, #05EB97 100%)",
         padding: "40px 40px 24px 40px",

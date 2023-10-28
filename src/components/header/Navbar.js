@@ -218,17 +218,6 @@ const MobileHeading = styled.div`
   }
 `;
 
-const MobileDropdownLink = styled.a`
-  padding: 4px 8px;
-  color: #1b1b1b;
-  font-size: 14px;
-  font-weight: 500;
-
-  &:hover {
-    text-decoration: none;
-  }
-`;
-
 const MobileDropdown = ({ title, links, href }) => {
   const [open, setOpen] = useState(false);
 
@@ -246,58 +235,14 @@ const MobileDropdown = ({ title, links, href }) => {
           </>
         )}
       </MobileHeading>
-      <div className="d-flex flex-column gap-2">
-        {open &&
-          links &&
-          links.map((link) => (
-            <MobileDropdownLink
-              href={link.href}
-              key={`mobile-link-${link.name}`}
-            >
-              {link.name}
-            </MobileDropdownLink>
-          ))}
-      </div>
     </div>
   );
 };
 
-function MenuDropdown({ name, links, href }) {
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  const handleMouseEnter = () => {
-    setShowDropdown(true);
-  };
-
-  const handleMouseLeave = () => {
-    setShowDropdown(false);
-  };
-
+function MenuDropdown({ name, href }) {
   return (
-    <div
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className="position-relative d-flex flex-column align-items-center"
-    >
+    <div className="position-relative d-flex flex-column align-items-center">
       <NavLinks href={href}>{name}</NavLinks>
-      {links && showDropdown && (
-        <div
-          style={{ zIndex: 100, top: 50, width: "max-content" }}
-          className="position-absolute rounded-3 shadow bg-white p-3"
-        >
-          <div className="d-flex flex-column gap-3">
-            {links.map((link, idx) => (
-              <a
-                key={`${name}-${idx}`}
-                href={link.href}
-                style={{ textAlign: "center", color: "inherit" }}
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 }
@@ -307,37 +252,14 @@ const links = [
   {
     category: "Projects",
     href: "/projects",
-    menu: [
-      { href: "/projects/built-with-bos", name: "Built with BOS" },
-      { href: "/projects/native-projects", name: "BOS Native" },
-      {
-        href: "/projects/bos-integration",
-        name: "Integrated with BOS",
-      },
-      {
-        href: "/projects-form",
-        name: "Submit your project",
-      },
-    ],
   },
   {
     category: "Resources",
     href: "/resources",
-    menu: [
-      { href: "/education/tutorials", name: "Tutorials" },
-      { href: "/education/code-reviews", name: "Code Reviews" },
-      { href: "/education/workshops", name: "Workshops/Webinars" },
-      { href: "/education/office-hours", name: "Office Hours" },
-    ],
   },
   {
     category: "Tools",
     href: "/tools",
-    menu: [
-      { href: "/integrations", name: "Integrations" },
-      { href: "/infrastructure", name: "Infrasturcture" },
-      { href: "/gateways", name: "Gateways" },
-    ],
   },
 ];
 

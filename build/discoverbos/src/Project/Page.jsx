@@ -55,7 +55,7 @@ if (!data) {
   return <div>Project not found</div>;
 }
 
-const projectData = JSON.parse(data[""]);
+const projectData = data.profile;
 console.log(projectData);
 
 const tabs = [
@@ -142,8 +142,7 @@ State.init({
   selectedTab: tabs[0],
 });
 
-const { metadata } = data;
-const { name, description, image, backgroundImage } = metadata;
+const { name: projectName, tagline, image, backgroundImage } = projectData;
 
 function Module({ module }) {
   if (typeof module === "function") {
@@ -163,23 +162,31 @@ return (
     />
 
     <div className="d-md-flex d-block justify-content-between container">
-      <div className="d-md-flex d-block align-items-start">
+      <div className="d-md-flex d-block align-items-start mb-5">
         <div className="position-relative">
           <div style={{ width: 150, height: 100 }}>
-            <img
-              alt="Loading logo..."
-              className="border border-3 border-white rounded-circle shadow position-absolute"
-              width="150"
-              height="150"
-              src={`https://ipfs.near.social/ipfs/${image.ipfs_cid}`}
-              style={{ top: -50 }}
+            <Widget
+              src="mob.near/widget/Image"
+              props={{
+                image: image,
+                alt: `loading logo`,
+                className:
+                  "border border-3 border-white rounded-circle shadow position-absolute",
+                style: {
+                  width: 150,
+                  height: 150,
+                  objectFit: "cover",
+                },
+                fallbackUrl:
+                  "https://www.ivins.com/wp-content/uploads/2020/09/placeholder-1.png",
+              }}
             />
           </div>
         </div>
 
         <div className="d-flex flex-column ps-3 pt-3 pb-2">
-          <span className="h1 text-nowrap">{name}</span>
-          <span className="text-secondary">{description}</span>
+          <span className="h1 text-nowrap">{projectName}</span>
+          <span className="text-secondary">{tagline}</span>
         </div>
       </div>
 

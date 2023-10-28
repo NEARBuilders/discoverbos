@@ -74,8 +74,7 @@ const ProjectCard = ({ project }) => {
     background: #fff;
     box-shadow: 0px 12px 18px 0px rgba(0, 0, 0, 0.07);
 
-    max-width: 24rem;
-    width: 100%;
+    min-width: 24rem;
   `;
 
   const Tag = styled.div`
@@ -131,7 +130,7 @@ const ProjectCard = ({ project }) => {
       <div className="d-flex flex-column gap-3">
         <div className="d-flex align-items-center gap-2 overflow-auto">
           {Object.keys(project.tags).map((it) => (
-            <Tag>
+            <Tag key={Math.random()}>
               {HashTag} {it}
             </Tag>
           ))}
