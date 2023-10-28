@@ -73,7 +73,7 @@ const ProjectCard = ({ project }) => {
     border: 1px solid #cfcfcf;
     background: #fff;
     box-shadow: 0px 12px 18px 0px rgba(0, 0, 0, 0.07);
-
+    background: transparent;
     min-width: 24rem;
   `;
 
@@ -124,17 +124,29 @@ const ProjectCard = ({ project }) => {
     margin: 0;
   `;
 
+  const TagsContainer = styled.div`
+    background-image: linear-gradient(to right, white, white),
+      linear-gradient(to right, white, white),
+      linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0)),
+      linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0));
+    background-position: left center, right center, left center, right center;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+    background-attachment: local, local, scroll, scroll;
+  `;
+
   return (
     <Card className="p-4 d-flex flex-column gap-4" key={Math.random()}>
       <ProjectImage src={project.image.url} />
       <div className="d-flex flex-column gap-3">
-        <div className="d-flex align-items-center gap-2 overflow-auto">
+        <TagsContainer className="d-flex align-items-center gap-2 overflow-auto">
           {Object.keys(project.tags).map((it) => (
             <Tag key={Math.random()}>
               {HashTag} {it}
             </Tag>
           ))}
-        </div>
+        </TagsContainer>
         <ProjectTitle>{project.name}</ProjectTitle>
 
         <ProjectDetails>
@@ -226,10 +238,15 @@ const FeaturedProjects = () => {
   const endIndex = state.projectsIndex + 3;
 
   const ResponsiveCards = styled.div`
-    @media screen and (max-width: 1435px) {
-      /* flex-wrap: wrap;
-      justify-content: center !important; */
-    }
+    background-image: linear-gradient(to right, white, white),
+      linear-gradient(to right, white, white),
+      linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0)),
+      linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0));
+    background-position: left center, right center, left center, right center;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+    background-attachment: local, local, scroll, scroll;
   `;
 
   return (
@@ -258,7 +275,7 @@ const FeaturedProjects = () => {
           </NavigationButton>
         </div>
       </div>
-      <ResponsiveCards className="d-flex w-100 overflow-x-scroll align-items-stretch mx-auto gap-3">
+      <ResponsiveCards className="d-flex w-100 overflow-auto align-items-stretch mx-auto gap-3">
         {projectsData.map((project) => (
           <ProjectCard
             key={`project-${Math.random()}`}
