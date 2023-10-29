@@ -69,11 +69,29 @@ function toUrl(image) {
 }
 
 const [currentCategory, setCurrentCategory] = useState("");
+const [searchKey, setSearchKey] = useState("");
 let filteredApps = categoriesWithProjects;
 if (currentCategory !== "") {
   filteredApps = categoriesWithProjects.filter(
     (it) => it.category === currentCategory
   );
+}
+if (searchKey !== "") {
+  filteredApps = projectsData.filter((project) =>
+    project.data.name.toLowerCase().includes(searchKey.toLowerCase())
+  );
+  filteredApps = [
+    {
+      category: `Searching for "${searchKey}"`,
+      projects: filteredApps.map((it) => {
+        return {
+          projectKey: it.key,
+          ...it.data,
+          tags: Object.keys(it.data.tags),
+        };
+      }),
+    },
+  ];
 }
 
 const SidebarDiv = styled.div`
@@ -167,6 +185,55 @@ const AppCard = ({ project }) => {
   );
 };
 
+const ProjectBox = styled.div`
+  width: 8rem;
+  height: 8rem;
+  border-radius: 16px;
+
+  position: relative;
+`;
+
+const ProjectImage = styled.img`
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 16px;
+  object-fit: cover;
+
+  top: 0;
+  left: 0;
+`;
+const ProjectTitle = styled.span`
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 3.5rem 1.25rem 1.25rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 20%,
+    rgba(0, 0, 0, 0)
+  );
+  text-shadow: rgba(0, 0, 0, 0.75) 0px 0px 2px;
+  z-index: 2;
+  color: white;
+  border-radius: 16px;
+  text-align: center;
+`;
+
+const FeaturedProject = ({ project, projectKey }) => {
+  return (
+    <a
+      href={`/discover.near/widget/Project.Page?path=legacy-awesome.near/project/${projectKey}`}
+    >
+      <ProjectBox>
+        <ProjectTitle>{project.name}</ProjectTitle>
+        <ProjectImage src={toUrl(project.image)} />
+      </ProjectBox>
+    </a>
+  );
+};
+
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -182,17 +249,58 @@ const AppsContainer = styled.div`
   grid-column: span 3 / span 3;
 `;
 
+const ResponsiveAppContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+`;
+
+const CTA = styled.a`
+  background: #00bf63;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50rem;
+`;
+
 return (
   <Container className="container pt-3">
     <Sidebar />
     <AppsContainer>
-      {currentCategory === "" && <h2 className="mb-5">All Projects</h2>}
+      {currentCategory === "" && (
+        <div className="mb-5">
+          <div className="d-flex align-items-center justify-content-between mb-3">
+            <h2>Featured Projects</h2>
+            <CTA href="/projects-form">Submit your project</CTA>
+          </div>
+          <div className="d-flex flex-wrap gap-3 align-items-center justify-content-center">
+            {projectsData.slice(0, 10).map((it) => (
+              <FeaturedProject project={it.data} projectKey={it.key} />
+            ))}
+          </div>
+        </div>
+      )}
+      <div className="mb-5">
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchKey}
+          onChange={(e) => setSearchKey(e.target.value)}
+        />
+      </div>
       {filteredApps.map((it) => (
         <div className="mb-5" style={{ maxWidth: "100%" }}>
           <h2>{it.category}</h2>
-          {it.projects.map((project) => (
-            <AppCard project={project} />
-          ))}
+          <ResponsiveAppContainer>
+            {it.projects.map((project) => (
+              <AppCard project={project} />
+            ))}
+          </ResponsiveAppContainer>
         </div>
       ))}
     </AppsContainer>

@@ -59,8 +59,8 @@ const HeroSection = () => {
           }}
         >
           <Heading>
-            <BoldWord>Discover</BoldWord>,<BoldWord>Explore</BoldWord>,
-            <BoldWord>Connect</BoldWord>, and
+            <BoldWord>Discover</BoldWord> • <BoldWord>Explore</BoldWord> •{" "}
+            <BoldWord>Connect</BoldWord> • And
             <BoldWord>Learn</BoldWord> about the World of
             <BoldWord>BOS</BoldWord>
           </Heading>
