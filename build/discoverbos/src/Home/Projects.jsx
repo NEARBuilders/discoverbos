@@ -3,30 +3,24 @@ State.init({
   mobileIndex: 0,
 });
 
-const projectsPath =
-  JSON.parse(
-    Social.get(
-      `${context.accountId}/thing/project-registry/featured`,
-      "final"
-    ) || "null"
-  ) || [];
+const projects = Social.keys("legacy-awesome.near/project/*");
 
-if (projectsPath.length === 0) {
-  return <div>Loading...</div>;
+if (!projects) {
+  return "Loading...";
 }
 
-console.log(projectsPath);
+const projectsData = Object.keys(projects["legacy-awesome.near"].project)
+  .map((it) => {
+    return {
+      key: it,
+      data: Social.get(`legacy-awesome.near/project/${it}/**`).profile,
+    };
+  })
+  .slice(0, 6);
 
-const projects = projectsPath.map((it) => {
-  const data = Social.getr(it, "final");
-  return JSON.parse(data[""]);
-});
-
-if (projects.length === 0 || projectsPath[0] === null) {
-  return <div>Loading...</div>;
+if (!projectsData) {
+  return "Loading...";
 }
-
-console.log(projects);
 
 const ProjectCard = ({ project }) => {
   if (project.type === "add") {
@@ -66,11 +60,9 @@ const ProjectCard = ({ project }) => {
     );
   }
 
-  const sampleImage =
-    "https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80";
-
   const ProjectImage = styled.img`
     height: 232px;
+    width: 100%;
     border-radius: 16px;
     box-shadow: 0px 6px 20px -4px rgba(55, 74, 89, 0.36);
     object-fit: cover;
@@ -81,14 +73,8 @@ const ProjectCard = ({ project }) => {
     border: 1px solid #cfcfcf;
     background: #fff;
     box-shadow: 0px 12px 18px 0px rgba(0, 0, 0, 0.07);
-  `;
-
-  const Time = styled.div`
-    color: #6e798c;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    background: transparent;
+    min-width: 24rem;
   `;
 
   const Tag = styled.div`
@@ -138,71 +124,41 @@ const ProjectCard = ({ project }) => {
     margin: 0;
   `;
 
-  const BuilderInfo = () => {
-    const BuilderLogo = styled.img`
-      width: 45px;
-      height: 45px;
-      border-radius: 45px;
-    `;
-    const BuilderName = styled.p`
-      color: #081f32;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      margin: 0;
-    `;
-
-    const LikeButton = styled.button`
-      display: flex;
-      height: 47px;
-      padding: 12px 16px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-
-      border-radius: 8px;
-      background: #dbdbdb;
-
-      border: none;
-      outline: none;
-
-      &:hover {
-        border: none;
-        outline: none;
-      }
-
-      &:active {
-        border: none;
-        outline: none;
-      }
-    `;
-
-    return (
-      <div className="d-flex gap-3 align-items-center">
-        <div>
-          <BuilderLogo src="https://plus.unsplash.com/premium_photo-1668004507519-20874dc42842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2112&q=80" />
-        </div>
-        <BuilderName className="flex-grow-1">{project.dev}</BuilderName>
-        <LikeButton>
-          <i className="bi bi-heart"></i>
-        </LikeButton>
-      </div>
-    );
-  };
+  const TagsContainer = styled.div`
+    background-image: linear-gradient(to right, white, white),
+      linear-gradient(to right, white, white),
+      linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0)),
+      linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0));
+    background-position: left center, right center, left center, right center;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+    background-attachment: local, local, scroll, scroll;
+  `;
 
   return (
     <Card className="p-4 d-flex flex-column gap-4" key={Math.random()}>
-      <ProjectImage src={sampleImage} />
+      <ProjectImage src={project.image.url} />
       <div className="d-flex flex-column gap-3">
-        <div className="d-flex">
-          <Tag>{HashTag} modal</Tag>
-          <Time className="ms-auto">1 week ago</Time>
-        </div>
+        <TagsContainer className="d-flex align-items-center gap-2 overflow-auto">
+          {Object.keys(project.tags).map((it) => (
+            <Tag key={Math.random()}>
+              {HashTag} {it}
+            </Tag>
+          ))}
+        </TagsContainer>
         <ProjectTitle>{project.name}</ProjectTitle>
-        <ProjectDetails>{project.description}</ProjectDetails>
-        <BuilderInfo />
+
+        <ProjectDetails>
+          <Widget
+            src="efiz.near/widget/every.markdown.view"
+            props={{
+              data: {
+                content: project.description.slice(0, 200) + "...",
+              },
+            }}
+          />
+        </ProjectDetails>
       </div>
     </Card>
   );
@@ -282,10 +238,15 @@ const FeaturedProjects = () => {
   const endIndex = state.projectsIndex + 3;
 
   const ResponsiveCards = styled.div`
-    @media screen and (max-width: 1435px) {
-      /* flex-wrap: wrap;
-      justify-content: center !important; */
-    }
+    background-image: linear-gradient(to right, white, white),
+      linear-gradient(to right, white, white),
+      linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0)),
+      linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0));
+    background-position: left center, right center, left center, right center;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+    background-attachment: local, local, scroll, scroll;
   `;
 
   return (
@@ -314,9 +275,12 @@ const FeaturedProjects = () => {
           </NavigationButton>
         </div>
       </div>
-      <ResponsiveCards className="d-flex w-100 overflow-x-scroll align-items-stretch mx-auto gap-3">
-        {projects.map((project) => (
-          <ProjectCard key={`project-${Math.random()}`} project={project} />
+      <ResponsiveCards className="d-flex w-100 overflow-auto align-items-stretch mx-auto gap-3">
+        {projectsData.map((project) => (
+          <ProjectCard
+            key={`project-${Math.random()}`}
+            project={project.data}
+          />
         ))}
         <ProjectCard
           key={`project-${Math.random()}`}
@@ -474,17 +438,6 @@ const MobileProjects = () => {
       </svg>
     );
 
-    const Time = styled.p`
-      color: #6e798c;
-      font-family: "Mona Sans", sans-serif;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-
-      margin: 0;
-    `;
-
     const CardTitle = styled.h3`
       color: #081f32;
       font-family: "Mona Sans", sans-serif;
@@ -507,45 +460,30 @@ const MobileProjects = () => {
       margin: 0;
     `;
 
-    const BuilderInfo = () => {
-      const BuilderLogo = styled.img`
-        width: 45px;
-        height: 45px;
-        border-radius: 45px;
-      `;
-      const BuilderName = styled.p`
-        color: #081f32;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        margin: 0;
-      `;
-
-      return (
-        <div className="d-flex gap-3 align-items-center">
-          <BuilderLogo src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
-          <BuilderName>Builder Name</BuilderName>
-        </div>
-      );
-    };
     return (
       <Card>
         <div className="position-relative">
-          <CardImage src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
-          <LikeButton>{HeartIcon}</LikeButton>
+          <CardImage src={project.image.url} />
         </div>
         <div style={{ padding: 24 }} className="d-flex flex-column gap-3">
-          <div className="d-flex justify-content-between align-items-center">
-            <Tag>{HashTag} modal</Tag>
-            <Time>1 week ago</Time>
+          <div className="d-flex align-items-center gap-2 overflow-auto">
+            {Object.keys(project.tags).map((it) => (
+              <Tag>
+                {HashTag} {it}
+              </Tag>
+            ))}
           </div>
-          <CardTitle>Super Cool Project Title</CardTitle>
+          <CardTitle>{project.name}</CardTitle>
           <CardDetails>
-            Luas dan nyaman. meski belum berani kemana-mana karena kondisi
-            pandemi. hanya menilmati kamar dan sarapan...
+            <Widget
+              src="efiz.near/widget/every.markdown.view"
+              props={{
+                data: {
+                  content: project.description.slice(0, 200) + "...",
+                },
+              }}
+            />
           </CardDetails>
-          <BuilderInfo />
         </div>
       </Card>
     );
@@ -614,10 +552,10 @@ const MobileProjects = () => {
           </Description>
         </div>
         <div>
-          {projects.slice(state.mobileIndex, endIndex).map((project) => (
+          {projectsData.slice(state.mobileIndex, endIndex).map((project) => (
             <MobileProjectCard
               key={`project-${Math.random()}`}
-              project={project}
+              project={project.data}
             />
           ))}
         </div>
@@ -630,8 +568,8 @@ const MobileProjects = () => {
             <i className="bi bi-chevron-left" onClick={previousProjects}></i>
           </NavigationButton>
           <NavigationButton
-            disabled={endIndex >= projects.length}
-            className={endIndex >= projects.length && "inactive"}
+            disabled={endIndex >= projectsData.length}
+            className={endIndex >= projectsData.length && "inactive"}
           >
             <i className="bi bi-chevron-right" onClick={nextProjects}></i>
           </NavigationButton>

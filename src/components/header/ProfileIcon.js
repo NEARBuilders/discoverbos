@@ -21,9 +21,9 @@ const Button = styled.button`
   gap: 4px;
 `;
 
-const AuthButton = () => {
+const AuthButton = ({ logOut }) => {
   return (
-    <Button>
+    <Button onClick={logOut}>
       <i className="bi bi-box-arrow-right"></i> Sign out
     </Button>
   );
@@ -37,7 +37,7 @@ const ProfileButton = () => {
   );
 };
 
-export default function ProfileIcon({ accountId }) {
+export default function ProfileIcon({ accountId, logOut }) {
   const [show, setShow] = useState(false);
   const onMouseEnter = () => {
     setShow(true);
@@ -72,7 +72,7 @@ export default function ProfileIcon({ accountId }) {
             </div>
             <div className="d-flex flex-column align-items-center gap-2 w-100">
               <ProfileButton />
-              <AuthButton />
+              <AuthButton logOut={logOut} />
             </div>
           </div>
         </div>
