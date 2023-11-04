@@ -97,9 +97,9 @@ const ExploreCard = ({ title, description, icon, link }) => {
 const cards = [
   {
     title: "BOS Native",
-    link: "/projects/native-projects",
+    link: "/gateways",
     description:
-      "DiscoverbOS is the gateway of the gateways build on the BOS powered by NEAR protocol.",
+      "DiscoverBOS is the gateway of the gateways build on the BOS powered by NEAR protocol.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

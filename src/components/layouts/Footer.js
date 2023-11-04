@@ -71,7 +71,7 @@ const MainContainer = styled.div`
 
 const RoundedDiv = styled.div`
   padding: 32px 40px;
-  gap: 96px;
+  gap: 32px;
 
   border-radius: 16px;
   background: #fff;
@@ -83,7 +83,7 @@ const RoundedDiv = styled.div`
 
   @media screen and (max-width: 900px) {
     padding: 32px 20px;
-    gap: 48px;
+    gap: 16px;
   }
 `;
 
@@ -162,7 +162,7 @@ export default function Footer(props) {
         <div className="d-flex flex-column flex-lg-row align-items-start justify-content-between gap-3">
           <div className="d-flex flex-column">
             <div className="d-flex gap-3">
-              <SocialLink href="https://x.com/DiscoverBOS">
+              <SocialLink href="https://x.com/TheblockchainOS?t=46O8ePGVxXVbjnolKRT_-w&s=09">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -176,7 +176,7 @@ export default function Footer(props) {
                   />
                 </svg>
               </SocialLink>
-              <SocialLink href="https://t.me/DiscoverBOS">
+              <SocialLink href="https://t.me/Discover_BOS">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -230,19 +230,6 @@ export default function Footer(props) {
                 Follow us on Twitter, we are super active there!
               </p>
             </div>
-          </div>
-          <div className="d-flex align-items-end">
-            <p
-              className="m-0"
-              style={{
-                color: "#1B1819",
-                fontSize: "12px",
-                fontWeight: 600,
-                lineHeight: "120%",
-              }}
-            >
-              1901 Fake Address Street, Woohoo ,<br /> New York 11707
-            </p>
           </div>
         </div>
       </RoundedDiv>

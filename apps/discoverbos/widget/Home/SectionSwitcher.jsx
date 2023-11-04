@@ -37,18 +37,18 @@ const ExploreData = {
   ctaLink: "/discover.near/widget/Search",
   relatedLinks: [
     {
-      href: "/projects/built-with-bos",
-      name: "Built with BOS",
+      href: "/projects",
+      name: "Projects",
       details: "check out the possibilities",
     },
     {
-      href: "/projects/native-projects",
-      name: "BOS Native",
+      href: "/resources",
+      name: "Resources",
       details: "see the potential",
     },
     {
-      href: "/projects/bos-integration",
-      name: "Integrated with BOS",
+      href: "/events/calendar",
+      name: "Events Calendar",
       details: "check out the possibilities",
     },
   ],
@@ -156,8 +156,8 @@ const ConnectData = {
       details: "check out the possibilities",
     },
     {
-      href: "communities/project",
-      name: "Project Communities",
+      href: "communities/regional",
+      name: "Regional Communities",
       details: "see the potential",
     },
     {
