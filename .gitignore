@@ -30,3 +30,5 @@ neardev
 
 # OS X
 .DS_Store
+
+.node-version
