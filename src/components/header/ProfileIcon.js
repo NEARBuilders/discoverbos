@@ -29,11 +29,13 @@ const AuthButton = ({ logOut }) => {
   );
 };
 
-const ProfileButton = () => {
+const ProfileButton = ({ accountId }) => {
   return (
-    <Button>
-      <i className="bi bi-person"></i> Profile
-    </Button>
+    <a style={{ all: 'unset' }} href={`/mob.near/widget/ProfilePage?accountId=${accountId}`}>
+      <Button>
+        <i className="bi bi-person"></i> Profile
+      </Button>
+    </a>
   );
 };
 
@@ -71,7 +73,7 @@ export default function ProfileIcon({ accountId, logOut }) {
               <small style={{ color: "inherit" }}>{accountId}</small>
             </div>
             <div className="d-flex flex-column align-items-center gap-2 w-100">
-              <ProfileButton />
+              <ProfileButton accountId={accountId} />
               <AuthButton logOut={logOut} />
             </div>
           </div>
