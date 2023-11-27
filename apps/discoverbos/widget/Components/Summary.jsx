@@ -156,7 +156,7 @@ const Button = styled.button`
   }
 `;
 
-const ButtonLink = styled("Link")`
+const ButtonLink = styled.a`
   ${sharedButtonStyles}
   color: ${(p) => (p.primary ? "#09342E" : "#11181C")} !important;
   background: ${(p) => (p.primary ? "#59E692" : "#FBFCFD")};
@@ -240,13 +240,13 @@ return (
     )}
 
     <Actions>
-      <ButtonLink
+      <Link
         primary
-        href={primaryActions[primaryAction].url}
+        to={primaryActions[primaryAction].url}
         onClick={handleCloseMenu}
       >
-        {primaryActions[primaryAction].display}
-      </ButtonLink>
+        <Button primary>{primaryActions[primaryAction].display}</Button>
+      </Link>
 
       <ButtonLink href={`https://jutsu.ai/editor/${src}`}>
         {context.accountId === accountId ? (
@@ -289,11 +289,12 @@ return (
           ),
         }}
       />
-
-      <ButtonLink href={`${detailsUrl}&tab=source`}>
-        <i className="bi bi-code-square"></i>
-        View Source
-      </ButtonLink>
+      <Link href={`${detailsUrl}&tab=source`}>
+        <Button>
+          <i className="bi bi-code-square"></i>
+          View Source
+        </Button>
+      </Link>
 
       <OverlayTrigger
         placement="top"
