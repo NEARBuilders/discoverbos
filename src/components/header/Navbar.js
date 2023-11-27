@@ -258,6 +258,10 @@ const links = [
     href: "/resources",
   },
   {
+    category: "Build",
+    href: "https://jutsu.ai",
+  },
+  {
     category: "Tools",
     href: "/tools",
   },
