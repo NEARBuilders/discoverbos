@@ -1,9 +1,3 @@
-const projects = Social.keys("legacy-awesome.near/project/*");
-
-if (!projects) {
-  return "Loading...";
-}
-
 const featuredProjects = [
   {
     key: 1,
@@ -269,44 +263,52 @@ const featuredProjects = [
   },
 ];
 
-const projectsData = Object.keys(projects["legacy-awesome.near"].project).map(
-  (it) => {
-    return {
-      key: it,
-      data: Social.get(`legacy-awesome.near/project/${it}/**`).profile,
-    };
-  }
-);
-
-if (!projectsData) {
-  return "Loading...";
+function fetchData() {
+  return fetch(
+    "https://api.airtable.com/v0/appX8Djlyo80EOXvk/tblujdBWA46hy3O5a",
+    {
+      method: "GET",
+      headers: {
+        Authorization:
+          "Bearer pat9vuRcBLUFkembr.4478edb3b2ae01d87f866e6a8e359edd381dc085310185987747d7b1d149494a",
+      },
+    }
+  );
 }
 
-const tempCategories = projectsData
-  .map((el) => Object.keys(el.data.tags))
-  .flat();
+function groupProjectsByCategory(projects) {
+  const projectCategoryMap = {};
 
-const categories = tempCategories.filter(
-  (it, idx) => tempCategories.indexOf(it) === idx
-);
+  projects.forEach((project) => {
+    if (project.fields && project.fields["Tags"]) {
+      project.fields["Tags"].forEach((tag) => {
+        if (!projectCategoryMap[tag]) {
+          projectCategoryMap[tag] = [];
+        }
+        projectCategoryMap[tag].push(project);
+      });
+    }
+  });
 
-const categoriesWithProjects = categories.map((it) => {
-  return {
-    category: it,
-    projects: projectsData
-      .map((project) => {
-        return {
-          projectKey: project.key,
-          ...project.data,
-          tags: Object.keys(project.data.tags),
-        };
-      })
-      .filter((project) => project.tags.includes(it)),
-  };
-});
+  const categories = Object.keys(projectCategoryMap).map((category) => ({
+    category,
+    projects: projectCategoryMap[category],
+  }));
 
-if (!categoriesWithProjects) {
-  return "Loading...";
+  return categories;
+}
+
+let projects = [];
+let projectsByCategory = [];
+
+const res = fetchData();
+if (res.ok) {
+  const records = res.body.records;
+  records.filter((it) => it.fields["Status"] !== "DEAD");
+  projects = records;
+  projectsByCategory = groupProjectsByCategory(records);
+} else {
+  console.log("error fetching projects");
 }
 
 const AppTitle = styled.a`
@@ -335,26 +337,22 @@ function toUrl(image) {
 
 const [currentCategory, setCurrentCategory] = useState("");
 const [searchKey, setSearchKey] = useState("");
-let filteredApps = categoriesWithProjects;
+
+let filteredApps = projectsByCategory;
+
 if (currentCategory !== "") {
-  filteredApps = categoriesWithProjects.filter(
+  filteredApps = projectsByCategory.filter(
     (it) => it.category === currentCategory
   );
 }
 if (searchKey !== "") {
-  filteredApps = projectsData.filter((project) =>
-    project.data.name.toLowerCase().includes(searchKey.toLowerCase())
+  filteredApps = projects.filter((project) =>
+    project.fields["Name"].toLowerCase().includes(searchKey.toLowerCase())
   );
   filteredApps = [
     {
       category: `Searching for "${searchKey}"`,
-      projects: filteredApps.map((it) => {
-        return {
-          projectKey: it.key,
-          ...it.data,
-          tags: Object.keys(it.data.tags),
-        };
-      }),
+      projects: filteredApps,
     },
   ];
 }
@@ -401,9 +399,13 @@ const Sidebar = () => {
       <h2>Categories</h2>
       <ResponsiveCategories>
         <CategoryItem onClick={() => setCurrentCategory("")}>All</CategoryItem>
-        {categories.map((it) => (
-          <CategoryItem onClick={() => setCurrentCategory(it)}>
-            {it.charAt(0).toUpperCase() + it.slice(1).toLowerCase()}
+        {projectsByCategory.map((it) => (
+          <CategoryItem
+            onClick={() => setCurrentCategory(it.category)}
+            key={it.category}
+          >
+            {it.category.charAt(0).toUpperCase() +
+              it.category.slice(1).toLowerCase()}
           </CategoryItem>
         ))}
       </ResponsiveCategories>
@@ -423,27 +425,37 @@ const ScrollShadow = styled.div`
   background-attachment: local, local, scroll, scroll;
 `;
 
+const normalize = (val) => {
+  return val.toLowerCase().replace(" ", "-");
+}
+
 const AppCard = ({ project }) => {
-  const { name, image, tags, projectKey } = project;
+  const { Name, Tags } = project.fields;
+
+  const profileData = Social.get(`legacy-awesome.near/project/${normalize(Name)}/**`).profile
+  const image = profileData?.image;
+
   return (
     <ScrollShadow className="d-flex gap-3 align-items-center overflow-auto mb-2">
       <AppImage src={toUrl(image)} />
       <div className="d-flex flex-column justify-content-center">
         <AppTitle
-          href={`/discover.near/widget/Project.Page?path=legacy-awesome.near/project/${projectKey}`}
+          href={`https://near.social/nearcatalog.near/widget/NearCatalog.Project?id=${normalize(Name)}`}
         >
-          {name}
+          {Name}
         </AppTitle>
         <div className="d-flex gap-1 align-items-center">
-          {tags.map((it) => (
-            <small
-              onClick={() => setCurrentCategory(it)}
-              className="border border-1 border-dark-subtle px-1 rounded-2"
-              style={{ cursor: "pointer" }}
-            >
-              {it}
-            </small>
-          ))}
+          {Tags &&
+            Tags.map((it) => (
+              <small
+                key={it}
+                onClick={() => setCurrentCategory(it)}
+                className="border border-1 border-dark-subtle px-1 rounded-2"
+                style={{ cursor: "pointer" }}
+              >
+                {it}
+              </small>
+            ))}
         </div>
       </div>
     </ScrollShadow>
@@ -561,7 +573,9 @@ return (
           <h2>{it.category}</h2>
           <ResponsiveAppContainer>
             {it.projects.map((project) => (
-              <AppCard project={project} />
+              <div key={JSON.stringify(project)}>
+                <AppCard project={project} />
+              </div>
             ))}
           </ResponsiveAppContainer>
         </div>
