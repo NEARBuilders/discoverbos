@@ -1,5 +1,5 @@
 const TestnetDomains = {
-  "test.near.social": true,
+  "test.discoverbos.org": true,
   "127.0.0.1": true,
 };
 

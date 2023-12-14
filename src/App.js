@@ -1,4 +1,3 @@
-import { sanitizeUrl } from "@braintree/sanitize-url";
 import { setupWalletSelector } from "@near-wallet-selector/core";
 import { setupHereWallet } from "@near-wallet-selector/here-wallet";
 import { setupMeteorWallet } from "@near-wallet-selector/meteor-wallet";
@@ -19,11 +18,11 @@ import "react-bootstrap-typeahead/css/Typeahead.bs5.css";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { BosLoaderBanner } from "./components/BosLoaderBanner";
+import { NavigationWrapper } from "./components/navigation/NavigationWrapper";
 import { NetworkId, Widgets } from "./data/widgets";
 import { useBosLoaderInitializer } from "./hooks/useBosLoaderInitializer";
 import Flags from "./pages/Flags";
 import ViewPage from "./pages/ViewPage";
-import { NavigationWrapper } from "./components/navigation/NavigationWrapper";
 
 import RootLayout from "./components/layouts/root";
 
@@ -59,15 +58,17 @@ import {
   ProjectsNativeProjects,
 } from "./pages/projects";
 
-import { Integrations, Infrastructure, Gateways } from "./pages/more";
-import Home from "./pages/Home";
-import HomeSelector from "./pages/home/HomeSelector";
-import Projects from "./pages/projects/Projects";
-import Resources from "./pages/education/Resources";
-import Community from "./pages/communities/Community";
 import About from "./pages/About";
+import Home from "./pages/Home";
+import Community from "./pages/communities/Community";
+import Resources from "./pages/education/Resources";
+import HomeSelector from "./pages/home/HomeSelector";
+import { Gateways, Infrastructure, Integrations } from "./pages/more";
+import Projects from "./pages/projects/Projects";
 // import ProjectsForm from "./pages/projects/ProjectsForm";
+import { isValidAttribute } from "dompurify";
 import ProjectsForm from "./pages/projects/Form";
+import { setupNightly } from "@near-wallet-selector/nightly";
 
 export const refreshAllowanceObj = {};
 const documentationHref = "https://social.near-docs.io/";
@@ -99,6 +100,7 @@ function App() {
             setupSender(),
             setupHereWallet(),
             setupMeteorWallet(),
+            setupNightly(),
             setupNeth({
               gas: "300000000000000",
               bundle: false,
@@ -112,10 +114,15 @@ function App() {
               delete props.href;
             }
             if (props.to) {
-              props.to = sanitizeUrl(props.to);
+              props.to = isValidAttribute("a", "href", props.to)
+                ? props.to
+                : "about:blank";
             }
             return <Link {...props} />;
           },
+        },
+        config: {
+          defaultFinality: undefined,
         },
       });
   }, [initNear]);
