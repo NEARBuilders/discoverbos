@@ -1,0 +1,55 @@
+{
+  "ref-finance": {
+    "profile": {
+      "name": "Ref Finance",
+      "tagline": "Multi-purpose DeFi platform built on NEAR Protocol.",
+      "description": "Ref Finance is a community-led, multi-purpose DeFi platform built on NEAR Protocol. Ref Finance takes full advantage of Near’s low fees, one-to-two second finality, and WebAssembly-based runtime (hello, Rust smart contracts!).\n\nIn addition to the advantages of being built on top of NEAR, Ref Finance provides:\n\n- Multiple pools in one contract\n- Atomic transactions\n- Customisable pool fee",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/ref-finance/ref-finance.jpg"
+      },
+      "tags": {
+        "AURORA": "",
+        "DAPPS": "",
+        "DEFI": "",
+        "DEX": "",
+        "EXCHANGES": ""
+      },
+      "dapp": "https://app.ref.finance",
+      "linktree": {
+        "website": "https://ref.finance",
+        "twitter": "https://twitter.com/finance_ref",
+        "medium": "https://ref-finance.medium.com",
+        "telegram": "https://t.me/ref_finance",
+        "discord": "",
+        "github": "https://github.com/ref-finance"
+      }
+    }
+  },
+  "aurora-dev": {
+    "profile": {
+      "name": "Aurora",
+      "tagline": "Bridge + EVM Scaling Solution for Ethereum.",
+      "description": "Aurora is an EVM built on the NEAR Protocol, delivering a turn-key solution for developers to operate their apps on an Ethereum-compatible, high-throughput, scalable and future-safe platform, with low transaction costs for their users. Aurora’s main features include:\\n\\n- Fully compatible EVM for fast deployment of Solidity smart contracts;\\n- Horizontal scaling possibility thanks to NEAR Protocol’s dynamic resharding;\\n- High throughput (x10 increase in transaction throughput comparing to Ethereum);\\n- Fast confirmations (Transaction execution takes only 1-2 seconds in Aurora);\\n- x1000 reduction in gas costs;\\n- Trustless bridge architecture between Ethereum and Aurora / NEAR.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/aurora-dev/aurora-dev.jpg"
+      },
+      "tags": {
+        "AURORA": "",
+        "DEVTOOLING": "",
+        "INFRASTRUCTURE": "",
+        "VALIDATORS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/auroraisnear",
+        "medium": "https://auroraisnear.medium.com/",
+        "telegram": "https://t.me/auroraisnear",
+        "discord": "https://discord.com/invite/dEFJBz8HQV",
+        "github": "https://github.com/aurora-is-near",
+        "linkedIn": "https://www.linkedin.com/company/aurora-is-near",
+        "facebook": "https://www.facebook.com/auroraisnear",
+        "astroDAO": "auroradao.sputnik-dao.near",
+        "whitepaper": "https://doc.aurora.dev/"
+      }
+    }
+  }
+}

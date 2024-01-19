@@ -1,0 +1,1181 @@
+{
+  "ref-finance": {
+    "profile": {
+      "name": "Ref Finance",
+      "tagline": "Multi-purpose DeFi platform built on NEAR Protocol.",
+      "description": "Ref Finance is a community-led, multi-purpose DeFi platform built on NEAR Protocol. Ref Finance takes full advantage of Near’s low fees, one-to-two second finality, and WebAssembly-based runtime (hello, Rust smart contracts!).\n\nIn addition to the advantages of being built on top of NEAR, Ref Finance provides:\n\n- Multiple pools in one contract\n- Atomic transactions\n- Customisable pool fee",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/ref-finance/ref-finance.jpg"
+      },
+      "tags": {
+        "AURORA": "",
+        "DAPPS": "",
+        "DEFI": "",
+        "DEX": "",
+        "EXCHANGES": ""
+      },
+      "dapp": "https://app.ref.finance",
+      "linktree": {
+        "website": "https://ref.finance",
+        "twitter": "https://twitter.com/finance_ref",
+        "medium": "https://ref-finance.medium.com",
+        "telegram": "https://t.me/ref_finance",
+        "discord": "",
+        "github": "https://github.com/ref-finance"
+      }
+    }
+  },
+  "aurora-dev": {
+    "profile": {
+      "name": "Aurora",
+      "tagline": "Bridge + EVM Scaling Solution for Ethereum.",
+      "description": "Aurora is an EVM built on the NEAR Protocol, delivering a turn-key solution for developers to operate their apps on an Ethereum-compatible, high-throughput, scalable and future-safe platform, with low transaction costs for their users. Aurora’s main features include:\\n\\n- Fully compatible EVM for fast deployment of Solidity smart contracts;\\n- Horizontal scaling possibility thanks to NEAR Protocol’s dynamic resharding;\\n- High throughput (x10 increase in transaction throughput comparing to Ethereum);\\n- Fast confirmations (Transaction execution takes only 1-2 seconds in Aurora);\\n- x1000 reduction in gas costs;\\n- Trustless bridge architecture between Ethereum and Aurora / NEAR.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/aurora-dev/aurora-dev.jpg"
+      },
+      "tags": {
+        "AURORA": "",
+        "DEVTOOLING": "",
+        "INFRASTRUCTURE": "",
+        "VALIDATORS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/auroraisnear",
+        "medium": "https://auroraisnear.medium.com/",
+        "telegram": "https://t.me/auroraisnear",
+        "discord": "https://discord.com/invite/dEFJBz8HQV",
+        "github": "https://github.com/aurora-is-near",
+        "linkedIn": "https://www.linkedin.com/company/aurora-is-near",
+        "facebook": "https://www.facebook.com/auroraisnear",
+        "astroDAO": "auroradao.sputnik-dao.near",
+        "whitepaper": "https://doc.aurora.dev/"
+      }
+    }
+  },
+  "near-wallet": {
+    "profile": {
+      "name": "NEAR Wallet",
+      "tagline": "NEAR Wallet is a non-custodial, web-based wallet for the NEAR blockchain.",
+      "description": "NEAR Wallet is a non-custodial wallet where you can store, receive, send NEAR assets and interact with the NEAR blockchain simply and securely.\\n\\nNEAR Wallet aims to become an all-in-one solution for exploring the NEAR ecosystem. Interact with NEAR assets, explore dApps, NFTs and more with NEAR Wallet!\\n\\nYou can either import an existing NEAR Wallet or create a new one.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/near-wallet/near-wallet.jpg"
+      },
+      "tags": {
+        "INFRASTRUCTURE": "",
+        "WALLETS": ""
+      },
+      "linktree": {
+        "github": "https://github.com/near/near-wallet"
+      }
+    }
+  },
+  "trisolaris": {
+    "profile": {
+      "name": "Trisolaris",
+      "tagline": "Bringing DeFi to the NEAR ecosystem.",
+      "description": "Trisolaris is a one-stop trading platform for the NEAR blockchain, running on NEAR’s Aurora engine. It is the first DEX on Aurora, enabling a seamless trading experience similar to native Ethereum for a fraction of the cost, taking advantage of the great underlying architecture provided by the Aurora engine.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/trisolaris/trisolaris.jpg"
+      },
+      "tags": {
+        "AURORA": "",
+        "DAPPS": "",
+        "DEFI": "",
+        "DEX": "",
+        "EXCHANGES": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/trisolarislabs",
+        "medium": "https://medium.com/trisolaris-labs",
+        "telegram": "https://t.me/TrisolarisLabs",
+        "discord": "https://discord.com/invite/my6GtSTmmX",
+        "github": "https://github.com/trisolaris-labs"
+      }
+    }
+  },
+  "the-graph": {
+    "profile": {
+      "name": "The Graph",
+      "tagline": "Scalable Queries for a Decentralized Future.",
+      "description": "The Graph is a protocol for building decentralized applications quickly on Ethereum and IPFS using GraphQL.\\n\\nWe're building The Graph because we've seen the challenges in getting data off blockchains. We envision The Graph as a truly decentralized ecosystem where the community can collaborate on curating quality data sources available to all. Together we can build a new generation of the web free from data silos and monopolies.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/the-graph/the-graph.jpg"
+      },
+      "tags": {
+        "AURORA": "",
+        "DATA": "",
+        "DEVTOOLING": "",
+        "INDEXERS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/graphprotocol",
+        "medium": "https://medium.com/graphprotocol",
+        "telegram": "http://t.me/graphprotocol",
+        "discord": "https://discord.gg/vtvv7FP",
+        "github": "https://github.com/graphprotocol"
+      }
+    }
+  },
+  "octopus-network": {
+    "profile": {
+      "name": "Octopus Network",
+      "tagline": "A multi-chain network providing leased security and interoperability to Substrate appchains.",
+      "description": "Octopus is a protocol for launching Web3.0 appchains. By decreasing the cost of bootstrapping a Web3.0 applications in form of blockchain by two orders of magnitude, from several million dollars to less than one hundred thousand dollars; providing leased security, out-of-box interoperability and everlasting forkability; facilitating generalized mining centered token economics; bonding a set of social contracts consist of fair launch, regulatory compliance token distribution and protocol participants dominant on-chain governance, Octopus Network will unleash Web3.0 gold rush.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/octopus-network/octopus-network.jpg"
+      },
+      "tags": {
+        "DEVTOOLING": "",
+        "FUNDING": "",
+        "INFRASTRUCTURE": "",
+        "OCTOPUS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/oct_network",
+        "medium": "https://medium.com/oct-network",
+        "discord": "https://discord.com/invite/6GTJBkZA9Q",
+        "github": "https://github.com/octopus-network"
+      }
+    }
+  },
+  "paras": {
+    "profile": {
+      "name": "Paras",
+      "tagline": "NFT Marketplace for Digital Collectibles on NEAR.",
+      "description": "Paras, All-in-one social DAC marketplace for creators and collectors.\\n\\nFor Collectors: Discover beautiful art cards and collect them on a blockchain-based technology that prevents forgery and provides provable ownership.\\n\\nFor Artists: Create your digital art cards and sell them on the marketplace in just a few clicks. Start earning with your digital creation.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/paras/paras.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "MARKETPLACES": "",
+        "NFT": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/ParasHQ",
+        "medium": "https://medium.com/paras-media",
+        "telegram": "https://t.me/parashq",
+        "discord": "https://discord.com/invite/vWR2XBNupg",
+        "facebook": "https://www.facebook.com/parashq.digital",
+        "whitepaper": "https://ipfs.fleek.co/ipfs/bafybeihu6atdada45rmx4sszny6sahrzas4tuzrpuufdcpe6b63r6ugdce"
+      }
+    }
+  },
+  "senderwallet": {
+    "profile": {
+      "name": "Sender Wallet",
+      "tagline": "Browser extension wallet built on NEAR.",
+      "description": "Sender is a browser extension wallet built for NEAR protocol, with the goal of providing a secure and easy-to-use wallet for DeFi and NFT users. The purpose of the documentation is to illustrate how to build a DApp with Sender.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/senderwallet/senderwallet.jpg"
+      },
+      "tags": {
+        "INFRASTRUCTURE": "",
+        "WALLETS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/SenderWallet",
+        "medium": "https://senderwallet.medium.com/",
+        "telegram": "https://t.me/sender_community",
+        "discord": "https://discord.com/invite/9WhejkkbZF",
+        "whitepaper": "https://docs.senderwallet.io/"
+      }
+    }
+  },
+  "burrow": {
+    "profile": {
+      "name": "Burrow",
+      "tagline": "Borrow, Supply. Thrive.",
+      "description": "Burrow is a decentralized, non-custodial pool-based interest rates platform that enables users to supply assets to earn interest, and to borrow against them to unlock liquidity. Burrow is similar in nature to Aave, Compound, and other pool-based protocols.\\n\\nBurrow runs natively on the NEAR blockchain, a layer 1, proof-of-stake, sharded blockchain with a WebAssembly runtime. The Burrow protocol's smart contracts are written in Rust.\\n\\nBurrow aims to unlock liquidity for interest-bearing assets, particularly layer 1 staking derivatives such as stNEAR and stETH. Users of Burrow will be able to deposit stNEAR as collateral, then borrow more NEAR to create a leveraged staking position, or borrow a stablecoin to create a self-repaying position.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/burrow/burrow.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "DEFI": "",
+        "LENDING": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/burrowcash",
+        "medium": "https://burrowcash.medium.com/",
+        "telegram": "https://t.me/burrowcash",
+        "discord": "https://discord.com/invite/C66aQQ4g8m",
+        "astroDAO": "burrow.sputnik-dao.near"
+      }
+    }
+  },
+  "sweat-economy": {
+    "profile": {
+      "name": "Sweat Еconomy",
+      "tagline": "Walk into crypto. Natural evolution of Sweatcoin.",
+      "description": "SWEAT Еconomy is the natural evolution of Sweatcoin. Global, open, and fair, SWEAT is a next generation cryptocurrency that will bring the next billion people into Web 3.0, and make movement part of global GDP.\\n\\n### Sweatcoin \\n\\nDownload: [iPhone App Store](https://itunes.apple.com/app/sweatcoin-app-that-pays-you/id971023427) | [Android Play Store](https://play.google.com/store/apps/details?id=in.sweatco.app)\\n\\n- 110M users\\n- The most downloaded Health & Fitness App of 2022\\n- Home of sweatcoins, the in-app currency like 'rewards points', which users earn for their steps. \\n\\n### Sweat Wallet\\n\\nDownload: [iPhone App Store](https://apps.apple.com/app/sweat-wallet/id1619316571) | [Android Play Store](https://play.google.com/store/apps/details?id=com.sweatwallet)\\n\\n- 13M wallets created\\n- Home of SWEAT, a new cryptocurrency users generate with their steps.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/sweat-economy/sweat-economy.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "GAMING": "",
+        "SPORTS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/SweatEconomy",
+        "medium": "https://medium.com/sweat-economy",
+        "telegram": "https://t.me/sweateconomy",
+        "discord": "https://discord.com/invite/sweateconomy",
+        "linkedIn": "https://www.linkedin.com/company/sweat-economy/",
+        "whitepaper": "https://drive.google.com/file/d/1IPklRcEQvgJkCaeYvGh43yjWl-Dj5_6i/view"
+      }
+    }
+  },
+  "learn-near": {
+    "profile": {
+      "name": "Learn NEAR Club",
+      "tagline": "Learn how to use and build on NEAR and Earn NEAR.",
+      "description": "Learn NEAR Club is all inclusive hands-on onboarding machine to NEAR Protocol – connecting NEAR Ecosystem projects to pro-active community members via (L)Earn method.\\n\\n### What are nLEARNs?\\nnLEARNS are Learn NEAR Club internal points powering (L)Earning economy. nLEARNS are NOT tokens and do NOT have monetary value. The ultimate use case of nLEARNs is Proof of (L)Earn. Any (L)Earner history can be verified so community members or projects can get an idea about how consistent is the learning progress.\\n\\n### NEAR Certified Developer Program\\n\\nThis NEAR Certified Developer course is an opportunity for web developers to earn a Certificate of Completion that represents the ability to design, develop, test and deploy smart contracts on the NEAR platform – NEAR Certified Developer (NCD).",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/learn-near/learn-near.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "ECOSYSTEM": "",
+        "EDUCATION": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/LearnNear",
+        "telegram": "https://t.me/LearnNEARClub",
+        "github": "https://github.com/Learn-NEAR-Club",
+        "linkedIn": "https://www.linkedin.com/company/learn-near-club"
+      }
+    }
+  },
+  "meta-pool": {
+    "profile": {
+      "name": "Meta Pool",
+      "tagline": "Liquid Staking Protocol built on NEAR.",
+      "description": "Meta Pool is the liquid staking solution for NEAR and wNEAR token holders. \\n\\nUsers staking NEAR and wNEAR with Meta Pool receive in exchange a NEP-141 standard token, stNEAR (staked NEAR). The stNEAR token simultaneously accrues staking rewards and unlocks users’ liquidity enabling them to participate in DeFi activities (e.g. lending, farming, borrowing) on NEAR and Aurora.\\n\\nMeta Pool solves the problems associated with PoS networks staking (illiquidity, immovability and accessibility) and also aims to distribute staking in multiple validators to improve censorship-resistance of the NEAR network.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/meta-pool/meta-pool.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "DEFI": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/meta_pool",
+        "medium": "https://medium.com/@meta_pool",
+        "discord": "https://discord.com/invite/NJ7A2r2U8g",
+        "github": "https://github.com/Narwallets/meta-pool",
+        "linkedIn": "https://www.linkedin.com/company/meta-pool/"
+      }
+    }
+  },
+  "nearweek": {
+    "profile": {
+      "name": "NEARWEEK",
+      "tagline": "Decentralised news sources within the NEAR ecosystem.",
+      "description": "NEARWEEK is the one-stop-shop for all NEAR related news. Each weekly newsletter and edition is made possible via news contributions from the NEARWEEK community to the NEWS DAO. Subscribe or visit NEARWEEK.com to get your weekly dose of news from the NEARverse!",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/nearweek/nearweek.jpg"
+      },
+      "tags": {
+        "ECOSYSTEM": "",
+        "EDUCATION": "",
+        "GUILDS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/NEARWEEK",
+        "medium": "https://medium.com/nearweek",
+        "telegram": "https://t.me/nearweek",
+        "linkedIn": "https://www.linkedin.com/company/nearweek/",
+        "astroDAO": "nearweek-news-contribution.sputnik-dao.near",
+        "whitepaper": "https://docs.nearweek.com/"
+      }
+    }
+  },
+  "spin": {
+    "profile": {
+      "name": "Spin",
+      "tagline": "DeFi derivatives infrastructure built on NEAR Protocol.",
+      "description": "Spin is a DeFi derivatives infrastructure built on NEAR Protocol, a reliable and scalable L1 solution. The on-chain order book solution offered by Spin provides a CEX-competitive experience to DeFi users. Founded in June 2021, Spin was the first product to offer on-chain order book solution on NEAR Protocol. \\n\\nThe advantages of the order book model include better user experience compared to AMM, flexible liquidity, easy access for institutional traders, secure and transparent on-chain verification, opportunity to price different types of instruments, and trading robots interoperability. The order book based infrastructure unlocks the opportunity to build various types of derivatives with different levels of complexity in the DeFi space including but not limited to perpetual & quarterly futures, power perpetuals, floor perpetuals, options, exotic options, everlasting options, options vaults, basis trading, fixed yield, structured products, and RFQ.\\n\\nSPIN token is a Spin native utility token that ensures the sustainable development of the platform and also provides additional incentivization opportunities for the community.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/spin/spin.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "DEFI": "",
+        "DEX": "",
+        "EXCHANGES": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/spin_fi",
+        "medium": "https://spin-fi.medium.com/",
+        "telegram": "https://t.me/spin_fi",
+        "discord": "https://discord.com/invite/e3jUf3dDZu",
+        "github": "https://github.com/spin-fi/",
+        "whitepaper": "https://docs.spin.fi/"
+      }
+    }
+  },
+  "aurigami": {
+    "profile": {
+      "name": "Aurigami",
+      "tagline": "Lend, borrow, and earn with ease on Aurora.",
+      "description": "Aurigami is a decentralized, non-custodial money market protocol on Aurora. \\n\\nAs the primitive money market on Aurora, Aurigami serves to complement both existing and emerging DeFi protocols to bootstrap the ecosystem’s growth. Money markets serve as the core foundation of all financial economies and with Aurigami, assets on Aurora can be utilized more strategically and efficiently. Idle assets can be turned into interest-bearing auTokens, leverage can be achieved through collateralized borrowing, borrowed funds can be deployed elsewhere for additional yield.\\n\\nThe beauty of DeFi lies in its composability, and Aurigami unlocks further liquidity and flexibility of funds. Just like the art of paper folding, we bring together various points within the Aurora ecosystem and together, the end product becomes way more than the sum of its parts.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/aurigami/aurigami.jpg"
+      },
+      "tags": {
+        "AURORA": "",
+        "DAPPS": "",
+        "DEFI": "",
+        "LENDING": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/aurigami_PLY",
+        "medium": "https://medium.com/aurigami",
+        "discord": "https://discord.com/invite/MpgHRtm8EK"
+      }
+    }
+  },
+  "linear-protocol": {
+    "profile": {
+      "name": "LiNEAR Protocol",
+      "tagline": "Your Journey of DeFi on NEAR Starts Here.",
+      "description": "LiNEAR Protocol is a liquid staking solution built on the NEAR Protocol. LiNEAR unlocks liquidity of the staked NEAR by creating a staking derivative to be engaged with various DeFi protocols on NEAR and Aurora, while also enjoying over 10% APY staking rewards of the underlying base tokens. LiNEAR is the cornerstone piece of the NEAR-Aurora DeFi ecosystem.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/linear-protocol/linear-protocol.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "DEFI": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/LinearProtocol",
+        "medium": "https://medium.com/@LinearProtocol",
+        "discord": "https://discord.com/invite/bkkvWwMf2T",
+        "github": "https://github.com/linear-protocol"
+      }
+    }
+  },
+  "few-and-far": {
+    "profile": {
+      "name": "Few and Far",
+      "tagline": "One-Stop Destination for NFTs on NEAR.",
+      "description": "Few and Far is the next-generation NFT Marketplace built on NEAR Protocol. Its technology supports advanced functionality that superpowers NFT applications across the blockchain, including critical applications for Gaming and DeFi.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/few-and-far/few-and-far.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "LAUNCHPADS": "",
+        "MARKETPLACES": "",
+        "NFT": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/FewandFarNFT",
+        "medium": "https://medium.com/few-and-far",
+        "discord": "https://discord.com/invite/8RvXKtEQg8",
+        "linkedIn": "https://www.linkedin.com/company/few-and-far-nft/",
+        "whitepaper": "https://fewandfar.gitbook.io/fewandfar-near-startup-grant-proposal/"
+      }
+    }
+  },
+  "near-social-social08": {
+    "profile": {
+      "name": "Near Social",
+      "tagline": "Social data protocol on NEAR.",
+      "description": "Near Social (previously known as Social08) is a social data protocol built on top of NEAR Protocol.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/near-social-social08/near-social-social08.jpg"
+      },
+      "tags": {
+        "DEVTOOLING": "",
+        "INFRASTRUCTURE": "",
+        "SOCIAL": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/NearSocial_",
+        "telegram": "https://t.me/NearSocial",
+        "github": "https://github.com/NearSocial"
+      }
+    }
+  },
+  "everstake": {
+    "profile": {
+      "name": "Everstake",
+      "tagline": "Staking platform that specializes in PoS cryptocurrencies.",
+      "description": "Everstake is Your Social Staking Platform. Everstake helps institutional investors and regular token holders to profit off their crypto assets. We operate in a wide range of Proof of Stake blockchains, providing our customers with numerous options to choose from. Pick the most promising projects, delegate with Everstake and make 5%-20% annually.\\n\\nEverstake is a team of experienced developers, financial experts and blockchain enthusiasts. The company was founded by Attic Lab, an EOS block producer from Ukraine. \\n\\nWe run highly secure and reliable nodes for PoS protocols using the enterprise-level hardware to ensure maximum efficiency and security.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/everstake/everstake.jpg"
+      },
+      "tags": {
+        "INFRASTRUCTURE": "",
+        "VALIDATORS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/everstake_pool",
+        "medium": "https://medium.com/everstake",
+        "telegram": "https://t.me/everstake_chat",
+        "github": "https://github.com/everstake"
+      }
+    }
+  },
+  "mintbase": {
+    "profile": {
+      "name": "Mintbase",
+      "tagline": "Digital assets minted and backed by you.",
+      "description": "Mintbase is a toolkit that allows anyone to create Non-fungible tokens (NFTs) without worrying about technical complexities. \\n\\nThe first and most hyped use-case for NFT’s has been Art. Although we love to see artists using this technology (and thriving!), we know the full potential of purposeful NFTs is not being fully explored yet. What does that mean? We believe in NFTs with practical applications and use cases: membership access, ticketing, communal projects, redeemable NFTs and so much more.\\n\\nFor us, NFTs represent the grounds for a new financial system. By providing verifiable digital ownership, the possibilities created are endless: they’re scarce, interoperable and cryptographically secure. With our split royalties and revenue features, collaborative projects have a whole other way to deal with their finances. \\n\\nAt Mintbase, everyone gets their own smart contract and can add several minters to their store. Think “Shopify for NFTs”: People can create their stores to sell music, art, tickets, memberships and much more. In a nutshell, anything can be tokenized. The Mintbase interface can easily be used, but via our SDK anyone can spin off their own NFT marketplaces.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/mintbase/mintbase.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "MARKETPLACES": "",
+        "NFT": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/mintbase",
+        "medium": "https://medium.com/mintbase/",
+        "telegram": "https://t.me/mintbase",
+        "discord": "https://discord.com/invite/89cSHH7",
+        "github": "https://github.com/Mintbase",
+        "astroDAO": "mintbase.sputnik-dao.near"
+      }
+    }
+  },
+  "astrodao": {
+    "profile": {
+      "name": "AstroDAO",
+      "tagline": "Launch your DAO in less than 10 minutes without a line of code.",
+      "description": "Astro is a platform for launching Decentralized Autonomous Organizations. DAOs are self-organized groups that form around common purposes. Membership, decision making, and funding are coordinated in public on a tamper-proof blockchain.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/astrodao/astrodao.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "DAO": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/AstroDao",
+        "telegram": "https://t.me/astro_near"
+      }
+    }
+  },
+  "orderly-network": {
+    "profile": {
+      "name": "Orderly Network",
+      "tagline": "A permissionless orderbook protocol with next-gen decentralized trading infrastructure.",
+      "description": "Orderly Network is a permissionless, decentralized exchange protocol built on NEAR. Founded in April 2022 with the mission to create the most robust liquidity layer infrastructure for any dApp to utilize and build on, Orderly Network offers market-leading execution with low latency, minimal fees, and access to ample liquidity options.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/orderly-network/orderly-network.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "DEFI": "",
+        "INFRASTRUCTURE": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/OrderlyNetwork",
+        "medium": "https://medium.com/@orderlynetwork",
+        "discord": "https://discord.com/invite/orderlynetwork",
+        "linkedIn": "https://www.linkedin.com/company/orderly-network/",
+        "whitepaper": "https://docs.orderly.network/"
+      }
+    }
+  },
+  "pikespeak": {
+    "profile": {
+      "name": "Pikespeak",
+      "tagline": "Supercharging Web 3 users with powerful analytics.",
+      "description": "Access to live and historical data with visualisations of the most fundamental Web 3 use cases. Pikespeak is a user-centric (vs transaction-oriented) analytics solution, focusing on user engagement with the most successful applications: DeFi, DAOs, NFTs, Gaming, etc.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/pikespeak/pikespeak.jpg"
+      },
+      "tags": {
+        "ANALYTICS": "",
+        "DAPPS": "",
+        "EXPLORERS": "",
+        "UTILITIES": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/pikespeak_ai",
+        "whitepaper": "https://doc.pikespeak.ai/"
+      }
+    }
+  },
+  "playember": {
+    "profile": {
+      "name": "PlayEmber",
+      "tagline": "Building X-chain GameFi infrastructure to mass onboard Web2 gamers to Web3.",
+      "description": "At playEmber we’re all about taking that initial ember of an idea and making it into a roaring hit of a game! With years of knowledge in the hyper casual and casual gaming space we're in a perfect position to slingshot games to millions of players and keep them profitable.\\n\\nWith Ember Coin our Web3 arm to the business: Utilising our 100 Million Downloads to date and our mobile gaming expertise, we will add a Play & Earn element to our mobile games along with allowing external F2P game studios the tech to join the P&E EmberCoin ecosystem.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/playember/playember.jpg"
+      },
+      "tags": {
+        "DEVTOOLING": "",
+        "GAMING": "",
+        "GAMEFI": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/play_ember",
+        "facebook": "https://www.facebook.com/playember",
+        "whitepaper": "https://playember.gitbook.io/"
+      }
+    }
+  },
+  "infura": {
+    "profile": {
+      "name": "Infura",
+      "tagline": "The World’s Most Powerful Blockchain Development Suite.",
+      "description": "By integrating with NEAR Network, Infura developers will have greater access to a carbon-neutral ecosystem with minimal environmental footprint. Because NEAR operates on a unique sharded blockchain called Nightshade, it has limitless scaling capabilities allowing transaction-heavy decentralized applications to function effortlessly with low fees. Transactions are processed at 14 tps on Ethereum and 7 tps on Bitcoin. As it stands, NEAR embodies similar characteristics as the Ethereum 2.0 roadmap, including PoS and shard chains. Additionally, the partnership allows developers to build decentralized applications using popular programming languages such as Rust and AssemblyScript as well as provides developers access to superior learning resources. By integrating with the NEAR Protocol, Infura provides developers building on its platform greater access to a carbon-neutral ecosystem with minimal environmental footprint.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/infura/infura.jpg"
+      },
+      "tags": {
+        "DEVTOOLING": "",
+        "INDEXERS": "",
+        "INFRASTRUCTURE": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/infura_io",
+        "discord": "https://discord.com/invite/EcVRfRuqQX",
+        "github": "https://github.com/INFURA",
+        "facebook": "https://www.facebook.com/infura.io/"
+      }
+    }
+  },
+  "near-explorer": {
+    "profile": {
+      "name": "NEAR Explorer",
+      "tagline": "NEAR blockchain explorer.",
+      "description": "NEAR blockchain explorer is an online blockchain browser which displays the contents of individual NEAR blocks and transactions and the transaction histories and balances of addresses.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/near-explorer/near-explorer.jpg"
+      },
+      "tags": {
+        "ANALYTICS": "",
+        "EXPLORERS": "",
+        "INFRASTRUCTURE": ""
+      },
+      "linktree": {
+        "github": "https://github.com/near/near-explorer"
+      }
+    }
+  },
+  "near-crowd": {
+    "profile": {
+      "name": "NEAR Crowd",
+      "tagline": "Earn NEAR by performing simple tasks.",
+      "description": "NEAR Crowd allows you to earn Ⓝ by performing simple tasks.\\n\\nNEAR Crowd is a service that allows people earn Ⓝ by completing small tasks. While tasks are provided and funded by a centralized entity, called the Requestor, NEAR Crowd significantly limits the power that the Requestor has, and moves the power to the community instead. In particular, while the Requestor provides the specification of what needs to be done in each task, it's the community that decides whether each task is completed correctly according to this specification. This is achieved by creating a set of rules, checks and balances that are enforced by a smart contract deployed on NEAR.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/near-crowd/near-crowd.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "ECOSYSTEM": "",
+        "VALIDATORS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/NEARCrowd",
+        "telegram": "https://t.me/NEARCrowd",
+        "github": "https://github.com/NEARCrowd"
+      }
+    }
+  },
+  "daorecords": {
+    "profile": {
+      "name": "DAOrecords",
+      "tagline": "Reinventing the Record Label to Democratize the Music Industry.",
+      "description": "DAOrecords is on a mission to democratize the Music Industry. But to do so is no easy task and requires a unique approach to both business and art. We invite you to join us on our journey to empower artists and communities worldwide through music and the decentralized web to shape a future beneficial to all.\\n\\nAlthough the world isn’t quite ready for a fully decentralized Record Label (not yet), we decided to start with a hybrid model that brings the best of both together as we dive into a fresh new journey.\\n\\nAs a company, we employ a “social enterprise” business model that is used to fuel more content creation, fan rewards and other mutually beneficial activities. It’s our mission to empower creatives and their communities!",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/daorecords/daorecords.jpg"
+      },
+      "tags": {
+        "DAO": "",
+        "ECOSYSTEM": "",
+        "MUSIC": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/DAOrecords_",
+        "medium": "https://medium.com/@daorecords",
+        "telegram": "https://t.me/DAOrecords",
+        "discord": "https://discord.com/invite/Zp8KPJB",
+        "facebook": "https://www.facebook.com/DAOrecords",
+        "astroDAO": "daorecords.sputnik-dao.near"
+      }
+    }
+  },
+  "mynearwallet": {
+    "profile": {
+      "name": "MyNearWallet",
+      "tagline": "NEAR wallet to store, buy, send and stake assets for DeFi.",
+      "description": "MyNearWallet is a web wallet that allows users to securely store and stake NEAR tokens and compatible assets. It is the official successor of the legacy NEAR Wallet. MyNearWallet also has wNEAR and USN swaps available, as well as ways to purchase NEAR.\\n\\nIn the near future, there will be more more dApps & NFTs integrated, and a lot more features are coming: increased security, a more user-friendly flow, more functions.\\n\\niOS & Android versions and a web-extension will be developed as well, in addition to the desktop version.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/mynearwallet/mynearwallet.jpg"
+      },
+      "tags": {
+        "INFRASTRUCTURE": "",
+        "WALLETS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/MyNearWallet",
+        "medium": "https://medium.com/mynearwallet-blog",
+        "telegram": "https://t.me/MyNearWallet",
+        "discord": "https://discord.com/invite/Vj74PpQYsh",
+        "github": "https://github.com/mynearwallet",
+        "linkedIn": "https://www.linkedin.com/company/mynearwallet/"
+      }
+    }
+  },
+  "croncat": {
+    "profile": {
+      "name": "CRONCAT",
+      "tagline": "Decentralized Scheduling for Blockchain Transactions.",
+      "description": "CRONCAT, Decentralized Scheduling for Blockchain Transactions. Schedule tasks for any contract. Automate anything your contract needs.\\n\\nUse the age old standard crontab spec to annotate time intervals. Extended to support blockchain consensus timing.\\n\\nSpecify once or many times a task can run. Tasks can execute as long as they have budget.\\n\\nAll tasks are triggered by a network of croncat agents. Your task parameters are sandboxed away from any tampering.\\n\\nTasks pay a small fee for future timing. This rewards agents for staying diligent and doing transactions on your behalf.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/croncat/croncat.jpg"
+      },
+      "tags": {
+        "DEVTOOLING": "",
+        "UTILITIES": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/croncats",
+        "github": "https://github.com/Cron-Near/",
+        "astroDAO": "croncat.sputnik-dao.near",
+        "whitepaper": "https://docs.cron.cat/docs/"
+      }
+    }
+  },
+  "onmachina": {
+    "profile": {
+      "name": "OnMachina",
+      "tagline": "Sharded data storage structure.",
+      "description": "Machina — is a sharded data storage structure that is designed to provide scalable, cost-efficient, and immediately retrievable information on-chain. Machina leverages the unique properties of Nightshade sharding of NEAR and provides a seamless economic model utilizing stablecoins.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/onmachina/onmachina.jpg"
+      },
+      "tags": {
+        "INFRASTRUCTURE": "",
+        "STORAGE": "",
+        "DEVTOOLING": "",
+        "AURORA": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/OnMachina",
+        "telegram": "https://t.me/machina_group"
+      }
+    }
+  },
+  "rainbow-bridge": {
+    "profile": {
+      "name": "Rainbow Bridge",
+      "tagline": "Transfer tokens between Ethereum, Aurora and NEAR.",
+      "description": "The Rainbow Bridge is the official bridge for transferring tokens between Ethereum, NEAR and the Aurora networks. The bridge is the product of Aurora, the Ethereum-compatible scaling solution built on NEAR.\\n\\nYou can use the bridge to move tokens between any of the three networks. Depending on the selected direction, bridging can involve one or two transactions. Transfers to NEAR & Aurora require a single transaction, and take up to 10 minutes. Transfers to Ethereum require two transactions, and can take up to 16 hours. To learn more, check out our FAQs.\\n\\nThe Rainbow Bridge is unique among bridges, and we’re proud of both its user experience and its technological underpinnings. We hope you enjoy using it, and if you do, maybe consider giving us a shout out on Twitter!",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/rainbow-bridge/rainbow-bridge.jpg"
+      },
+      "tags": {
+        "AURORA": "",
+        "BRIDGES": "",
+        "DEFI": "",
+        "INFRASTRUCTURE": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/auroraisnear",
+        "github": "https://github.com/near/rainbow-bridge"
+      }
+    }
+  },
+  "pembrock-finance": {
+    "profile": {
+      "name": "PembRock Finance",
+      "tagline": "Leveraged yield farming on NEAR.",
+      "description": "PembRock Finance is the first leveraged yield farming project on NEAR. \\n\\n- Lenders can receive stable returns by depositing funds into our vaults.\\n\\n- These funds are utilized by yield farmers, who can leverage their crypto holdings by up to 3x, gaining maximum rewards from their farming positions.\\n\\nWho said yield farming has to be difficult? Connect with your NEAR Wallet and start lending or yield farming with customizable positions in just a few clicks. Our intuitive interface and step-by-step guides are there to support you whether you’re an experienced DeFi user or someone completely new to this growing sector.\\n\\nFounded by NEAR Guild masters and having secured a $75,000 grant from the NEAR Foundation, PembRock will continue to incorporate new features and further involve the community, attracting more investment and expanding the NEAR ecosystem through increased liquidity and new integrations.\\n",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/pembrock-finance/pembrock-finance.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "DEFI": "",
+        "YIELD_AGGREGATORS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/PembrockFi",
+        "medium": "https://medium.com/@pembrock.finance",
+        "telegram": "https://t.me/pembrock_finance"
+      }
+    }
+  },
+  "meteor-wallet": {
+    "profile": {
+      "name": "Meteor Wallet",
+      "tagline": "The simple and secure wallet to manage your crypto, access DeFi, and explore NEAR.",
+      "description": "Meteor Wallet is a non-custodial wallet that makes onboarding simple and exploring NEAR fun.\\n- DeFi wallet with staking & swap aggregation (compare rates for low fees with over 50 tokens).\\n- NFT portfolio with collection info and floor prices.\\n- Explore NEAR dApps with challenges and rewards!\\n\\nAvailable on Web & Browser Extension with mobile apps coming soon.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/meteor-wallet/meteor-wallet.jpg"
+      },
+      "tags": {
+        "INFRASTRUCTURE": "",
+        "WALLETS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/MeteorWallet",
+        "discord": "https://discord.com/invite/jhzXGG3ugE",
+        "github": "https://github.com/Meteor-Wallet"
+      }
+    }
+  },
+  "keypom": {
+    "profile": {
+      "name": "Keypom",
+      "tagline": "A suite of Web3 onboarding tools built on NEAR.",
+      "description": "Keypom is a suite of Web3 onboarding tools built on NEAR; is a public good; and plans to decentralize. Make Onboarding Great Again (MOGA) - Web3 onboarding and UX done differently.\\n\\nKeypom allows anyone to create highly customizable onboarding experiences for their users. These experiences can be both for new, or existing users. If someone already has a wallet, they can still use a Keypom link to experience an app, and then transfer the assets later.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/keypom/keypom.jpg"
+      },
+      "tags": {
+        "DAPPS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/keypomxyz",
+        "github": "https://github.com/keypom"
+      }
+    }
+  },
+  "stader": {
+    "profile": {
+      "name": "Stader.Near",
+      "tagline": "Staking solution for NEAR blockchain.",
+      "description": "Stader Labs is the first multi-chain protocol bringing liquid staking solution (NearX) to NEAR & Aurora. Stader Near is the only liquid staking contract to have undergone 3 audits by leading auditors - BlockSec, Osec & Halborn with a TVL of 1.3Mn+ NEAR within just 40 days of launch. Already live on key AMM and order book Dex’s such as Ref Finance, Jumbo Exchange, Trisolaris, Tonic Dex & Spin, NearX has the deepest liquidity among liquid staking solutions on NEAR with total LP size of $3.3 Mn+. \\n\\nStader NEAR offers the convenience of staking from Near native wallet, Sender Wallet, Ledger Wallet and Wallet Connect on NEAR and via Metamask and Wallet Connect on Aurora. \\n\\nThe team is executing at rocket speed and NearX integration with lending protocols such as Burrow, Bastion and Aurigami is coming soon. In addition, NearX will also go live on Bluebit, Pikpea, Oin Finance, Fluxus and Pembrock by November end.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/stader/stader.jpg"
+      },
+      "tags": {
+        "AURORA": "",
+        "DAPPS": "",
+        "DEFI": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/stader__near",
+        "medium": "https://blog.staderlabs.com/",
+        "telegram": "https://t.me/staderlabs",
+        "discord": "https://discord.com/invite/xJURAhSmav",
+        "github": "https://github.com/stader-labs",
+        "whitepaper": "https://staderlabs-docs.s3.amazonaws.com/Stader_Litepaper.pdf"
+      }
+    }
+  },
+  "popula": {
+    "profile": {
+      "name": "Popula",
+      "tagline": "Web3 platform for the Community Economy.",
+      "description": "Popula is the infrastructure devoted to the Web3 Community Economy, leading a new paradigm for the Creator Economy powered by open-source protocols.\\n\\nPopula provides a community-friendly playground for creators to share content, and for users to explore, interact and participate in different communities. Behind the Popula interface is a Point System, a reputation protocol that issues non-transferrable tokens (Points) to record value-added behaviour within a community and signal the reputation, contribution, and commitment of participants. By leveraging the Points System, Popula’s Community Economy Protocol Set helps creators monetise and incentivise member co-creation. They enable creators to leverage expertise from within their communities, freeing up their time while generating increasingly higher-quality content and accelerating growth. At the same time, members of those communities can see their contribution recognized (accruing reputation) and rewarded (accruing upside and perks), which encourages them to keep supporting more creators, thus fueling the whole ecosystem’s growth.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/popula/popula.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "SOCIAL": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/beepopula",
+        "medium": "https://medium.com/beepopula",
+        "discord": "https://discord.com/invite/KrJFag5S2s"
+      }
+    }
+  },
+  "here-wallet": {
+    "profile": {
+      "name": "HERE Wallet",
+      "tagline": "Mobile wallet for NEAR Protocol.",
+      "description": "HERE Wallet is a mobile wallet for the NEAR Protocol. With the use of this application, you can easily buy, sell and use NEAR.\\n\\nHERE is based on a liquid stacking protocol. All users start to receive passive income immediately after depositing. At the same time NEAR at HERE Wallet is not frozen and you can use it at any time without fees. Read more about it in our whitepaper.\\n\\nAlso, the HERE Wallet can even work together with the NEAR web wallet, giving users access to all dApps.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/here-wallet/here-wallet.jpg"
+      },
+      "tags": {
+        "INFRASTRUCTURE": "",
+        "WALLETS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/here_wallet",
+        "medium": "https://medium.com/@nearhere",
+        "telegram": "https://t.me/herewallet",
+        "discord": "https://discord.com/invite/8Q3gw3gsD2",
+        "github": "https://github.com/here-wallet",
+        "whitepaper": "https://docs.herewallet.app/"
+      }
+    }
+  },
+  "hapi": {
+    "profile": {
+      "name": "HAPI",
+      "tagline": "Onchain Cybersecurity Protocol for DeFi.",
+      "description": "HAPI is a one-of-a-kind decentralized security protocol that prevents and interrupts any potential malicious activity within the blockchain space. HAPI works by leveraging both external and off-chain data as well as on-chain data accrued directly by HAPI and is publicly available.\\n\\nOne can imagine HAPI being an all-encompassing, overarching protocol that combines crypto intelligence data from multiple sources allowing the most accurate information on malicious activity, and compromised wallets.\\n\\nHAPI is the only crypto cybersecurity solution that can be integrated into DEXes and DeFi protocols preventing Money Laundering by projects embedding/calling HAPI Smart Contracts and checking each transaction via the database.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/hapi/hapi.jpg"
+      },
+      "tags": {
+        "DEFI": "",
+        "DEVTOOLING": "",
+        "SECURITY": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/i_am_hapi_one",
+        "medium": "https://medium.com/i-am-hapi",
+        "telegram": "https://t.me/hapiHF",
+        "discord": "https://discord.com/invite/HdGXqF32Jc",
+        "github": "https://github.com/HAPIprotocol",
+        "linkedIn": "https://www.linkedin.com/company/hapi-protocol/",
+        "whitepaper": "https://hapi-one.gitbook.io/"
+      }
+    }
+  },
+  "creatives-dao": {
+    "profile": {
+      "name": "Creatives DAO",
+      "tagline": "DAO vertical from NEAR Protocol supporting creatives.",
+      "description": "Creatives DAO community has been producing artworks, events, magazines, videos audio, interviews, NFTs, Metaverse parties and everything creative for nearly a year now.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/creatives-dao/creatives-dao.jpg"
+      },
+      "tags": {
+        "DAO": "",
+        "ECOSYSTEM": "",
+        "NFT": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/creativesdao",
+        "telegram": "https://t.me/CreativesDAO",
+        "discord": "https://discord.com/invite/mmWB2pABBa",
+        "astroDAO": "creatives.sputnik-dao.near"
+      }
+    }
+  },
+  "calimero": {
+    "profile": {
+      "name": "Calimero Network",
+      "tagline": "Blockchain infrastructure for enterprises.",
+      "description": "Calimero leverages state-of-the-art privacy and permissioning techniques for enterprises with all the scaling, speed, and performance advantages of NEAR Protocol.\\n\\nWhy choose Calimero? The consortium approach has proven to be slow, complex, and difficult to update. Our approach – private, customizable enterprise shards – meets customer requirements for security while also allowing easy access to data, analytics, and seamless collaboration. Accelerate your business on the Open Web today.\\n\\nSecure private blockchain infrastructure lets you protect your data while leveraging all the business benefits of open-source blockchains. Built on NEAR Protocol.\\n\\n**Deploy private dApps seamlessly**\\n\\nDeploy a ready-to-use application from our Marketplace or easily build your own custom solution. Connect to private or public blockchain applications like DeFi, NFTs, on-chain KYC, and more without compromising on confidentiality.\\n\\n**Out-of-the-box solutions let you ship fast**\\n\\nOur application management console and dashboards allow you to quickly ship your applications and analyze growth data without having to manage your own infrastructure.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/calimero/calimero.jpg"
+      },
+      "tags": {
+        "INFRASTRUCTURE": "",
+        "PRIVACY": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/CalimeroNetwork",
+        "github": "https://github.com/calimero-is-near",
+        "whitepaper": "https://docs.calimero.network/"
+      }
+    }
+  },
+  "nearblocks": {
+    "profile": {
+      "name": "NearBlocks",
+      "tagline": "User friendly Blockchain Explorer and Analytics Platform.",
+      "description": "NearBlocks is the leading Blockchain Explorer, Search, API and Analytics Platform for NEAR Protocol, a decentralized smart contracts platform. Built and launched in 2022, it is one of the earliest projects built around NEAR Protocol and its community with the mission of providing equitable access to blockchain data.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/nearblocks/nearblocks.jpg"
+      },
+      "tags": {
+        "ANALYTICS": "",
+        "EXPLORERS": "",
+        "INFRASTRUCTURE": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/nearblocks",
+        "telegram": "https://t.me/nearblocks",
+        "whitepaper": "https://api.nearblocks.io/api-docs/"
+      }
+    }
+  },
+  "near-mobile-wallet": {
+    "profile": {
+      "name": "NEAR Mobile Wallet",
+      "tagline": "Securely store, manage & transfer NEAR & other crypto on the go.",
+      "description": "NEAR Mobile is the ultimate non-custodial mobile wallet for securely storing, managing, and transferring your NEAR tokens and other cryptocurrencies on the NEAR blockchain. With NEAR Mobile, you can easily create accounts, reserve NEAR IDs, view your tokens and NFTs inside the app, stay up to date with the latest news, stake your NEAR and earn rewards, and interact with other dapps on the ecosystem - all in one user-friendly platform.\\n\\n**Non-custodial**: You have complete control over your NEAR tokens and other cryptocurrencies, with no intermediaries involved.\\n**Secure**: NEAR Mobile uses the latest security measures, including two-factor authentication, biometric authentication, and PIN protection, to keep your funds safe.\\n**User-friendly**: With its intuitive interface and easy-to-navigate design, NEAR Mobile is perfect for both new and experienced crypto users.\\n**Reserve NEAR IDs**: Easily reserve your NEAR ID within the app to create a more user-friendly wallet address.\\n**Staking rewards**: Stake your NEAR and earn rewards directly within the app.\\nInteract with other dapps: Easily connect and interact with other NEAR ecosystem applications directly from NEAR Mobile.\\n\\nNEAR Mobile is the perfect all-in-one solution for managing your crypto assets on the NEAR blockchain. Download NEAR Mobile today and take control of your crypto!",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/near-mobile-wallet/near-mobile-app.jpg"
+      },
+      "tags": {
+        "INFRASTRUCTURE": "",
+        "WALLETS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/NEARMobile_app",
+        "github": "https://github.com/Peersyst/near-mobile-wallet"
+      }
+    }
+  },
+  "web3mon": {
+    "profile": {
+      "name": "Web3Mon",
+      "tagline": "The First NFT Multiverse Game in the Ice Age.",
+      "description": "Web3Mon is a P2E combined with an innovative multiverse world, a new type of NFT game ecosystem that has never existed before. Our ecosystem is designed with a gameplay loop and reward system that has a high level of detail and intricacy with Web3Mon at its core. It's a multiverse game that allows players to participate in and trade with their existing NFT assets, which allows them to venture into our carefully designed NFT fantasy world. Our Web3Mon project is sophisticated and executed by a powerful team that promises a very high level of gaming and worldview design and can be called the Avengers.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/web3mon/web3mon.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "GAMING": "",
+        "NFT": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/web3mon",
+        "whitepaper": "https://docs.web3mon.io/"
+      }
+    }
+  },
+  "zomland": {
+    "profile": {
+      "name": "ZomLand",
+      "tagline": "Play2Earn NFT collectible game on NEAR.",
+      "description": "Zomland is an interactive P2E NFT card game with exciting gameplay and a lot of funs. You take on leader's role of the army of zombies and monsters to battle with other users all over the world.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/zomland/zomland.jpg"
+      },
+      "tags": {
+        "COLLECTIBLES": "",
+        "DAPPS": "",
+        "GAMING": "",
+        "GAMEFI": "",
+        "NFT": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/Zomland_Game",
+        "telegram": "https://t.me/zomland_official",
+        "discord": "https://discord.com/invite/Te3GkcJPjt",
+        "whitepaper": "https://dandelion-dash-25e.notion.site/Whitepaper-f13cc403f031402f9244712c24ee151f"
+      }
+    }
+  },
+  "open-web-academy": {
+    "profile": {
+      "name": "Open Web Academy",
+      "tagline": "Web 3.0 educational community for the development of blockchain solutions.",
+      "description": "Open Web Academy (OWA) is a virtual center to certify Web 3.0 developers and professionals through highly specialized documentation, multimedia content and personalized advice created and shared by and for the community.\\n\\nOpen Web House is a two-day offline event in a pilot phase focused on software developers from Mexico who want to build web 3.0, as well as a space to mentor DeFi topics and crowdfunding projects through a hackathon.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/open-web-academy/open-web-academy.jpg"
+      },
+      "tags": {
+        "DAO": "",
+        "EDUCATION": "",
+        "VALIDATORS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/openwebacademy_",
+        "medium": "https://medium.com/@owa_academy",
+        "telegram": "https://t.me/openwebhouse",
+        "discord": "https://discord.com/invite/ekZy68tm5c",
+        "github": "https://github.com/open-web-academy",
+        "astroDAO": "open-web-academy.sputnik-dao.near"
+      }
+    }
+  },
+  "genadrop": {
+    "profile": {
+      "name": "Genadrop",
+      "tagline": "The No Code NFT Generative, Art Creator Tool & Minter.",
+      "description": "GenaDrop is the ultimate multi-chain no code generative NFT creator, minter, and marketplace.\\n\\nComing from the name \"Generative Drops\". GenaDrop allows artists to create layer, choose rarities, add conflict rules, add blank images, pick the number to generate, generate preview, delete bad images, edit metadata, download a zip, upload to IPFS, mint to multiple blockchains with a simple to use user interface.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/genadrop/genadrop.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "NFT": "",
+        "UTILITIES": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/genadrop",
+        "discord": "https://discord.com/invite/4vdtmQqz6d",
+        "whitepaper": "https://www.genadrop.com/docs"
+      }
+    }
+  },
+  "web4-near": {
+    "profile": {
+      "name": "Web4.near",
+      "tagline": "Unstoppable websites on NEAR Protocol blockchain and Filecoin.",
+      "description": "Web4 is a new way to distribute decentralized apps. You only need to deploy one smart contract using WebAssembly to deploy whole web app.\\n\\n- Decentralised ownership and hosting\\n- Content permanence by default, no more expired links\\n- Offline friendly\\n- Web presence controlled by user\\n- Interactive mobile apps linked together as websites, no app stores\\n\\nYou only need to deploy single smart contract using WebAssembly to host your app HTTP backend, static resources and blockchain logic.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/web4-near/web4-near.jpg"
+      },
+      "tags": {
+        "DEVTOOLING": "",
+        "INFRASTRUCTURE": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/web4near",
+        "github": "https://github.com/vgrichina/web4"
+      }
+    }
+  },
+  "phoenix-bonds": {
+    "profile": {
+      "name": "Phoenix Bonds",
+      "tagline": "A novel bonding mechanism built on LiNEAR Protocol.",
+      "description": "Phoenix Bonds is a principal-protected bonding platform that help protocols with liquidity-bootstrapping and provide perpetually-boosted yield to users. Phoenix Bonds can work with all yield bearing assets. The first version will be launched for $LiNEAR, the staking derivative token of LiNEAR Protocol.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/phoenix-bonds/phoenix-bonds.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "DEFI": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/LinearProtocol",
+        "whitepaper": "https://docs.linearprotocol.org/phoenix-bonds"
+      }
+    }
+  },
+  "near-vietnam-hub": {
+    "profile": {
+      "name": "NEAR Vietnam Hub",
+      "tagline": "NEAR Vietnam Regional Hub.",
+      "description": "Stay up to date on the latest news, events, and developments from the NEAR Ecosystem in Vietnam.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/near-vietnam-hub/near-vietnam-hub.jpg"
+      },
+      "tags": {
+        "ECOSYSTEM": "",
+        "REGIONAL_HUBS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/NearVietnamHub",
+        "telegram": "https://t.me/nearvietnamofficial",
+        "facebook": "https://www.facebook.com/NEARVietnamOfficial"
+      }
+    }
+  },
+  "dapplets-project": {
+    "profile": {
+      "name": "Dapplets Project",
+      "tagline": "The Home of Augmented Web, powered by Crypto.",
+      "description": "We are building an open Augmented Web Infrastructure for decentralized Apps (Dapplets), all powered by crypto technologies.\\n\\nOur system is open-source and available to developers anywhere in the world.\\n\\nDapplets Project is an open and self-governed Public Good entity. The platform is publicly available to anyone and enables a lot of new augmenting applications, both public good and commercial. Anyone who shares our values can join the project and share our common success.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/dapplets-project/dapplets-project.jpg"
+      },
+      "tags": {
+        "DEVTOOLING": ""
+      },
+      "linktree": {
+        "telegram": "https://t.me/dapplets",
+        "discord": "https://discord.com/invite/YcxbkcyjMV",
+        "github": "https://github.com/dapplets"
+      }
+    }
+  },
+  "nepbot": {
+    "profile": {
+      "name": "NepBot",
+      "tagline": "Build your NEP token-gated communities on Discord.",
+      "description": "Inspired by Collab.land and the rapid growth of Near community on discord, NepBot is created to help people build token gated experienced on Discord. It is a Discord bot for token-based community management. It allows users to verify their on-chain identity and assets on Discord, configure token-gated rules for server roles, and automatically assign roles for server members. In the future, users will also be able to mint and claim NFTs and conduct on-chain governance directly in Discord servers via NepBot.\\n\\nOur mission is to facilitate token-based community management across the Near ecosystem, and to onboard more people to Near through token-gated experiences.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/nepbot/nepbot.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "SOCIAL": "",
+        "UTILITIES": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/nepbot4near",
+        "discord": "https://discord.com/invite/avqufmzS6t",
+        "github": "https://github.com/NepBot"
+      }
+    }
+  },
+  "reality-near": {
+    "profile": {
+      "name": "Reality Near",
+      "tagline": "Metaverse for Malls and Universities of Latam.",
+      "description": "Reality Near is a Metaverse that seeks to generate opportunities of development for its users in educational and economic fields, within a decentralized environment that offers the same growth opportunities for all.\\n\\nReality Near will work supported by the blockchain ecosystem of the NEAR Protocol. This guarantees complete security and transparency in the transactions that are going to be carried out within the Metaverse. This system allows infinite content to be created in it, which can generate value, both for the creator and for the rest of the community.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/reality-near/reality-near.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "METAVERSE": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/RealityNearOrg",
+        "github": "https://github.com/RealityNearFoundation2022",
+        "linkedIn": "https://www.linkedin.com/company/reality-near/",
+        "facebook": "https://www.facebook.com/FundacionRealityNear"
+      }
+    }
+  },
+  "harmonic-guild": {
+    "profile": {
+      "name": "Harmonic Guild",
+      "tagline": "Discover the simplicity of building your own NFT economy.",
+      "description": "Harmonic Technology Guild is a partnership LLC, transitioning to become a democratic decentralized autonomous organization. We are focused on building a suite of NFT utilities for musicians, artists and daily internet users. We are undertaking development of custom NFT marketplaces, NFT distribution technologies, and NFT-based digital community tools. Everything we do has an eye to environmental sustainability and carbon negativity, with specific offerings in that vein coming soon. With our partners at Minting Music and Charm3d, we aim to bring transparency and meritocracy to the music industry by implementing the many benefits of Web3. We develop, coordinate, and work in sub-DAOs which operate many of our projects. Join Harmonic and help us build a better internet for everyone.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/harmonic-guild/harmonic-guild.jpg"
+      },
+      "tags": {
+        "ECOSYSTEM": "",
+        "GUILDS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/HarmonicGuild",
+        "telegram": "https://t.me/harmonic_public"
+      }
+    }
+  },
+  "near-ukraine-guild": {
+    "profile": {
+      "name": "NEAR Ukraine Guild",
+      "tagline": "Fast-growing guild aimed at building devs/creators/entrepreneurs community.",
+      "description": "NEAR Ukraine Guild is a fast-growing guild aimed at building a strong developers/creators/entrepreneurs community since there are many people in Ukraine who either isn’t familiar with NEAR, or thinks it’s very complicated to start doing here.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/near-ukraine-guild/near-ukraine-guild.jpg"
+      },
+      "tags": {
+        "ECOSYSTEM": "",
+        "GUILDS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/nearuaguild",
+        "medium": "https://medium.com/@nearuaguild",
+        "telegram": "https://t.me/nearprotocolua"
+      }
+    }
+  },
+  "sharddog": {
+    "profile": {
+      "name": "ShardDog",
+      "tagline": "Connecting KeyPom to REST APIs on NEAR.",
+      "description": "Shard Dog let's you quickly create a NEAR named wallet with a simple link!\\nThis is done by connecting to KeyPom through custom REST APIs.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/sharddog/sharddog.jpg"
+      },
+      "tags": {
+        "DAPPS": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/sharddog"
+      }
+    }
+  },
+  "nearzombies": {
+    "profile": {
+      "name": "NearZombies",
+      "tagline": "Earn while learning.",
+      "description": "Learn about NEAR, a sustainable protocol that is growing in popularity every day. NearZombies offers a new way of learning while learning the subjects in an interactive way.",
+      "image": {
+        "url": "https://web.archive.org/web/20230521202108im_/https://awesomenear-spaces.fra1.digitaloceanspaces.com/production/projects/nearzombies/nearzombies.jpg"
+      },
+      "tags": {
+        "DAPPS": "",
+        "EDUCATION": ""
+      },
+      "linktree": {
+        "twitter": "https://twitter.com/nearzombies",
+        "telegram": "https://t.me/nearzombies"
+      }
+    }
+  }
+}
