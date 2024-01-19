@@ -278,12 +278,12 @@ const projectsData = Object.keys(projects["legacy-awesome.near"].project).map(
   }
 );
 
-if (!projectsData) {
+if (!Array.isArray(projectsData)) {
   return "Loading...";
 }
 
 const tempCategories = projectsData
-  .map((el) => Object.keys(el.data.tags))
+  .map((el) => Object.keys(el.data.tags ?? {}))
   .flat();
 
 const categories = tempCategories.filter(
