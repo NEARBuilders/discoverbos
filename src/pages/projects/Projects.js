@@ -8,7 +8,8 @@ export default function Projects() {
   return (
     <div className="container">
       <Widget
-        src="nearcatalog.near/widget/NearCatalog.App"
+       src="nearcatalog.near/widget/NearCatalog.App"
+        //src="nearcatalog.near/widget/NearCatalog.App"
         config={{
           redirectMap: redirectMapStore.redirectMap,
         }}
