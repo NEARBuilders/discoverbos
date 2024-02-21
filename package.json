@@ -45,7 +45,7 @@
     "dev": "concurrently \"bos-workspace dev\" \"npm run serve -- --env mode=development\"",
     "prod": "npm run webpack -- --env mode=production",
     "prod:analyze": "npm run prod -- --env presets=analyze",
-    "build": "npm run serve -- --env mode=development",
+    "build": "npm run prod",
     "start": "npm run dev",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
