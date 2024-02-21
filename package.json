@@ -45,7 +45,7 @@
     "dev": "concurrently \"bos-workspace dev\" \"npm run serve -- --env mode=development\"",
     "prod": "npm run webpack -- --env mode=production",
     "prod:analyze": "npm run prod -- --env presets=analyze",
-    "build": "concurrently \"bos-workspace build\" \"npm run serve -- --env mode=development\"",
+    "build": "npm run serve -- --env mode=development",
     "start": "npm run dev",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
@@ -68,7 +68,7 @@
     "@babel/preset-react": "^7.14.5",
     "assert": "^2.0.0",
     "babel-loader": "^8.2.2",
-    "bos-workspace": "^0.0.1-alpha.4",
+    "bos-workspace": "^0.0.1-alpha.5",
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
     "clean-webpack-plugin": "^4.0.0",
